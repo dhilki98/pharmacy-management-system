@@ -20,15 +20,17 @@ namespace PharmacyManagementSystem
 
         private void Administrator_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM USERS", "server = DESKTOP-F7UFU4N; database = PharmacyDB; ");
-            DataSet ds = new DataSet();
-            da.Fill(ds, "ÛSERS");
-            dataGV_Adm.DataSource = ds.Tables["USERS"].DefaultView;
+            //SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM USERS", "server = DESKTOP-F7UFU4N; database = PharmacyDB; ");
+            //DataSet ds = new DataSet();
+            //da.Fill(ds, "ÛSERS");
+            //dataGV_Adm.DataSource = ds.Tables["USERS"].DefaultView;
         }
 
         private void btn_Adm_adduser_Click(object sender, EventArgs e)
         {
-
+            newEmployee newEmplo = new newEmployee();
+            newEmplo.Show();
+            this.Hide();
         }
 
         private void btn_Adm_back_Click(object sender, EventArgs e)

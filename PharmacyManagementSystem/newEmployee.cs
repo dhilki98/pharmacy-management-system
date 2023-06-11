@@ -22,7 +22,7 @@ namespace PharmacyManagementSystem
 
         private void newEmployee_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btn_nE_add_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace PharmacyManagementSystem
             String role = cmbBox_nE_userrole.Text;
             String name = txt_nE_name.Text;
             String nic = txt_nE_nic.Text;
-            Int64 mobile = Int64.Parse(txt_nE_mobileno.Text);
+            String mobile = txt_nE_mobileno.Text;
             String email = txt_nE_eaddress.Text;
             String phamlicense = txt_nE_pln.Text;
             String username = txt_nE_username.Text;
@@ -38,7 +38,8 @@ namespace PharmacyManagementSystem
 
             try
             {
-                query = "";
+                query = "insert into users (fullName,userName,password,nic,userRole,email,contactNo,pharmLicense) values ('"+name+"','"+username+"','"+password+"','"+nic+"','"+role+"','"+email+"','"+mobile+"','"+phamlicense+"')";
+                fn.setData(query, "Add Sucessful.");
             }
             catch (Exception)
             {
