@@ -149,7 +149,7 @@
             this.btn_Main_refresh.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Main_refresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Main_refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Main_refresh.Location = new System.Drawing.Point(281, 12);
+            this.btn_Main_refresh.Location = new System.Drawing.Point(303, 12);
             this.btn_Main_refresh.Name = "btn_Main_refresh";
             this.btn_Main_refresh.Size = new System.Drawing.Size(100, 42);
             this.btn_Main_refresh.TabIndex = 1;

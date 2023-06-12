@@ -57,6 +57,7 @@ namespace PharmacyManagementSystem
                         Main mn = new Main();
                         mn.Show();
                         this.Hide();
+
                     }
                 }
                 else

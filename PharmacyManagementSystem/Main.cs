@@ -68,6 +68,7 @@ namespace PharmacyManagementSystem
         private void btn_Main_refresh_Click(object sender, EventArgs e)
         {
             Main_Load(this, null);
+            
         }
     }
 }
