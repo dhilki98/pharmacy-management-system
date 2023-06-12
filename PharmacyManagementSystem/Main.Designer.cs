@@ -37,6 +37,11 @@
             this.btn_Main_administration = new System.Windows.Forms.Button();
             this.lbl_Main_logo = new System.Windows.Forms.Label();
             this.pctBox_Main_logo = new System.Windows.Forms.PictureBox();
+            this.btn_Main_refresh = new System.Windows.Forms.Button();
+            this.lbl_Main_admno = new System.Windows.Forms.Label();
+            this.lbl_Main_noa = new System.Windows.Forms.Label();
+            this.lbl_main_pharm = new System.Windows.Forms.Label();
+            this.lbl_Main_nop = new System.Windows.Forms.Label();
             this.pnl_Main_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Main_logo)).BeginInit();
             this.SuspendLayout();
@@ -139,20 +144,82 @@
             this.pctBox_Main_logo.TabIndex = 0;
             this.pctBox_Main_logo.TabStop = false;
             // 
+            // btn_Main_refresh
+            // 
+            this.btn_Main_refresh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Main_refresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Main_refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Main_refresh.Location = new System.Drawing.Point(281, 12);
+            this.btn_Main_refresh.Name = "btn_Main_refresh";
+            this.btn_Main_refresh.Size = new System.Drawing.Size(100, 42);
+            this.btn_Main_refresh.TabIndex = 1;
+            this.btn_Main_refresh.Text = "Refresh";
+            this.btn_Main_refresh.UseVisualStyleBackColor = false;
+            this.btn_Main_refresh.Click += new System.EventHandler(this.btn_Main_refresh_Click);
+            // 
+            // lbl_Main_admno
+            // 
+            this.lbl_Main_admno.AutoSize = true;
+            this.lbl_Main_admno.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Main_admno.Location = new System.Drawing.Point(303, 69);
+            this.lbl_Main_admno.Name = "lbl_Main_admno";
+            this.lbl_Main_admno.Size = new System.Drawing.Size(172, 21);
+            this.lbl_Main_admno.TabIndex = 2;
+            this.lbl_Main_admno.Text = "No of Administrators :";
+            // 
+            // lbl_Main_noa
+            // 
+            this.lbl_Main_noa.AutoSize = true;
+            this.lbl_Main_noa.BackColor = System.Drawing.Color.Gold;
+            this.lbl_Main_noa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Main_noa.Location = new System.Drawing.Point(490, 69);
+            this.lbl_Main_noa.Name = "lbl_Main_noa";
+            this.lbl_Main_noa.Size = new System.Drawing.Size(19, 21);
+            this.lbl_Main_noa.TabIndex = 3;
+            this.lbl_Main_noa.Text = "0";
+            // 
+            // lbl_main_pharm
+            // 
+            this.lbl_main_pharm.AutoSize = true;
+            this.lbl_main_pharm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_main_pharm.Location = new System.Drawing.Point(303, 97);
+            this.lbl_main_pharm.Name = "lbl_main_pharm";
+            this.lbl_main_pharm.Size = new System.Drawing.Size(150, 21);
+            this.lbl_main_pharm.TabIndex = 4;
+            this.lbl_main_pharm.Text = "No of Pharmacists :";
+            // 
+            // lbl_Main_nop
+            // 
+            this.lbl_Main_nop.AutoSize = true;
+            this.lbl_Main_nop.BackColor = System.Drawing.Color.Gold;
+            this.lbl_Main_nop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Main_nop.Location = new System.Drawing.Point(490, 97);
+            this.lbl_Main_nop.Name = "lbl_Main_nop";
+            this.lbl_Main_nop.Size = new System.Drawing.Size(19, 21);
+            this.lbl_Main_nop.TabIndex = 5;
+            this.lbl_Main_nop.Text = "0";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1364, 729);
+            this.Controls.Add(this.lbl_Main_nop);
+            this.Controls.Add(this.lbl_main_pharm);
+            this.Controls.Add(this.lbl_Main_noa);
+            this.Controls.Add(this.lbl_Main_admno);
+            this.Controls.Add(this.btn_Main_refresh);
             this.Controls.Add(this.pnl_Main_left);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.pnl_Main_left.ResumeLayout(false);
             this.pnl_Main_left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Main_logo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -166,5 +233,10 @@
         private Button btn_Main_billing;
         private Button btn_Main_im;
         private Label lbl_Main_username;
+        private Button btn_Main_refresh;
+        private Label lbl_Main_admno;
+        private Label lbl_Main_noa;
+        private Label lbl_main_pharm;
+        private Label lbl_Main_nop;
     }
 }

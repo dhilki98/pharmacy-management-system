@@ -59,6 +59,10 @@ namespace PharmacyManagementSystem
                         this.Hide();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Invalid Username OR Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
            /* if (txt_Login_password.Text == "111" && txt_Login_username.Text == "Dhilki")
             {
