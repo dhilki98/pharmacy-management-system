@@ -50,9 +50,11 @@
             this.btn_nE_Remove = new System.Windows.Forms.Button();
             this.btn_nE_update = new System.Windows.Forms.Button();
             this.lbl_nE_search = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_nE_search = new System.Windows.Forms.TextBox();
             this.lnl_nE_pln = new System.Windows.Forms.Label();
             this.txt_nE_pln = new System.Windows.Forms.TextBox();
+            this.pctBox_nE_username = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_nE_username)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_nE_userdetails
@@ -210,6 +212,7 @@
             this.txt_nE_username.Name = "txt_nE_username";
             this.txt_nE_username.Size = new System.Drawing.Size(340, 29);
             this.txt_nE_username.TabIndex = 14;
+            this.txt_nE_username.TextChanged += new System.EventHandler(this.txt_nE_username_TextChanged);
             // 
             // txt_nE_password
             // 
@@ -252,6 +255,7 @@
             this.btn_nE_reset.TabIndex = 18;
             this.btn_nE_reset.Text = "Reset";
             this.btn_nE_reset.UseVisualStyleBackColor = false;
+            this.btn_nE_reset.Click += new System.EventHandler(this.btn_nE_reset_Click);
             // 
             // btn_nE_Remove
             // 
@@ -288,14 +292,14 @@
             this.lbl_nE_search.TabIndex = 21;
             this.lbl_nE_search.Text = "Search";
             // 
-            // textBox1
+            // txt_nE_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(91, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(340, 29);
-            this.textBox1.TabIndex = 22;
+            this.txt_nE_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_nE_search.ForeColor = System.Drawing.Color.Black;
+            this.txt_nE_search.Location = new System.Drawing.Point(91, 152);
+            this.txt_nE_search.Name = "txt_nE_search";
+            this.txt_nE_search.Size = new System.Drawing.Size(340, 29);
+            this.txt_nE_search.TabIndex = 22;
             // 
             // lnl_nE_pln
             // 
@@ -317,15 +321,25 @@
             this.txt_nE_pln.Size = new System.Drawing.Size(340, 29);
             this.txt_nE_pln.TabIndex = 24;
             // 
+            // pctBox_nE_username
+            // 
+            this.pctBox_nE_username.Location = new System.Drawing.Point(950, 312);
+            this.pctBox_nE_username.Name = "pctBox_nE_username";
+            this.pctBox_nE_username.Size = new System.Drawing.Size(40, 29);
+            this.pctBox_nE_username.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBox_nE_username.TabIndex = 25;
+            this.pctBox_nE_username.TabStop = false;
+            // 
             // newEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1029, 630);
+            this.Controls.Add(this.pctBox_nE_username);
             this.Controls.Add(this.txt_nE_pln);
             this.Controls.Add(this.lnl_nE_pln);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_nE_search);
             this.Controls.Add(this.lbl_nE_search);
             this.Controls.Add(this.btn_nE_update);
             this.Controls.Add(this.btn_nE_Remove);
@@ -353,6 +367,7 @@
             this.Name = "newEmployee";
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.newEmployee_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_nE_username)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,8 +397,9 @@
         private Button btn_nE_Remove;
         private Button btn_nE_update;
         private Label lbl_nE_search;
-        private TextBox textBox1;
+        private TextBox txt_nE_search;
         private Label lnl_nE_pln;
         private TextBox txt_nE_pln;
+        private PictureBox pctBox_nE_username;
     }
 }

@@ -12,6 +12,10 @@ namespace PharmacyManagementSystem
 {
     public partial class Login : Form
     {
+        function fn = new function();
+        String query;
+        DataSet ds;
+
         public Login()
         {
             InitializeComponent();
@@ -25,7 +29,38 @@ namespace PharmacyManagementSystem
 
         private void btn_Login_signin_Click(object sender, EventArgs e)
         {
-            if (txt_Login_password.Text == "111" && txt_Login_username.Text == "Dhilki")
+            query = "select * from USERS";
+            ds = fn.getData(query);
+            if(ds.Tables[0].Rows.Count == 0)
+            {
+                if(txt_Login_username.Text=="root" && txt_Login_password.Text == "root")
+                {
+                    Main mn = new Main();
+                    mn.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                query = "select * from USERS where userName = '" + txt_Login_username.Text + "' and password='" + txt_Login_password.Text + "'";
+                ds = fn.getData(query);
+                if (ds.Tables[0].Rows.Count != 0)
+                {
+                    String role = ds.Tables[0].Rows[0][5].ToString();
+                    if(role == "Administrator")
+                    {
+                        Main mn = new Main();
+                        mn.Show();
+                        this.Hide();
+                    }else if(role == "Pharmacist")
+                    {
+                        Main mn = new Main();
+                        mn.Show();
+                        this.Hide();
+                    }
+                }
+            }
+           /* if (txt_Login_password.Text == "111" && txt_Login_username.Text == "Dhilki")
             {
                 Main mn = new Main();
                 mn.Show();
@@ -34,7 +69,7 @@ namespace PharmacyManagementSystem
             else
             {
                 MessageBox.Show ("Invalid Username OR Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
     }
 }
