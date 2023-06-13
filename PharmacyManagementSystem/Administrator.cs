@@ -36,6 +36,17 @@ namespace PharmacyManagementSystem
             //Viewuser.ID = ID; look this error
         }
 
+        public void loadform(object Form)
+        {
+            if (this.pnl_Adm_right.Controls.Count > 0)
+                this.pnl_Adm_right.Controls.RemoveAt(0);
+            Form f = new Form();
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.pnl_Adm_right.Controls.Add(f);
+            this.pnl_Adm_right.Tag = f;
+            f.Show();
+        }
         private void Administrator_Load(object sender, EventArgs e)
         {
             //SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM USERS", "server = DESKTOP-F7UFU4N; database = PharmacyDB; ");
@@ -44,11 +55,14 @@ namespace PharmacyManagementSystem
             //dataGV_Adm.DataSource = ds.Tables["USERS"].DefaultView;
         }
 
+       
+
         private void btn_Adm_adduser_Click(object sender, EventArgs e)
         {
-            newEmployee newEmplo = new newEmployee();
+            loadform(new newEmployee());
+           /* newEmployee newEmplo = new newEmployee();
             newEmplo.Show();
-            this.Hide();
+            this.Hide();*/
         }
 
         private void btn_Adm_back_Click(object sender, EventArgs e)
@@ -60,9 +74,15 @@ namespace PharmacyManagementSystem
 
         private void btn_Adm_viewusers_Click(object sender, EventArgs e)
         {
-            Viewuser vUser = new Viewuser();
+            loadform(new Viewuser());
+            /*Viewuser vUser = new Viewuser();
             vUser.Show();
-            this.Hide();
+            this.Hide();*/
+        }
+
+        private void btn_Adm_update_Click(object sender, EventArgs e)
+        {
+            loadform(new newEmployee());
         }
 
         private void setLabel(DataSet ds, Label lbl)
@@ -76,5 +96,7 @@ namespace PharmacyManagementSystem
                 lbl.Text = "0";
             }
         }
+
+        
     }
 }

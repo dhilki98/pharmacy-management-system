@@ -33,6 +33,7 @@
             this.lbl_Vu_username = new System.Windows.Forms.Label();
             this.txt_Vu_username = new System.Windows.Forms.TextBox();
             this.btn_Vu_delete = new System.Windows.Forms.Button();
+            this.btn_Vu_close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_Uv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,18 +94,32 @@
             this.btn_Vu_delete.UseVisualStyleBackColor = false;
             this.btn_Vu_delete.Click += new System.EventHandler(this.btn_Vu_delete_Click);
             // 
+            // btn_Vu_close
+            // 
+            this.btn_Vu_close.BackColor = System.Drawing.Color.Red;
+            this.btn_Vu_close.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Vu_close.ForeColor = System.Drawing.Color.Black;
+            this.btn_Vu_close.Location = new System.Drawing.Point(1030, 12);
+            this.btn_Vu_close.Name = "btn_Vu_close";
+            this.btn_Vu_close.Size = new System.Drawing.Size(30, 30);
+            this.btn_Vu_close.TabIndex = 5;
+            this.btn_Vu_close.Text = "X";
+            this.btn_Vu_close.UseVisualStyleBackColor = false;
+            // 
             // Viewuser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 688);
+            this.Controls.Add(this.btn_Vu_close);
             this.Controls.Add(this.btn_Vu_delete);
             this.Controls.Add(this.txt_Vu_username);
             this.Controls.Add(this.lbl_Vu_username);
             this.Controls.Add(this.btn_Uv_refresh);
             this.Controls.Add(this.dataGV_Uv);
             this.Name = "Viewuser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Viewuser";
             this.Load += new System.EventHandler(this.Viewuser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_Uv)).EndInit();
@@ -120,5 +135,6 @@
         private Label lbl_Vu_username;
         private TextBox txt_Vu_username;
         private Button btn_Vu_delete;
+        private Button btn_Vu_close;
     }
 }

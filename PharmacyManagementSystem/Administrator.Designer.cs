@@ -39,18 +39,8 @@
             this.lbl_Adm_logo = new System.Windows.Forms.Label();
             this.pctBox_Adm_logo = new System.Windows.Forms.PictureBox();
             this.pnl_Adm_right = new System.Windows.Forms.Panel();
-            this.pnl_Adm_right1 = new System.Windows.Forms.Panel();
-            this.dataGV_Adm = new System.Windows.Forms.DataGridView();
-            this.clm_Adm_userrole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Adm_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Adm_nic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Adm_mnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Adm_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Adm_username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Adm_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Adm_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Adm_logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGV_Adm)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Adm_left
@@ -65,7 +55,6 @@
             this.pnl_Adm_left.Controls.Add(this.lbl_Adm_logo);
             this.pnl_Adm_left.Controls.Add(this.pctBox_Adm_logo);
             this.pnl_Adm_left.Controls.Add(this.pnl_Adm_right);
-            this.pnl_Adm_left.Controls.Add(this.pnl_Adm_right1);
             this.pnl_Adm_left.Location = new System.Drawing.Point(0, 0);
             this.pnl_Adm_left.Name = "pnl_Adm_left";
             this.pnl_Adm_left.Size = new System.Drawing.Size(275, 730);
@@ -118,6 +107,7 @@
             this.btn_Adm_update.TabIndex = 6;
             this.btn_Adm_update.Text = "Update User";
             this.btn_Adm_update.UseVisualStyleBackColor = false;
+            this.btn_Adm_update.Click += new System.EventHandler(this.btn_Adm_update_Click);
             // 
             // btn_Adm_viewusers
             // 
@@ -173,76 +163,12 @@
             this.pnl_Adm_right.Size = new System.Drawing.Size(1086, 726);
             this.pnl_Adm_right.TabIndex = 1;
             // 
-            // pnl_Adm_right1
-            // 
-            this.pnl_Adm_right1.Location = new System.Drawing.Point(281, 3);
-            this.pnl_Adm_right1.Name = "pnl_Adm_right1";
-            this.pnl_Adm_right1.Size = new System.Drawing.Size(1089, 729);
-            this.pnl_Adm_right1.TabIndex = 1;
-            // 
-            // dataGV_Adm
-            // 
-            this.dataGV_Adm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGV_Adm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clm_Adm_userrole,
-            this.clm_Adm_name,
-            this.clm_Adm_nic,
-            this.clm_Adm_mnum,
-            this.clm_Adm_address,
-            this.clm_Adm_username,
-            this.clm_Adm_password});
-            this.dataGV_Adm.Location = new System.Drawing.Point(281, 41);
-            this.dataGV_Adm.Name = "dataGV_Adm";
-            this.dataGV_Adm.RowTemplate.Height = 25;
-            this.dataGV_Adm.Size = new System.Drawing.Size(1080, 150);
-            this.dataGV_Adm.TabIndex = 1;
-            // 
-            // clm_Adm_userrole
-            // 
-            this.clm_Adm_userrole.HeaderText = "User Role";
-            this.clm_Adm_userrole.Name = "clm_Adm_userrole";
-            // 
-            // clm_Adm_name
-            // 
-            this.clm_Adm_name.HeaderText = "Name";
-            this.clm_Adm_name.Name = "clm_Adm_name";
-            this.clm_Adm_name.Width = 200;
-            // 
-            // clm_Adm_nic
-            // 
-            this.clm_Adm_nic.HeaderText = "NIC No";
-            this.clm_Adm_nic.Name = "clm_Adm_nic";
-            this.clm_Adm_nic.Width = 150;
-            // 
-            // clm_Adm_mnum
-            // 
-            this.clm_Adm_mnum.HeaderText = "Mobile No";
-            this.clm_Adm_mnum.Name = "clm_Adm_mnum";
-            this.clm_Adm_mnum.Width = 150;
-            // 
-            // clm_Adm_address
-            // 
-            this.clm_Adm_address.HeaderText = "Email Address";
-            this.clm_Adm_address.Name = "clm_Adm_address";
-            this.clm_Adm_address.Width = 200;
-            // 
-            // clm_Adm_username
-            // 
-            this.clm_Adm_username.HeaderText = "Username";
-            this.clm_Adm_username.Name = "clm_Adm_username";
-            // 
-            // clm_Adm_password
-            // 
-            this.clm_Adm_password.HeaderText = "Password";
-            this.clm_Adm_password.Name = "clm_Adm_password";
-            // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1364, 729);
-            this.Controls.Add(this.dataGV_Adm);
             this.Controls.Add(this.pnl_Adm_left);
             this.Name = "Administrator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -251,7 +177,6 @@
             this.pnl_Adm_left.ResumeLayout(false);
             this.pnl_Adm_left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Adm_logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGV_Adm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,14 +193,6 @@
         private Button btn_Adm_viewusers;
         private Button btn_Adm_adduser;
         private Label lbl_Adm_username;
-        private DataGridView dataGV_Adm;
-        private DataGridViewTextBoxColumn clm_Adm_userrole;
-        private DataGridViewTextBoxColumn clm_Adm_name;
-        private DataGridViewTextBoxColumn clm_Adm_nic;
-        private DataGridViewTextBoxColumn clm_Adm_mnum;
-        private DataGridViewTextBoxColumn clm_Adm_address;
-        private DataGridViewTextBoxColumn clm_Adm_username;
-        private DataGridViewTextBoxColumn clm_Adm_password;
         private Button btn_Adm_remove;
     }
 }
