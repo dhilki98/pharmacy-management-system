@@ -130,6 +130,7 @@
             this.btn_Adm_viewusers.TabIndex = 5;
             this.btn_Adm_viewusers.Text = "View Users";
             this.btn_Adm_viewusers.UseVisualStyleBackColor = false;
+            this.btn_Adm_viewusers.Click += new System.EventHandler(this.btn_Adm_viewusers_Click);
             // 
             // btn_Adm_adduser
             // 

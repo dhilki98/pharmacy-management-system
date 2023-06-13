@@ -49,12 +49,12 @@ namespace PharmacyManagementSystem
                     String role = ds.Tables[0].Rows[0][5].ToString();
                     if(role == "Administrator")
                     {
-                        Main mn = new Main();
+                        Main mn = new Main(txt_Login_username.Text);
                         mn.Show();
                         this.Hide();
                     }else if(role == "Pharmacist")
                     {
-                        Main mn = new Main();
+                        Main mn = new Main(txt_Login_username.Text);
                         mn.Show();
                         this.Hide();
 

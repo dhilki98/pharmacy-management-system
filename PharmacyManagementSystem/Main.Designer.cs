@@ -63,14 +63,14 @@
             // 
             // lbl_Main_username
             // 
-            this.lbl_Main_username.AutoSize = true;
             this.lbl_Main_username.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Main_username.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_Main_username.Location = new System.Drawing.Point(93, 542);
+            this.lbl_Main_username.Location = new System.Drawing.Point(3, 672);
             this.lbl_Main_username.Name = "lbl_Main_username";
-            this.lbl_Main_username.Size = new System.Drawing.Size(119, 32);
+            this.lbl_Main_username.Size = new System.Drawing.Size(269, 32);
             this.lbl_Main_username.TabIndex = 6;
             this.lbl_Main_username.Text = "username";
+            this.lbl_Main_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Main_logout
             // 

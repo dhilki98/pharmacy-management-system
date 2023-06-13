@@ -15,10 +15,20 @@ namespace PharmacyManagementSystem
         function fn = new function();
         String query;
         DataSet ds;
+        
 
         public Main()
         {
             InitializeComponent();
+        }
+
+        
+
+        public Main(String username)
+        {
+            InitializeComponent();
+            lbl_Main_username.Text = username;
+            
         }
 
         private void btn_Main_administration_Click(object sender, EventArgs e)
