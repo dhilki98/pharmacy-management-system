@@ -46,35 +46,15 @@ namespace PharmacyManagementSystem
                 ds = fn.getData(query);
                 if (ds.Tables[0].Rows.Count != 0)
                 {
-                    String role = ds.Tables[0].Rows[0][5].ToString();
-                    if(role == "Administrator")
-                    {
-                        Main mn = new Main(txt_Login_username.Text);
-                        mn.Show();
-                        this.Hide();
-                    }else if(role == "Pharmacist")
-                    {
-                        Main mn = new Main(txt_Login_username.Text);
-                        mn.Show();
-                        this.Hide();
-
-                    }
+                    Main mn = new Main(txt_Login_username.Text);
+                    mn.Show();
+                    this.Hide();
                 }
                 else
                 {
                     MessageBox.Show("Invalid Username OR Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-           /* if (txt_Login_password.Text == "111" && txt_Login_username.Text == "Dhilki")
-            {
-                Main mn = new Main();
-                mn.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show ("Invalid Username OR Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
         }
     }
 }
