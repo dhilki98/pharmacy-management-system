@@ -8,17 +8,23 @@ namespace PharmacyManagementSystem
         UserContext ctx;
         String query;
         DataSet ds;
-        
-        public Main(UserContext context)
+
+        public Main(UserContext ctx)
         {
             InitializeComponent();
-            ctx = context;
+            this.ctx = ctx;
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             lbl_Main_username.Text = ctx.getUsername();
             populateStats();
+            if (ctx.getUserRole() == UserContext.Role.Pharmacist)
+            {
+                btn_Main_administration.Hide();
+            } else if (ctx.getUserRole() == UserContext.Role.Administrator){
+                btn_Main_administration.Show();
+            }
         }
 
         private void setLabel(DataSet ds, Label lbl)
@@ -53,14 +59,14 @@ namespace PharmacyManagementSystem
 
         private void btn_Main_billing_Click(object sender, EventArgs e)
         {
-            Billing bill = new Billing();
+            Billing bill = new Billing(ctx);
             bill.Show();
             this.Hide();
         }
 
         private void btn_Main_im_Click(object sender, EventArgs e)
         {
-            Item_management im = new Item_management();
+            Item_management im = new Item_management(ctx);
             im.Show();
             this.Hide();
         }
@@ -68,7 +74,7 @@ namespace PharmacyManagementSystem
         private void btn_Main_refresh_Click(object sender, EventArgs e)
         {
             Main_Load(this, null);
-            
+
         }
     }
 }

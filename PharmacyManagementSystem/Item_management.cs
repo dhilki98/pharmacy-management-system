@@ -12,14 +12,16 @@ namespace PharmacyManagementSystem
 {
     public partial class Item_management : Form
     {
-        public Item_management()
+        UserContext ctx;
+        public Item_management(UserContext ctx)
         {
             InitializeComponent();
+            this.ctx = ctx;
         }
 
         private void btn_Im_back_Click(object sender, EventArgs e)
         {
-            Main mnI = new Main();
+            Main mnI = new Main(ctx);
             mnI.Show();
             this.Hide();
         }

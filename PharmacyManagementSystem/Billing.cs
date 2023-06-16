@@ -14,9 +14,11 @@ namespace PharmacyManagementSystem
 {
     public partial class Billing : Form
     {
-        public Billing()
+        UserContext ctx;
+        public Billing(UserContext ctx)
         {
             InitializeComponent();
+            this.ctx = ctx;
         }
 
         private void Billing_Load(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace PharmacyManagementSystem
 
         private void txt_Bill_nou_TextChanged(object sender, EventArgs e)
         {
-            if(txt_Bill_nou.Text != "")
+            if (txt_Bill_nou.Text != "")
             {
                 Int64 unitPrice = Int64.Parse(txt_Bill_nou.Text);
                 Int64 noOfUnit = Int64.Parse(txt_Bill_nou.Text);
@@ -39,11 +41,11 @@ namespace PharmacyManagementSystem
             }
         }
 
-        
+
 
         private void btn_Bill_back_Click(object sender, EventArgs e)
         {
-            Main mnB = new Main();
+            Main mnB = new Main(ctx);
             mnB.Show();
             this.Hide();
         }
@@ -51,15 +53,15 @@ namespace PharmacyManagementSystem
         protected int n, totalAmount = 0;
         protected Int64 quantity, newQuantity;
 
-        
+
 
         private void btn_Bill_atocart_Click(object sender, EventArgs e)
         {
-            if(txt_Bill_id.Text != "")
+            if (txt_Bill_id.Text != "")
             {
                 if (newQuantity >= 0)
                 {
-                    if(newQuantity > 100)
+                    if (newQuantity > 100)
                     {
                         n = dataGV_Bill.Rows.Add();
                         dataGV_Bill.Rows[n].Cells[0].Value = txt_Bill_id.Text;
@@ -83,7 +85,7 @@ namespace PharmacyManagementSystem
                         totalAmount = totalAmount + int.Parse(txt_Bill_tprice.Text);
                         lbl_Bill_total.Text = "Rs. " + totalAmount.ToString();
 
-                        MessageBox.Show("Only "+quantity+" Left.\n Make a Purchase");
+                        MessageBox.Show("Only " + quantity + " Left.\n Make a Purchase");
                     }
                 }
                 else
@@ -97,14 +99,14 @@ namespace PharmacyManagementSystem
                 MessageBox.Show("Select Item First.", "Information !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            
+
         }
 
         int valueAmount;
         String valueID;
         protected Int64 noOfunit;
 
-        
+
 
         private void dataGV_Bill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -120,11 +122,11 @@ namespace PharmacyManagementSystem
             }
         }
 
-        
+
 
         private void btn_Bill_remove_Click(object sender, EventArgs e)
         {
-            if(valueID != null)
+            if (valueID != null)
             {
                 try
                 {

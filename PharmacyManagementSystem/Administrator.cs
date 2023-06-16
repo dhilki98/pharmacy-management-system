@@ -8,33 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PharmacyManagementSystem
 {
     public partial class Administrator : Form
     {
         UserContext ctx;
+        bool isEditing;
         String query;
         DataSet ds;
-        String user = "";
 
         public Administrator(UserContext ctx)
         {
             InitializeComponent();
             this.ctx = ctx;
+            this.isEditing = false;
         }
 
-        public string ID
+        private void Administrator_Load(object sender, EventArgs e)
         {
-            get { return user.ToString(); }
-        }
-
-        public Administrator(String username)
-        {
-            InitializeComponent();
-            lbl_Adm_username.Text = username;
-            user = username;
-            //Viewuser.ID = ID; look this error
+            lbl_Adm_username.Text = ctx.getUsername();
         }
 
         public void loadform(object Form)
@@ -48,16 +42,7 @@ namespace PharmacyManagementSystem
             this.pnl_Adm_right.Tag = f;
             f.Show();
         }
-        private void Administrator_Load(object sender, EventArgs e)
-        {
-            //SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM USERS", "server = DESKTOP-F7UFU4N; database = PharmacyDB; ");
-            //DataSet ds = new DataSet();
-            //da.Fill(ds, "ÛSERS");
-            //dataGV_Adm.DataSource = ds.Tables["USERS"].DefaultView;
-        }
-
-       
-
+        
         private void btn_Adm_adduser_Click(object sender, EventArgs e)
         {
             loadform(new newEmployee());
@@ -85,19 +70,6 @@ namespace PharmacyManagementSystem
         {
             loadform(new newEmployee());
         }
-
-        private void setLabel(DataSet ds, Label lbl)
-        {
-            if (ds.Tables[0].Rows.Count != 0)
-            {
-                lbl.Text = ds.Tables[0].Rows[0][0].ToString();
-            }
-            else
-            {
-                lbl.Text = "0";
-            }
-        }
-
         
     }
 }
