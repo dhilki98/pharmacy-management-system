@@ -29,20 +29,10 @@
         private void InitializeComponent()
         {
             this.lbl_Ai_itemdetails = new System.Windows.Forms.Label();
-            this.lbl_Ai_id = new System.Windows.Forms.Label();
-            this.txt_Ai_id = new System.Windows.Forms.TextBox();
+            this.lbl_Ai_mname = new System.Windows.Forms.Label();
+            this.txt_Ai_mname = new System.Windows.Forms.TextBox();
             this.lbl_Ai_itemname = new System.Windows.Forms.Label();
-            this.lbl_Ai_itemno = new System.Windows.Forms.Label();
-            this.lbl_Ai_md = new System.Windows.Forms.Label();
-            this.lbl_Ai_ed = new System.Windows.Forms.Label();
-            this.lbl_Ai_quantity = new System.Windows.Forms.Label();
-            this.lbl_Ai_ppu = new System.Windows.Forms.Label();
             this.txt_Ai_itemname = new System.Windows.Forms.TextBox();
-            this.txt_Ai_itemno = new System.Windows.Forms.TextBox();
-            this.txt_Ai_quantity = new System.Windows.Forms.TextBox();
-            this.dtp_Ai_md = new System.Windows.Forms.DateTimePicker();
-            this.txt_Ai_ppu = new System.Windows.Forms.TextBox();
-            this.dtp_Ai_ed = new System.Windows.Forms.DateTimePicker();
             this.btn_Ai_add = new System.Windows.Forms.Button();
             this.btn_Ai_reset = new System.Windows.Forms.Button();
             this.pnl_Ai_left = new System.Windows.Forms.Panel();
@@ -62,137 +52,43 @@
             this.lbl_Ai_itemdetails.TabIndex = 0;
             this.lbl_Ai_itemdetails.Text = "Item Details";
             // 
-            // lbl_Ai_id
+            // lbl_Ai_mname
             // 
-            this.lbl_Ai_id.AutoSize = true;
-            this.lbl_Ai_id.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_id.Location = new System.Drawing.Point(47, 172);
-            this.lbl_Ai_id.Name = "lbl_Ai_id";
-            this.lbl_Ai_id.Size = new System.Drawing.Size(60, 21);
-            this.lbl_Ai_id.TabIndex = 1;
-            this.lbl_Ai_id.Text = "Item ID";
+            this.lbl_Ai_mname.AutoSize = true;
+            this.lbl_Ai_mname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Ai_mname.Location = new System.Drawing.Point(47, 261);
+            this.lbl_Ai_mname.Name = "lbl_Ai_mname";
+            this.lbl_Ai_mname.Size = new System.Drawing.Size(145, 21);
+            this.lbl_Ai_mname.TabIndex = 1;
+            this.lbl_Ai_mname.Text = "Item Medical Name";
             // 
-            // txt_Ai_id
+            // txt_Ai_mname
             // 
-            this.txt_Ai_id.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Ai_id.ForeColor = System.Drawing.Color.Black;
-            this.txt_Ai_id.Location = new System.Drawing.Point(47, 196);
-            this.txt_Ai_id.Name = "txt_Ai_id";
-            this.txt_Ai_id.Size = new System.Drawing.Size(340, 29);
-            this.txt_Ai_id.TabIndex = 2;
+            this.txt_Ai_mname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Ai_mname.ForeColor = System.Drawing.Color.Black;
+            this.txt_Ai_mname.Location = new System.Drawing.Point(47, 285);
+            this.txt_Ai_mname.Name = "txt_Ai_mname";
+            this.txt_Ai_mname.Size = new System.Drawing.Size(340, 29);
+            this.txt_Ai_mname.TabIndex = 2;
             // 
             // lbl_Ai_itemname
             // 
             this.lbl_Ai_itemname.AutoSize = true;
             this.lbl_Ai_itemname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_itemname.Location = new System.Drawing.Point(47, 261);
+            this.lbl_Ai_itemname.Location = new System.Drawing.Point(47, 172);
             this.lbl_Ai_itemname.Name = "lbl_Ai_itemname";
             this.lbl_Ai_itemname.Size = new System.Drawing.Size(87, 21);
             this.lbl_Ai_itemname.TabIndex = 3;
             this.lbl_Ai_itemname.Text = "Item Name";
             // 
-            // lbl_Ai_itemno
-            // 
-            this.lbl_Ai_itemno.AutoSize = true;
-            this.lbl_Ai_itemno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_itemno.Location = new System.Drawing.Point(60, 349);
-            this.lbl_Ai_itemno.Name = "lbl_Ai_itemno";
-            this.lbl_Ai_itemno.Size = new System.Drawing.Size(103, 21);
-            this.lbl_Ai_itemno.TabIndex = 4;
-            this.lbl_Ai_itemno.Text = "Item Number";
-            // 
-            // lbl_Ai_md
-            // 
-            this.lbl_Ai_md.AutoSize = true;
-            this.lbl_Ai_md.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_md.Location = new System.Drawing.Point(60, 460);
-            this.lbl_Ai_md.Name = "lbl_Ai_md";
-            this.lbl_Ai_md.Size = new System.Drawing.Size(148, 21);
-            this.lbl_Ai_md.TabIndex = 5;
-            this.lbl_Ai_md.Text = "Manufacturing Date";
-            // 
-            // lbl_Ai_ed
-            // 
-            this.lbl_Ai_ed.AutoSize = true;
-            this.lbl_Ai_ed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_ed.Location = new System.Drawing.Point(645, 102);
-            this.lbl_Ai_ed.Name = "lbl_Ai_ed";
-            this.lbl_Ai_ed.Size = new System.Drawing.Size(88, 21);
-            this.lbl_Ai_ed.TabIndex = 6;
-            this.lbl_Ai_ed.Text = "Expire Date";
-            // 
-            // lbl_Ai_quantity
-            // 
-            this.lbl_Ai_quantity.AutoSize = true;
-            this.lbl_Ai_quantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_quantity.Location = new System.Drawing.Point(645, 172);
-            this.lbl_Ai_quantity.Name = "lbl_Ai_quantity";
-            this.lbl_Ai_quantity.Size = new System.Drawing.Size(70, 21);
-            this.lbl_Ai_quantity.TabIndex = 7;
-            this.lbl_Ai_quantity.Text = "Quantity";
-            // 
-            // lbl_Ai_ppu
-            // 
-            this.lbl_Ai_ppu.AutoSize = true;
-            this.lbl_Ai_ppu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_ppu.Location = new System.Drawing.Point(645, 261);
-            this.lbl_Ai_ppu.Name = "lbl_Ai_ppu";
-            this.lbl_Ai_ppu.Size = new System.Drawing.Size(103, 21);
-            this.lbl_Ai_ppu.TabIndex = 8;
-            this.lbl_Ai_ppu.Text = "Price Per Unit";
-            // 
             // txt_Ai_itemname
             // 
             this.txt_Ai_itemname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Ai_itemname.ForeColor = System.Drawing.Color.Black;
-            this.txt_Ai_itemname.Location = new System.Drawing.Point(47, 285);
+            this.txt_Ai_itemname.Location = new System.Drawing.Point(47, 196);
             this.txt_Ai_itemname.Name = "txt_Ai_itemname";
             this.txt_Ai_itemname.Size = new System.Drawing.Size(340, 29);
             this.txt_Ai_itemname.TabIndex = 9;
-            // 
-            // txt_Ai_itemno
-            // 
-            this.txt_Ai_itemno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Ai_itemno.ForeColor = System.Drawing.Color.Black;
-            this.txt_Ai_itemno.Location = new System.Drawing.Point(60, 373);
-            this.txt_Ai_itemno.Name = "txt_Ai_itemno";
-            this.txt_Ai_itemno.Size = new System.Drawing.Size(340, 29);
-            this.txt_Ai_itemno.TabIndex = 10;
-            // 
-            // txt_Ai_quantity
-            // 
-            this.txt_Ai_quantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Ai_quantity.ForeColor = System.Drawing.Color.Black;
-            this.txt_Ai_quantity.Location = new System.Drawing.Point(645, 196);
-            this.txt_Ai_quantity.Name = "txt_Ai_quantity";
-            this.txt_Ai_quantity.Size = new System.Drawing.Size(340, 29);
-            this.txt_Ai_quantity.TabIndex = 11;
-            // 
-            // dtp_Ai_md
-            // 
-            this.dtp_Ai_md.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Ai_md.Location = new System.Drawing.Point(47, 484);
-            this.dtp_Ai_md.Name = "dtp_Ai_md";
-            this.dtp_Ai_md.Size = new System.Drawing.Size(340, 23);
-            this.dtp_Ai_md.TabIndex = 12;
-            // 
-            // txt_Ai_ppu
-            // 
-            this.txt_Ai_ppu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Ai_ppu.ForeColor = System.Drawing.Color.Black;
-            this.txt_Ai_ppu.Location = new System.Drawing.Point(645, 285);
-            this.txt_Ai_ppu.Name = "txt_Ai_ppu";
-            this.txt_Ai_ppu.Size = new System.Drawing.Size(340, 29);
-            this.txt_Ai_ppu.TabIndex = 13;
-            this.txt_Ai_ppu.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // dtp_Ai_ed
-            // 
-            this.dtp_Ai_ed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Ai_ed.Location = new System.Drawing.Point(645, 130);
-            this.dtp_Ai_ed.Name = "dtp_Ai_ed";
-            this.dtp_Ai_ed.Size = new System.Drawing.Size(340, 23);
-            this.dtp_Ai_ed.TabIndex = 14;
             // 
             // btn_Ai_add
             // 
@@ -282,20 +178,10 @@
             this.Controls.Add(this.pnl_Ai_left);
             this.Controls.Add(this.btn_Ai_reset);
             this.Controls.Add(this.btn_Ai_add);
-            this.Controls.Add(this.dtp_Ai_ed);
-            this.Controls.Add(this.txt_Ai_ppu);
-            this.Controls.Add(this.dtp_Ai_md);
-            this.Controls.Add(this.txt_Ai_quantity);
-            this.Controls.Add(this.txt_Ai_itemno);
             this.Controls.Add(this.txt_Ai_itemname);
-            this.Controls.Add(this.lbl_Ai_ppu);
-            this.Controls.Add(this.lbl_Ai_quantity);
-            this.Controls.Add(this.lbl_Ai_ed);
-            this.Controls.Add(this.lbl_Ai_md);
-            this.Controls.Add(this.lbl_Ai_itemno);
             this.Controls.Add(this.lbl_Ai_itemname);
-            this.Controls.Add(this.txt_Ai_id);
-            this.Controls.Add(this.lbl_Ai_id);
+            this.Controls.Add(this.txt_Ai_mname);
+            this.Controls.Add(this.lbl_Ai_mname);
             this.Controls.Add(this.lbl_Ai_itemdetails);
             this.Name = "Additem";
             this.Text = "Additem";
@@ -307,20 +193,10 @@
         #endregion
 
         private Label lbl_Ai_itemdetails;
-        private Label lbl_Ai_id;
-        private TextBox txt_Ai_id;
+        private Label lbl_Ai_mname;
+        private TextBox txt_Ai_mname;
         private Label lbl_Ai_itemname;
-        private Label lbl_Ai_itemno;
-        private Label lbl_Ai_md;
-        private Label lbl_Ai_ed;
-        private Label lbl_Ai_quantity;
-        private Label lbl_Ai_ppu;
         private TextBox txt_Ai_itemname;
-        private TextBox txt_Ai_itemno;
-        private TextBox txt_Ai_quantity;
-        private DateTimePicker dtp_Ai_md;
-        private TextBox txt_Ai_ppu;
-        private DateTimePicker dtp_Ai_ed;
         private Button btn_Ai_add;
         private Button btn_Ai_reset;
         private Panel pnl_Ai_left;

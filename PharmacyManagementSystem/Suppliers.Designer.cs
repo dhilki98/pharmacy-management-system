@@ -41,6 +41,8 @@
             this.btn_sup_add = new System.Windows.Forms.Button();
             this.btn_sup_delete = new System.Windows.Forms.Button();
             this.btn_sup_update = new System.Windows.Forms.Button();
+            this.btn_sup_reset = new System.Windows.Forms.Button();
+            this.btn_sup_viewsuppliers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_sup)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,10 +129,10 @@
             // 
             this.dataGV_sup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGV_sup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGV_sup.Location = new System.Drawing.Point(435, 113);
+            this.dataGV_sup.Location = new System.Drawing.Point(435, 182);
             this.dataGV_sup.Name = "dataGV_sup";
             this.dataGV_sup.RowTemplate.Height = 25;
-            this.dataGV_sup.Size = new System.Drawing.Size(625, 459);
+            this.dataGV_sup.Size = new System.Drawing.Size(625, 390);
             this.dataGV_sup.TabIndex = 9;
             // 
             // btn_sup_add
@@ -144,6 +146,7 @@
             this.btn_sup_add.TabIndex = 10;
             this.btn_sup_add.Text = "Add";
             this.btn_sup_add.UseVisualStyleBackColor = false;
+            this.btn_sup_add.Click += new System.EventHandler(this.btn_sup_add_Click);
             // 
             // btn_sup_delete
             // 
@@ -169,12 +172,40 @@
             this.btn_sup_update.Text = "Update";
             this.btn_sup_update.UseVisualStyleBackColor = false;
             // 
+            // btn_sup_reset
+            // 
+            this.btn_sup_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_reset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sup_reset.ForeColor = System.Drawing.Color.White;
+            this.btn_sup_reset.Location = new System.Drawing.Point(64, 602);
+            this.btn_sup_reset.Name = "btn_sup_reset";
+            this.btn_sup_reset.Size = new System.Drawing.Size(112, 35);
+            this.btn_sup_reset.TabIndex = 13;
+            this.btn_sup_reset.Text = "Reset";
+            this.btn_sup_reset.UseVisualStyleBackColor = false;
+            this.btn_sup_reset.Click += new System.EventHandler(this.btn_sup_reset_Click);
+            // 
+            // btn_sup_viewsuppliers
+            // 
+            this.btn_sup_viewsuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_viewsuppliers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sup_viewsuppliers.ForeColor = System.Drawing.Color.White;
+            this.btn_sup_viewsuppliers.Location = new System.Drawing.Point(435, 131);
+            this.btn_sup_viewsuppliers.Name = "btn_sup_viewsuppliers";
+            this.btn_sup_viewsuppliers.Size = new System.Drawing.Size(175, 35);
+            this.btn_sup_viewsuppliers.TabIndex = 14;
+            this.btn_sup_viewsuppliers.Text = "View Suppliers";
+            this.btn_sup_viewsuppliers.UseVisualStyleBackColor = false;
+            this.btn_sup_viewsuppliers.Click += new System.EventHandler(this.btn_sup_viewsuppliers_Click);
+            // 
             // Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 688);
+            this.Controls.Add(this.btn_sup_viewsuppliers);
+            this.Controls.Add(this.btn_sup_reset);
             this.Controls.Add(this.btn_sup_update);
             this.Controls.Add(this.btn_sup_delete);
             this.Controls.Add(this.btn_sup_add);
@@ -211,5 +242,7 @@
         private Button btn_sup_add;
         private Button btn_sup_delete;
         private Button btn_sup_update;
+        private Button btn_sup_reset;
+        private Button btn_sup_viewsuppliers;
     }
 }

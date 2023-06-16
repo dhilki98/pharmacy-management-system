@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.lbl_aB_iid = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_aB_iid = new System.Windows.Forms.TextBox();
             this.lbl_aB_sid = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_aB_sid = new System.Windows.Forms.TextBox();
             this.txt_aB_unitprice = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.txt_aB_quantity = new System.Windows.Forms.TextBox();
             this.lbl_aB_edate = new System.Windows.Forms.Label();
             this.lbl_aB_batchdetails = new System.Windows.Forms.Label();
@@ -41,6 +40,9 @@
             this.lbl_aB_unitprice = new System.Windows.Forms.Label();
             this.pnl_aB_middle = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.dateTP_aB_expiredate = new System.Windows.Forms.DateTimePicker();
+            this.btn_aB_reset = new System.Windows.Forms.Button();
+            this.btn_aB_update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_aB_iid
@@ -53,12 +55,12 @@
             this.lbl_aB_iid.TabIndex = 0;
             this.lbl_aB_iid.Text = "Item ID";
             // 
-            // textBox1
+            // txt_aB_iid
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(340, 23);
-            this.textBox1.TabIndex = 1;
+            this.txt_aB_iid.Location = new System.Drawing.Point(56, 174);
+            this.txt_aB_iid.Name = "txt_aB_iid";
+            this.txt_aB_iid.Size = new System.Drawing.Size(340, 23);
+            this.txt_aB_iid.TabIndex = 1;
             // 
             // lbl_aB_sid
             // 
@@ -71,12 +73,12 @@
             this.lbl_aB_sid.Text = "Spplier ID";
             this.lbl_aB_sid.Click += new System.EventHandler(this.lbl_aB_sid_Click);
             // 
-            // textBox2
+            // txt_aB_sid
             // 
-            this.textBox2.Location = new System.Drawing.Point(56, 346);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(340, 23);
-            this.textBox2.TabIndex = 3;
+            this.txt_aB_sid.Location = new System.Drawing.Point(56, 346);
+            this.txt_aB_sid.Name = "txt_aB_sid";
+            this.txt_aB_sid.Size = new System.Drawing.Size(340, 23);
+            this.txt_aB_sid.TabIndex = 3;
             // 
             // txt_aB_unitprice
             // 
@@ -84,14 +86,6 @@
             this.txt_aB_unitprice.Name = "txt_aB_unitprice";
             this.txt_aB_unitprice.Size = new System.Drawing.Size(340, 23);
             this.txt_aB_unitprice.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(56, 526);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(340, 23);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txt_aB_quantity
             // 
@@ -161,6 +155,40 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dateTP_aB_expiredate
+            // 
+            this.dateTP_aB_expiredate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTP_aB_expiredate.Location = new System.Drawing.Point(56, 508);
+            this.dateTP_aB_expiredate.Name = "dateTP_aB_expiredate";
+            this.dateTP_aB_expiredate.Size = new System.Drawing.Size(340, 23);
+            this.dateTP_aB_expiredate.TabIndex = 13;
+            // 
+            // btn_aB_reset
+            // 
+            this.btn_aB_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_aB_reset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_aB_reset.ForeColor = System.Drawing.Color.White;
+            this.btn_aB_reset.Location = new System.Drawing.Point(836, 488);
+            this.btn_aB_reset.Name = "btn_aB_reset";
+            this.btn_aB_reset.Size = new System.Drawing.Size(95, 43);
+            this.btn_aB_reset.TabIndex = 14;
+            this.btn_aB_reset.Text = "Reset";
+            this.btn_aB_reset.UseVisualStyleBackColor = false;
+            this.btn_aB_reset.Click += new System.EventHandler(this.btn_aB_reset_Click);
+            // 
+            // btn_aB_update
+            // 
+            this.btn_aB_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_aB_update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_aB_update.ForeColor = System.Drawing.Color.White;
+            this.btn_aB_update.Location = new System.Drawing.Point(709, 488);
+            this.btn_aB_update.Name = "btn_aB_update";
+            this.btn_aB_update.Size = new System.Drawing.Size(95, 43);
+            this.btn_aB_update.TabIndex = 15;
+            this.btn_aB_update.Text = "Update";
+            this.btn_aB_update.UseVisualStyleBackColor = false;
             // 
             // addBatch
             // 
@@ -168,6 +196,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 688);
+            this.Controls.Add(this.btn_aB_update);
+            this.Controls.Add(this.btn_aB_reset);
+            this.Controls.Add(this.dateTP_aB_expiredate);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pnl_aB_middle);
             this.Controls.Add(this.lbl_aB_unitprice);
@@ -175,11 +206,10 @@
             this.Controls.Add(this.lbl_aB_batchdetails);
             this.Controls.Add(this.lbl_aB_edate);
             this.Controls.Add(this.txt_aB_quantity);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.txt_aB_unitprice);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_aB_sid);
             this.Controls.Add(this.lbl_aB_sid);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_aB_iid);
             this.Controls.Add(this.lbl_aB_iid);
             this.Name = "addBatch";
             this.Text = "addBatch";
@@ -191,11 +221,10 @@
         #endregion
 
         private Label lbl_aB_iid;
-        private TextBox textBox1;
+        private TextBox txt_aB_iid;
         private Label lbl_aB_sid;
-        private TextBox textBox2;
+        private TextBox txt_aB_sid;
         private TextBox txt_aB_unitprice;
-        private TextBox textBox4;
         private TextBox txt_aB_quantity;
         private Label lbl_aB_edate;
         private Label lbl_aB_batchdetails;
@@ -203,5 +232,8 @@
         private Label lbl_aB_unitprice;
         private Panel pnl_aB_middle;
         private Button button1;
+        private DateTimePicker dateTP_aB_expiredate;
+        private Button btn_aB_reset;
+        private Button btn_aB_update;
     }
 }
