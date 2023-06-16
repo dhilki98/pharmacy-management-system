@@ -13,13 +13,15 @@ namespace PharmacyManagementSystem
 {
     public partial class Administrator : Form
     {
+        UserContext ctx;
         String query;
         DataSet ds;
         String user = "";
 
-        public Administrator()
+        public Administrator(UserContext ctx)
         {
             InitializeComponent();
+            this.ctx = ctx;
         }
 
         public string ID
@@ -66,7 +68,7 @@ namespace PharmacyManagementSystem
 
         private void btn_Adm_back_Click(object sender, EventArgs e)
         {
-            Main mnA = new Main();
+            Main mnA = new Main(ctx);
             mnA.Show();
             this.Hide();
         }

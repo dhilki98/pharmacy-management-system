@@ -1,35 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PharmacyManagementSystem
 {
     public partial class Main : Form
     {
+        UserContext ctx;
         String query;
         DataSet ds;
         
-        public Main()
+        public Main(UserContext context)
         {
             InitializeComponent();
+            ctx = context;
         }
-        
-        public Main(String username)
+
+        private void Main_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            lbl_Main_username.Text = username;
-            
+            lbl_Main_username.Text = ctx.getUsername();
+            populateStats();
+        }
+
+        private void setLabel(DataSet ds, Label lbl)
+        {
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                lbl.Text = ds.Tables[0].Rows[0][0].ToString();
+            }
+            else
+            {
+                lbl.Text = "0";
+            }
+        }
+
+        private void populateStats()
+        {
+            query = "select count(userRole) from USERS where userRole = 'Administrator'";
+            ds = DBHelper.getData(query);
+            setLabel(ds, lbl_Main_noa);
+
+            query = "select count(userRole) from USERS where userRole = 'Pharmacist'";
+            ds = DBHelper.getData(query);
+            setLabel(ds, lbl_Main_nop);
         }
 
         private void btn_Main_administration_Click(object sender, EventArgs e)
         {
-            Administrator adm = new Administrator();
+            Administrator adm = new Administrator(ctx);
             adm.Show();
             this.Hide();
         }
@@ -46,29 +63,6 @@ namespace PharmacyManagementSystem
             Item_management im = new Item_management();
             im.Show();
             this.Hide();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            query="select count(userRole) from USERS where userRole = 'Administrator'";
-            ds = DBHelper.getData(query);
-            setLabel(ds, lbl_Main_noa);
-
-            query = "select count(userRole) from USERS where userRole = 'Pharmacist'";
-            ds = DBHelper.getData(query);
-            setLabel(ds, lbl_Main_nop);
-        }
-
-        private void setLabel(DataSet ds,Label lbl)
-        {
-            if (ds.Tables[0].Rows.Count != 0)
-            {
-                lbl.Text =ds.Tables[0].Rows[0][0].ToString();
-            }
-            else
-            {
-                lbl.Text = "0";
-            }
         }
 
         private void btn_Main_refresh_Click(object sender, EventArgs e)
