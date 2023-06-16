@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagementSystem
 {
-    class function
+    class DBHelper
     {
-        protected SqlConnection getConnection() 
+        // static string SERVER_NAME = "DESKTOP-F7UFU4N";
+        static string SERVER_NAME = "LAPTOP-V4CJ4PPI";
+
+        private static SqlConnection createConnection() 
         { 
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source = DESKTOP-F7UFU4N;database=PharmacyDB;integrated security =True";
+            con.ConnectionString = "data source="+SERVER_NAME+";database=PharmacyDB;integrated security =True";
             return con;
         } 
 
-        public DataSet getData(String query)
+        public static DataSet getData(String query)
         {
-            SqlConnection con = getConnection();
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
+            cmd.Connection = createConnection();
             cmd.CommandText = query;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -29,9 +31,9 @@ namespace PharmacyManagementSystem
             return ds;
         }
 
-        public void setData(String query,String msg)
+        public static void setData(String query,String msg)
         {
-            SqlConnection con = getConnection();
+            SqlConnection con = createConnection();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             con.Open();

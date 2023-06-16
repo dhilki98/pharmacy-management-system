@@ -12,7 +12,6 @@ namespace PharmacyManagementSystem
 {
     public partial class addBatch : Form
     {
-        function fn = new function();
         String query;
 
         public addBatch()
@@ -51,7 +50,7 @@ namespace PharmacyManagementSystem
             try
             {
                 query = "insert into users (itemId, supId, unitPrice, expireDate, quantity) values ('" + itemID + "', '" + supplierID + "', '" + unitPrice + "', '" + expireDate + "', '" + quantity + "')";
-                fn.setData(query, "Add Sucessful.");
+                DBHelper.setData(query, "Add Sucessful.");
             }
             catch(Exception)
             {
@@ -70,7 +69,7 @@ namespace PharmacyManagementSystem
             txt_aB_quantity.Clear();
             txt_aB_sid.Clear();
             txt_aB_unitprice.Clear();
-            dateTP_aB_expiredate.SelectedDate = null;
+            dateTP_aB_expiredate.Value = DateTime.Today;
         }
     }
 }

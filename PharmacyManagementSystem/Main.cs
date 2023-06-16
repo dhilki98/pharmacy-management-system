@@ -12,18 +12,14 @@ namespace PharmacyManagementSystem
 {
     public partial class Main : Form
     {
-        function fn = new function();
         String query;
         DataSet ds;
         
-
         public Main()
         {
             InitializeComponent();
         }
-
         
-
         public Main(String username)
         {
             InitializeComponent();
@@ -55,11 +51,11 @@ namespace PharmacyManagementSystem
         private void Main_Load(object sender, EventArgs e)
         {
             query="select count(userRole) from USERS where userRole = 'Administrator'";
-            ds = fn.getData(query);
+            ds = DBHelper.getData(query);
             setLabel(ds, lbl_Main_noa);
 
             query = "select count(userRole) from USERS where userRole = 'Pharmacist'";
-            ds = fn.getData(query);
+            ds = DBHelper.getData(query);
             setLabel(ds, lbl_Main_nop);
         }
 

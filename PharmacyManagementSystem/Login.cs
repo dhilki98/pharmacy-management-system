@@ -12,7 +12,6 @@ namespace PharmacyManagementSystem
 {
     public partial class Login : Form
     {
-        function fn = new function();
         String query;
         DataSet ds;
 
@@ -30,7 +29,7 @@ namespace PharmacyManagementSystem
         private void btn_Login_signin_Click(object sender, EventArgs e)
         {
             query = "select * from USERS";
-            ds = fn.getData(query);
+            ds = DBHelper.getData(query);
             if(ds.Tables[0].Rows.Count == 0)
             {
                 if(txt_Login_username.Text=="root" && txt_Login_password.Text == "root")
@@ -43,7 +42,7 @@ namespace PharmacyManagementSystem
             else
             {
                 query = "select * from USERS where userName = '" + txt_Login_username.Text + "' and password='" + txt_Login_password.Text + "'";
-                ds = fn.getData(query);
+                ds = DBHelper.getData(query);
                 if (ds.Tables[0].Rows.Count != 0)
                 {
                     Main mn = new Main(txt_Login_username.Text);

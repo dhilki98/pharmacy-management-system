@@ -12,7 +12,6 @@ namespace PharmacyManagementSystem
 {
     public partial class newEmployee : Form
     {
-        function fn = new function();
         String query;
 
         public newEmployee()
@@ -39,7 +38,7 @@ namespace PharmacyManagementSystem
             try
             {
                 query = "insert into users (fullName,userName,password,nic,userRole,email,contactNo,pharmLicense) values ('"+name+"','"+username+"','"+password+"','"+nic+"','"+role+"','"+email+"','"+mobile+"','"+phamlicense+"')";
-                fn.setData(query, "Add Sucessful.");
+                DBHelper.setData(query, "Add Sucessful.");
             }
             catch (Exception)
             {
@@ -68,7 +67,7 @@ namespace PharmacyManagementSystem
         private void txt_nE_username_TextChanged(object sender, EventArgs e)
         {
             query = "select * from USERS where userName='"+txt_nE_username.Text+"'";
-            DataSet ds = fn.getData(query);
+            DataSet ds = DBHelper.getData(query);
 
             if(ds.Tables[0].Rows.Count == 0)
             {

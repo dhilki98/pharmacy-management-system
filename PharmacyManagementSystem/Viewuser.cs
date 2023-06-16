@@ -12,7 +12,6 @@ namespace PharmacyManagementSystem
 {
     public partial class Viewuser : Form
     {
-        function fn = new function();
         String query;
         String cuurentUser = "";
 
@@ -29,14 +28,14 @@ namespace PharmacyManagementSystem
         private void Viewuser_Load(object sender, EventArgs e)
         {
             query = "select * from USERS";
-            DataSet ds = fn.getData(query);
+            DataSet ds = DBHelper.getData(query);
             dataGV_Uv.DataSource = ds.Tables[0];
         }
 
         private void txt_Vu_username_TextChanged(object sender, EventArgs e)
         {
             query = "select * from USERS where userName like '" + txt_Vu_username.Text + "%'";
-            DataSet ds = fn.getData(query);
+            DataSet ds = DBHelper.getData(query);
             dataGV_Uv.DataSource = ds.Tables[0];
         }
 
@@ -57,7 +56,7 @@ namespace PharmacyManagementSystem
                 if (cuurentUser != userName)
                 {
                     query = "delete from USERS where userName = '" + userName + "'";
-                    fn.setData(query, "Users records deleted.");
+                    DBHelper.setData(query, "Users records deleted.");
                     Viewuser_Load(this, null);
                 }
                 else

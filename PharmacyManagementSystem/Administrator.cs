@@ -13,7 +13,6 @@ namespace PharmacyManagementSystem
 {
     public partial class Administrator : Form
     {
-        function fn = new function();
         String query;
         DataSet ds;
         String user = "";

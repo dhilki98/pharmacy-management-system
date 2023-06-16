@@ -12,7 +12,6 @@ namespace PharmacyManagementSystem
 {
     public partial class Suppliers : Form
     {
-        function fn = new function();
         String query;
 
         public Suppliers()
@@ -34,8 +33,8 @@ namespace PharmacyManagementSystem
 
             try
             {
-                query = ("insert into users (supName, address, contactNo, supLicenseNp) values ('" + supName + "', '" + supAddress + "', '" + supContactNo + "', '" + licenseNo + "')";
-                fn.setData(query, "Add Sucessful.");
+                query = ("insert into users (supName, address, contactNo, supLicenseNp) values ('" + supName + "', '" + supAddress + "', '" + supContactNo + "', '" + licenseNo + "')");
+                DBHelper.setData(query, "Add Sucessful.");
             }
             catch (Exception)
             {
@@ -62,7 +61,7 @@ namespace PharmacyManagementSystem
         private void btn_sup_viewsuppliers_Click(object sender, EventArgs e)
         {
             query = "select * from SUPPLIERS";
-            DataSet ds = fn.getData(query);
+            DataSet ds = DBHelper.getData(query);
             dataGV_sup.DataSource = ds.Tables[0];
         }
     }
