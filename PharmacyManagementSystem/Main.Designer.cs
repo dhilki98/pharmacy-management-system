@@ -58,7 +58,7 @@
             this.pnl_Main_left.Controls.Add(this.pctBox_Main_logo);
             this.pnl_Main_left.Location = new System.Drawing.Point(0, 0);
             this.pnl_Main_left.Name = "pnl_Main_left";
-            this.pnl_Main_left.Size = new System.Drawing.Size(275, 730);
+            this.pnl_Main_left.Size = new System.Drawing.Size(280, 730);
             this.pnl_Main_left.TabIndex = 0;
             // 
             // lbl_Main_username
@@ -204,7 +204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1364, 729);
+            this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.lbl_Main_nop);
             this.Controls.Add(this.lbl_main_pharm);
             this.Controls.Add(this.lbl_Main_noa);

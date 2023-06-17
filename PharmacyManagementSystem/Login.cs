@@ -20,7 +20,7 @@ namespace PharmacyManagementSystem
             {
                 if (txt_Login_username.Text == "root" && txt_Login_password.Text == "root")
                 {
-                    Main mn = new Main(new UserContext("Root User", UserContext.Role.Administrator));
+                    Main mn = new Main(new UserContext("Root User", UserContext.Role.Administrator,"Default Root User"));
                     mn.Show();
                     this.Hide();
                 }
@@ -31,16 +31,18 @@ namespace PharmacyManagementSystem
                 ds = DBHelper.getData(query);
                 if (ds.Tables[0].Rows.Count == 1)
                 {
-                    String role = ds.Tables[0].Rows[0][5].ToString();
+                    string username = txt_Login_username.Text;
+                    string role = ds.Tables[0].Rows[0][5].ToString() ?? "Pharmacist";
+                    string fullname = ds.Tables[0].Rows[0][1].ToString() ?? username;
                     if (role == "Administrator")
                     {
-                        Main mn = new Main(new UserContext(txt_Login_username.Text, UserContext.Role.Administrator));
+                        Main mn = new Main(new UserContext(username, UserContext.Role.Administrator, fullname));
                         mn.Show();
                         this.Hide();
                     }
                     else if (role == "Pharmacist")
                     {
-                        Main mn = new Main(new UserContext(txt_Login_username.Text, UserContext.Role.Pharmacist));
+                        Main mn = new Main(new UserContext(username, UserContext.Role.Pharmacist, fullname));
                         mn.Show();
                         this.Hide();
                     }

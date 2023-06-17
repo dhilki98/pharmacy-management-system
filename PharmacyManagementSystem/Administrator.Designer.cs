@@ -30,47 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrator));
             this.pnl_Adm_left = new System.Windows.Forms.Panel();
-            this.btn_Adm_remove = new System.Windows.Forms.Button();
             this.lbl_Adm_username = new System.Windows.Forms.Label();
             this.btn_Adm_back = new System.Windows.Forms.Button();
-            this.btn_Adm_update = new System.Windows.Forms.Button();
-            this.btn_Adm_viewusers = new System.Windows.Forms.Button();
             this.btn_Adm_adduser = new System.Windows.Forms.Button();
             this.lbl_Adm_logo = new System.Windows.Forms.Label();
             this.pctBox_Adm_logo = new System.Windows.Forms.PictureBox();
             this.pnl_Adm_right = new System.Windows.Forms.Panel();
+            this.btn_Adm_search = new System.Windows.Forms.Button();
+            this.txt_Adm_search = new System.Windows.Forms.TextBox();
+            this.dataGV_Uv = new System.Windows.Forms.DataGridView();
+            this.btn_Adm_reset = new System.Windows.Forms.Button();
+            this.btn_Adm_delete = new System.Windows.Forms.Button();
             this.pnl_Adm_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Adm_logo)).BeginInit();
+            this.pnl_Adm_right.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGV_Uv)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Adm_left
             // 
             this.pnl_Adm_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_Adm_left.Controls.Add(this.btn_Adm_remove);
             this.pnl_Adm_left.Controls.Add(this.lbl_Adm_username);
             this.pnl_Adm_left.Controls.Add(this.btn_Adm_back);
-            this.pnl_Adm_left.Controls.Add(this.btn_Adm_update);
-            this.pnl_Adm_left.Controls.Add(this.btn_Adm_viewusers);
             this.pnl_Adm_left.Controls.Add(this.btn_Adm_adduser);
             this.pnl_Adm_left.Controls.Add(this.lbl_Adm_logo);
             this.pnl_Adm_left.Controls.Add(this.pctBox_Adm_logo);
-            this.pnl_Adm_left.Controls.Add(this.pnl_Adm_right);
             this.pnl_Adm_left.Location = new System.Drawing.Point(0, 0);
             this.pnl_Adm_left.Name = "pnl_Adm_left";
-            this.pnl_Adm_left.Size = new System.Drawing.Size(275, 730);
+            this.pnl_Adm_left.Size = new System.Drawing.Size(280, 730);
             this.pnl_Adm_left.TabIndex = 0;
-            // 
-            // btn_Adm_remove
-            // 
-            this.btn_Adm_remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Adm_remove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adm_remove.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_remove.Location = new System.Drawing.Point(78, 455);
-            this.btn_Adm_remove.Name = "btn_Adm_remove";
-            this.btn_Adm_remove.Size = new System.Drawing.Size(125, 31);
-            this.btn_Adm_remove.TabIndex = 7;
-            this.btn_Adm_remove.Text = "Remove User";
-            this.btn_Adm_remove.UseVisualStyleBackColor = false;
             // 
             // lbl_Adm_username
             // 
@@ -88,50 +76,24 @@
             this.btn_Adm_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Adm_back.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Adm_back.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_back.Location = new System.Drawing.Point(78, 511);
+            this.btn_Adm_back.Location = new System.Drawing.Point(65, 425);
             this.btn_Adm_back.Name = "btn_Adm_back";
-            this.btn_Adm_back.Size = new System.Drawing.Size(125, 31);
+            this.btn_Adm_back.Size = new System.Drawing.Size(150, 35);
             this.btn_Adm_back.TabIndex = 7;
             this.btn_Adm_back.Text = "Back";
             this.btn_Adm_back.UseVisualStyleBackColor = false;
             this.btn_Adm_back.Click += new System.EventHandler(this.btn_Adm_back_Click);
-            // 
-            // btn_Adm_update
-            // 
-            this.btn_Adm_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Adm_update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adm_update.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_update.Location = new System.Drawing.Point(78, 403);
-            this.btn_Adm_update.Name = "btn_Adm_update";
-            this.btn_Adm_update.Size = new System.Drawing.Size(125, 31);
-            this.btn_Adm_update.TabIndex = 6;
-            this.btn_Adm_update.Text = "Update User";
-            this.btn_Adm_update.UseVisualStyleBackColor = false;
-            this.btn_Adm_update.Click += new System.EventHandler(this.btn_Adm_update_Click);
-            // 
-            // btn_Adm_viewusers
-            // 
-            this.btn_Adm_viewusers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Adm_viewusers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adm_viewusers.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_viewusers.Location = new System.Drawing.Point(78, 277);
-            this.btn_Adm_viewusers.Name = "btn_Adm_viewusers";
-            this.btn_Adm_viewusers.Size = new System.Drawing.Size(125, 31);
-            this.btn_Adm_viewusers.TabIndex = 5;
-            this.btn_Adm_viewusers.Text = "View Users";
-            this.btn_Adm_viewusers.UseVisualStyleBackColor = false;
-            this.btn_Adm_viewusers.Click += new System.EventHandler(this.btn_Adm_viewusers_Click);
             // 
             // btn_Adm_adduser
             // 
             this.btn_Adm_adduser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Adm_adduser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Adm_adduser.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_adduser.Location = new System.Drawing.Point(78, 343);
+            this.btn_Adm_adduser.Location = new System.Drawing.Point(65, 350);
             this.btn_Adm_adduser.Name = "btn_Adm_adduser";
-            this.btn_Adm_adduser.Size = new System.Drawing.Size(125, 31);
+            this.btn_Adm_adduser.Size = new System.Drawing.Size(150, 35);
             this.btn_Adm_adduser.TabIndex = 4;
-            this.btn_Adm_adduser.Text = "Add User";
+            this.btn_Adm_adduser.Text = "Add New User";
             this.btn_Adm_adduser.UseVisualStyleBackColor = false;
             this.btn_Adm_adduser.Click += new System.EventHandler(this.btn_Adm_adduser_Click);
             // 
@@ -140,7 +102,7 @@
             this.lbl_Adm_logo.AutoSize = true;
             this.lbl_Adm_logo.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Adm_logo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Adm_logo.Location = new System.Drawing.Point(39, 194);
+            this.lbl_Adm_logo.Location = new System.Drawing.Point(38, 203);
             this.lbl_Adm_logo.Name = "lbl_Adm_logo";
             this.lbl_Adm_logo.Size = new System.Drawing.Size(215, 39);
             this.lbl_Adm_logo.TabIndex = 2;
@@ -158,18 +120,79 @@
             // 
             // pnl_Adm_right
             // 
-            this.pnl_Adm_right.Location = new System.Drawing.Point(281, 3);
+            this.pnl_Adm_right.Controls.Add(this.btn_Adm_search);
+            this.pnl_Adm_right.Controls.Add(this.txt_Adm_search);
+            this.pnl_Adm_right.Controls.Add(this.dataGV_Uv);
+            this.pnl_Adm_right.Controls.Add(this.btn_Adm_reset);
+            this.pnl_Adm_right.Controls.Add(this.btn_Adm_delete);
+            this.pnl_Adm_right.Location = new System.Drawing.Point(275, 0);
             this.pnl_Adm_right.Name = "pnl_Adm_right";
-            this.pnl_Adm_right.Size = new System.Drawing.Size(1086, 726);
+            this.pnl_Adm_right.Size = new System.Drawing.Size(1086, 730);
             this.pnl_Adm_right.TabIndex = 1;
+            // 
+            // btn_Adm_search
+            // 
+            this.btn_Adm_search.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Adm_search.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Adm_search.ForeColor = System.Drawing.Color.White;
+            this.btn_Adm_search.Location = new System.Drawing.Point(452, 67);
+            this.btn_Adm_search.Name = "btn_Adm_search";
+            this.btn_Adm_search.Size = new System.Drawing.Size(102, 37);
+            this.btn_Adm_search.TabIndex = 6;
+            this.btn_Adm_search.Text = "Search";
+            this.btn_Adm_search.UseVisualStyleBackColor = false;
+            this.btn_Adm_search.Click += new System.EventHandler(this.btn_Adm_search_Click);
+            // 
+            // txt_Adm_search
+            // 
+            this.txt_Adm_search.Location = new System.Drawing.Point(94, 77);
+            this.txt_Adm_search.Name = "txt_Adm_search";
+            this.txt_Adm_search.PlaceholderText = "Enter a name...";
+            this.txt_Adm_search.Size = new System.Drawing.Size(340, 23);
+            this.txt_Adm_search.TabIndex = 5;
+            // 
+            // dataGV_Uv
+            // 
+            this.dataGV_Uv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGV_Uv.Location = new System.Drawing.Point(82, 137);
+            this.dataGV_Uv.Name = "dataGV_Uv";
+            this.dataGV_Uv.RowTemplate.Height = 25;
+            this.dataGV_Uv.Size = new System.Drawing.Size(929, 443);
+            this.dataGV_Uv.TabIndex = 0;
+            // 
+            // btn_Adm_reset
+            // 
+            this.btn_Adm_reset.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Adm_reset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Adm_reset.ForeColor = System.Drawing.Color.White;
+            this.btn_Adm_reset.Location = new System.Drawing.Point(571, 67);
+            this.btn_Adm_reset.Name = "btn_Adm_reset";
+            this.btn_Adm_reset.Size = new System.Drawing.Size(102, 37);
+            this.btn_Adm_reset.TabIndex = 1;
+            this.btn_Adm_reset.Text = "Reset";
+            this.btn_Adm_reset.UseVisualStyleBackColor = false;
+            this.btn_Adm_reset.Click += new System.EventHandler(this.btn_Adm_reset_Click);
+            // 
+            // btn_Adm_delete
+            // 
+            this.btn_Adm_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Adm_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Adm_delete.ForeColor = System.Drawing.Color.Black;
+            this.btn_Adm_delete.Location = new System.Drawing.Point(919, 636);
+            this.btn_Adm_delete.Name = "btn_Adm_delete";
+            this.btn_Adm_delete.Size = new System.Drawing.Size(92, 29);
+            this.btn_Adm_delete.TabIndex = 4;
+            this.btn_Adm_delete.Text = "Delete";
+            this.btn_Adm_delete.UseVisualStyleBackColor = false;
             // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1364, 729);
+            this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.pnl_Adm_left);
+            this.Controls.Add(this.pnl_Adm_right);
             this.Name = "Administrator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrator";
@@ -177,6 +200,9 @@
             this.pnl_Adm_left.ResumeLayout(false);
             this.pnl_Adm_left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Adm_logo)).EndInit();
+            this.pnl_Adm_right.ResumeLayout(false);
+            this.pnl_Adm_right.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGV_Uv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,13 +212,14 @@
         private Panel pnl_Adm_left;
         private PictureBox pctBox_Adm_logo;
         private Panel pnl_Adm_right;
-        private Panel pnl_Adm_right1;
         private Label lbl_Adm_logo;
         private Button btn_Adm_back;
-        private Button btn_Adm_update;
-        private Button btn_Adm_viewusers;
         private Button btn_Adm_adduser;
         private Label lbl_Adm_username;
-        private Button btn_Adm_remove;
+        private DataGridView dataGV_Uv;
+        private Button btn_Adm_reset;
+        private Button btn_Adm_delete;
+        private TextBox txt_Adm_search;
+        private Button btn_Adm_search;
     }
 }

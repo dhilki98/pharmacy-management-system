@@ -7,11 +7,14 @@ namespace PharmacyManagementSystem
 
         private string username;
 
+        private string fullname;
+
         private Role userRole;
 
-        public UserContext(string un, Role ur) {
+        public UserContext(string un, Role ur, string fn) {
             username= un;
             userRole= ur;
+            fullname= fn;
         }
 
         public Role getUserRole()
@@ -22,6 +25,11 @@ namespace PharmacyManagementSystem
         public string getUsername()
         {
             return username;
+        }
+
+        public string getFullname()
+        {
+            return fullname;
         }
     }
 }

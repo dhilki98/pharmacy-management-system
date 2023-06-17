@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+﻿using System.Data;
 
 namespace PharmacyManagementSystem
 {
     public partial class Administrator : Form
     {
         UserContext ctx;
-        bool isEditing;
         String query;
         DataSet ds;
 
@@ -23,32 +12,27 @@ namespace PharmacyManagementSystem
         {
             InitializeComponent();
             this.ctx = ctx;
-            this.isEditing = false;
         }
 
         private void Administrator_Load(object sender, EventArgs e)
         {
-            lbl_Adm_username.Text = ctx.getUsername();
+            lbl_Adm_username.Text = ctx.getFullname();
+            query = "select * from USERS";
+            dataGV_Uv.DataSource = DBHelper.getData(query).Tables[0];
+            btn_Adm_reset.Hide();
         }
 
-        public void loadform(object Form)
+        private void refreshTable()
         {
-            if (this.pnl_Adm_right.Controls.Count > 0)
-                this.pnl_Adm_right.Controls.RemoveAt(0);
-            Form f = new Form();
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.pnl_Adm_right.Controls.Add(f);
-            this.pnl_Adm_right.Tag = f;
-            f.Show();
+            query = "select * from USERS";
+            dataGV_Uv.DataSource = DBHelper.getData(query).Tables[0];
         }
         
         private void btn_Adm_adduser_Click(object sender, EventArgs e)
         {
-            loadform(new newEmployee());
-           /* newEmployee newEmplo = new newEmployee();
+            newEmployee newEmplo = new newEmployee();
             newEmplo.Show();
-            this.Hide();*/
+            this.Hide();
         }
 
         private void btn_Adm_back_Click(object sender, EventArgs e)
@@ -58,18 +42,18 @@ namespace PharmacyManagementSystem
             this.Hide();
         }
 
-        private void btn_Adm_viewusers_Click(object sender, EventArgs e)
+        private void btn_Adm_search_Click(object sender, EventArgs e)
         {
-            loadform(new Viewuser());
-            /*Viewuser vUser = new Viewuser();
-            vUser.Show();
-            this.Hide();*/
+            query = "select * from USERS where userName like '" + txt_Adm_search.Text + "%'";
+            dataGV_Uv.DataSource = DBHelper.getData(query).Tables[0];
+            btn_Adm_reset.Show();
         }
 
-        private void btn_Adm_update_Click(object sender, EventArgs e)
+        private void btn_Adm_reset_Click(object sender, EventArgs e)
         {
-            loadform(new newEmployee());
+            refreshTable();
+            txt_Adm_search.Text = "";
+            btn_Adm_reset.Hide();
         }
-        
     }
 }

@@ -47,7 +47,6 @@
             this.pnl_nE_mid = new System.Windows.Forms.Panel();
             this.btn_nE_add = new System.Windows.Forms.Button();
             this.btn_nE_reset = new System.Windows.Forms.Button();
-            this.btn_nE_Remove = new System.Windows.Forms.Button();
             this.btn_nE_update = new System.Windows.Forms.Button();
             this.lbl_nE_search = new System.Windows.Forms.Label();
             this.txt_nE_search = new System.Windows.Forms.TextBox();
@@ -236,7 +235,7 @@
             this.btn_nE_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_nE_add.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_nE_add.ForeColor = System.Drawing.Color.White;
-            this.btn_nE_add.Location = new System.Drawing.Point(596, 480);
+            this.btn_nE_add.Location = new System.Drawing.Point(674, 480);
             this.btn_nE_add.Name = "btn_nE_add";
             this.btn_nE_add.Size = new System.Drawing.Size(108, 38);
             this.btn_nE_add.TabIndex = 17;
@@ -249,7 +248,7 @@
             this.btn_nE_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_nE_reset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_nE_reset.ForeColor = System.Drawing.Color.White;
-            this.btn_nE_reset.Location = new System.Drawing.Point(698, 524);
+            this.btn_nE_reset.Location = new System.Drawing.Point(788, 480);
             this.btn_nE_reset.Name = "btn_nE_reset";
             this.btn_nE_reset.Size = new System.Drawing.Size(108, 38);
             this.btn_nE_reset.TabIndex = 18;
@@ -257,24 +256,12 @@
             this.btn_nE_reset.UseVisualStyleBackColor = false;
             this.btn_nE_reset.Click += new System.EventHandler(this.btn_nE_reset_Click);
             // 
-            // btn_nE_Remove
-            // 
-            this.btn_nE_Remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btn_nE_Remove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_nE_Remove.ForeColor = System.Drawing.Color.White;
-            this.btn_nE_Remove.Location = new System.Drawing.Point(824, 481);
-            this.btn_nE_Remove.Name = "btn_nE_Remove";
-            this.btn_nE_Remove.Size = new System.Drawing.Size(108, 38);
-            this.btn_nE_Remove.TabIndex = 19;
-            this.btn_nE_Remove.Text = "Remove";
-            this.btn_nE_Remove.UseVisualStyleBackColor = false;
-            // 
             // btn_nE_update
             // 
             this.btn_nE_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_nE_update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_nE_update.ForeColor = System.Drawing.Color.White;
-            this.btn_nE_update.Location = new System.Drawing.Point(710, 480);
+            this.btn_nE_update.Location = new System.Drawing.Point(674, 480);
             this.btn_nE_update.Name = "btn_nE_update";
             this.btn_nE_update.Size = new System.Drawing.Size(108, 38);
             this.btn_nE_update.TabIndex = 20;
@@ -342,7 +329,6 @@
             this.Controls.Add(this.txt_nE_search);
             this.Controls.Add(this.lbl_nE_search);
             this.Controls.Add(this.btn_nE_update);
-            this.Controls.Add(this.btn_nE_Remove);
             this.Controls.Add(this.btn_nE_reset);
             this.Controls.Add(this.btn_nE_add);
             this.Controls.Add(this.pnl_nE_mid);
@@ -394,7 +380,6 @@
         private Panel pnl_nE_mid;
         private Button btn_nE_add;
         private Button btn_nE_reset;
-        private Button btn_nE_Remove;
         private Button btn_nE_update;
         private Label lbl_nE_search;
         private TextBox txt_nE_search;
