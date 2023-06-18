@@ -156,6 +156,7 @@
             this.btn_Adm_delete.TabIndex = 19;
             this.btn_Adm_delete.Text = "Delete";
             this.btn_Adm_delete.UseVisualStyleBackColor = false;
+            this.btn_Adm_delete.Click += new System.EventHandler(this.btn_Adm_delete_Click);
             // 
             // btn_Adm_search
             // 
@@ -180,15 +181,15 @@
             // 
             // dataGV_Uv
             // 
+            this.dataGV_Uv.AllowUserToAddRows = false;
             this.dataGV_Uv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV_Uv.Location = new System.Drawing.Point(82, 137);
             this.dataGV_Uv.Name = "dataGV_Uv";
+            this.dataGV_Uv.ReadOnly = true;
             this.dataGV_Uv.RowTemplate.Height = 25;
             this.dataGV_Uv.Size = new System.Drawing.Size(929, 443);
             this.dataGV_Uv.TabIndex = 0;
             this.dataGV_Uv.CellClick += DataGv_Uv_CellClick;
-            this.dataGV_Uv.ReadOnly= true;
-            this.dataGV_Uv.AllowUserToAddRows = false;
             // 
             // btn_Adm_reset
             // 

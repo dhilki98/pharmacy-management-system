@@ -306,7 +306,7 @@
             this.btn_nE_cancel.Name = "btn_nE_cancel";
             this.btn_nE_cancel.Size = new System.Drawing.Size(108, 38);
             this.btn_nE_cancel.TabIndex = 26;
-            this.btn_nE_cancel.Text = "Cancel";
+            this.btn_nE_cancel.Text = "Back";
             this.btn_nE_cancel.UseVisualStyleBackColor = false;
             this.btn_nE_cancel.Click += new System.EventHandler(this.btn_nE_cancel_Click);
             // 

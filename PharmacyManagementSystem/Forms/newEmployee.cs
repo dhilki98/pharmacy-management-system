@@ -91,7 +91,12 @@ namespace PharmacyManagementSystem
             query = "select * from USERS where userName='" + uname + "'";
             DataSet ds = DBHelper.getData(query);
 
-            if (ds.Tables[0].Rows.Count == 0)
+            if(txt_nE_username.Text == "")
+            {
+                pctBox_nE_username_yes.Hide();
+                pctBox_nE_username_no.Show();
+            }
+            else if (ds.Tables[0].Rows.Count == 0)
             {
                 pctBox_nE_username_no.Hide();
                 pctBox_nE_username_yes.Show();
@@ -134,9 +139,9 @@ namespace PharmacyManagementSystem
                     DBHelper.setData(query, "Update Sucessful");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("User Allready Exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Operation Unsuccessful." + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

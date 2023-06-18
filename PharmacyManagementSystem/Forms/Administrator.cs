@@ -35,6 +35,19 @@ namespace PharmacyManagementSystem
             dataGV_Uv.DataSource = DBHelper.getData(query).Tables[0];
         }
 
+        private void removeUser(int userId)
+        {
+            try
+            {
+                query = "DELETE FROM users WHERE UserId='" + userId + "'";
+                DBHelper.setData(query, "Removal Sucessful");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("User Removal Unsuccessful." + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btn_Adm_adduser_Click(object sender, EventArgs e)
         {
             newEmployee newEmplo = new newEmployee(this);
@@ -62,13 +75,6 @@ namespace PharmacyManagementSystem
             btn_Adm_reset.Hide();
         }
 
-        private void DataGv_Uv_RowClick(object sender, DataGridViewRowEventArgs e)
-        {
-            btn_Adm_delete.Show();
-            btn_Adm_edit.Show();
-            selectedUserId = Convert.ToInt32(e.Row.Cells[0].Value);  
-        }
-
         private void DataGv_Uv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_Adm_delete.Show();
@@ -83,5 +89,13 @@ namespace PharmacyManagementSystem
             this.Hide();
             selectedUserId = 0;
         }
+
+        private void btn_Adm_delete_Click(object sender, EventArgs e)
+        {
+            removeUser(selectedUserId);
+            selectedUserId = 0;
+            refreshTable();
+        }
+
     }
 }
