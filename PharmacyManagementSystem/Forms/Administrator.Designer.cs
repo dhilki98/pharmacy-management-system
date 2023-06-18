@@ -36,11 +36,12 @@
             this.lbl_Adm_logo = new System.Windows.Forms.Label();
             this.pctBox_Adm_logo = new System.Windows.Forms.PictureBox();
             this.pnl_Adm_right = new System.Windows.Forms.Panel();
+            this.btn_Adm_edit = new System.Windows.Forms.Button();
+            this.btn_Adm_delete = new System.Windows.Forms.Button();
             this.btn_Adm_search = new System.Windows.Forms.Button();
             this.txt_Adm_search = new System.Windows.Forms.TextBox();
             this.dataGV_Uv = new System.Windows.Forms.DataGridView();
             this.btn_Adm_reset = new System.Windows.Forms.Button();
-            this.btn_Adm_delete = new System.Windows.Forms.Button();
             this.pnl_Adm_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Adm_logo)).BeginInit();
             this.pnl_Adm_right.SuspendLayout();
@@ -120,15 +121,41 @@
             // 
             // pnl_Adm_right
             // 
+            this.pnl_Adm_right.Controls.Add(this.btn_Adm_edit);
+            this.pnl_Adm_right.Controls.Add(this.btn_Adm_delete);
             this.pnl_Adm_right.Controls.Add(this.btn_Adm_search);
             this.pnl_Adm_right.Controls.Add(this.txt_Adm_search);
             this.pnl_Adm_right.Controls.Add(this.dataGV_Uv);
             this.pnl_Adm_right.Controls.Add(this.btn_Adm_reset);
-            this.pnl_Adm_right.Controls.Add(this.btn_Adm_delete);
             this.pnl_Adm_right.Location = new System.Drawing.Point(275, 0);
             this.pnl_Adm_right.Name = "pnl_Adm_right";
             this.pnl_Adm_right.Size = new System.Drawing.Size(1086, 730);
             this.pnl_Adm_right.TabIndex = 1;
+            // 
+            // btn_Adm_edit
+            // 
+            this.btn_Adm_edit.BackColor = System.Drawing.Color.White;
+            this.btn_Adm_edit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Adm_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_Adm_edit.Location = new System.Drawing.Point(388, 632);
+            this.btn_Adm_edit.Name = "btn_Adm_edit";
+            this.btn_Adm_edit.Size = new System.Drawing.Size(108, 38);
+            this.btn_Adm_edit.TabIndex = 20;
+            this.btn_Adm_edit.Text = "Edit";
+            this.btn_Adm_edit.UseVisualStyleBackColor = false;
+            this.btn_Adm_edit.Click += new System.EventHandler(this.btn_Adm_edit_Click);
+            // 
+            // btn_Adm_delete
+            // 
+            this.btn_Adm_delete.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_Adm_delete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Adm_delete.ForeColor = System.Drawing.Color.White;
+            this.btn_Adm_delete.Location = new System.Drawing.Point(592, 632);
+            this.btn_Adm_delete.Name = "btn_Adm_delete";
+            this.btn_Adm_delete.Size = new System.Drawing.Size(108, 38);
+            this.btn_Adm_delete.TabIndex = 19;
+            this.btn_Adm_delete.Text = "Delete";
+            this.btn_Adm_delete.UseVisualStyleBackColor = false;
             // 
             // btn_Adm_search
             // 
@@ -159,6 +186,9 @@
             this.dataGV_Uv.RowTemplate.Height = 25;
             this.dataGV_Uv.Size = new System.Drawing.Size(929, 443);
             this.dataGV_Uv.TabIndex = 0;
+            this.dataGV_Uv.CellClick += DataGv_Uv_CellClick;
+            this.dataGV_Uv.ReadOnly= true;
+            this.dataGV_Uv.AllowUserToAddRows = false;
             // 
             // btn_Adm_reset
             // 
@@ -172,18 +202,6 @@
             this.btn_Adm_reset.Text = "Reset";
             this.btn_Adm_reset.UseVisualStyleBackColor = false;
             this.btn_Adm_reset.Click += new System.EventHandler(this.btn_Adm_reset_Click);
-            // 
-            // btn_Adm_delete
-            // 
-            this.btn_Adm_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Adm_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adm_delete.ForeColor = System.Drawing.Color.Black;
-            this.btn_Adm_delete.Location = new System.Drawing.Point(919, 636);
-            this.btn_Adm_delete.Name = "btn_Adm_delete";
-            this.btn_Adm_delete.Size = new System.Drawing.Size(92, 29);
-            this.btn_Adm_delete.TabIndex = 4;
-            this.btn_Adm_delete.Text = "Delete";
-            this.btn_Adm_delete.UseVisualStyleBackColor = false;
             // 
             // Administrator
             // 
@@ -218,8 +236,9 @@
         private Label lbl_Adm_username;
         private DataGridView dataGV_Uv;
         private Button btn_Adm_reset;
-        private Button btn_Adm_delete;
         private TextBox txt_Adm_search;
         private Button btn_Adm_search;
+        private Button btn_Adm_edit;
+        private Button btn_Adm_delete;
     }
 }

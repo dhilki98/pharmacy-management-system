@@ -1,5 +1,4 @@
-﻿
-namespace PharmacyManagementSystem
+﻿namespace PharmacyManagementSystem.DataModels
 {
     public class UserContext
     {
@@ -11,10 +10,11 @@ namespace PharmacyManagementSystem
 
         private Role userRole;
 
-        public UserContext(string un, Role ur, string fn) {
-            username= un;
-            userRole= ur;
-            fullname= fn;
+        public UserContext(string un, Role ur, string fn)
+        {
+            username = un;
+            userRole = ur;
+            fullname = fn;
         }
 
         public Role getUserRole()

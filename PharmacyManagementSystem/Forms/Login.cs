@@ -1,4 +1,6 @@
 ﻿using System.Data;
+using PharmacyManagementSystem.DataModels;
+using PharmacyManagementSystem.Operationals;
 
 namespace PharmacyManagementSystem
 {

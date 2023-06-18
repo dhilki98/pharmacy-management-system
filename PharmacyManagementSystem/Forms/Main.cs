@@ -1,5 +1,7 @@
 ﻿
 using System.Data;
+using PharmacyManagementSystem.DataModels;
+using PharmacyManagementSystem.Operationals;
 
 namespace PharmacyManagementSystem
 {
@@ -54,7 +56,7 @@ namespace PharmacyManagementSystem
 
         private void btn_Main_administration_Click(object sender, EventArgs e)
         {
-            Administrator adm = new Administrator(ctx);
+            Administrator adm = new Administrator(ctx, this);
             adm.Show();
             this.Hide();
         }
