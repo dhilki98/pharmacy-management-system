@@ -14,6 +14,7 @@ namespace PharmacyManagementSystem
     public partial class addBatch : Form
     {
         String query;
+        Item_management parentIM;
 
         public addBatch()
         {
@@ -50,12 +51,12 @@ namespace PharmacyManagementSystem
 
             try
             {
-                query = "insert into users (itemId, supId, unitPrice, expireDate, quantity) values ('" + itemID + "', '" + supplierID + "', '" + unitPrice + "', '" + expireDate + "', '" + quantity + "')";
+                query = "insert into BATCHES (itemId, supId, unitPrice, expireDate, quantity) values ('" + itemID + "', '" + supplierID + "', '" + unitPrice + "', '" + expireDate + "', '" + quantity + "')";
                 DBHelper.setData(query, "Add Sucessful.");
             }
             catch(Exception)
             {
-                MessageBox.Show("User Allready Exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Operatio Unsucessful.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,6 +72,12 @@ namespace PharmacyManagementSystem
             txt_aB_sid.Clear();
             txt_aB_unitprice.Clear();
             dateTP_aB_expiredate.Value = DateTime.Today;
+        }
+
+        private void btn_aB_back_Click(object sender, EventArgs e)
+        {
+            parentIM.Show();
+            this.Hide();
         }
     }
 }

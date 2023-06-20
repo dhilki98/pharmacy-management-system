@@ -40,9 +40,12 @@
             this.dataGV_sup = new System.Windows.Forms.DataGridView();
             this.btn_sup_add = new System.Windows.Forms.Button();
             this.btn_sup_delete = new System.Windows.Forms.Button();
-            this.btn_sup_update = new System.Windows.Forms.Button();
+            this.btn_sup_edit = new System.Windows.Forms.Button();
             this.btn_sup_reset = new System.Windows.Forms.Button();
-            this.btn_sup_viewsuppliers = new System.Windows.Forms.Button();
+            this.btn_sup_search = new System.Windows.Forms.Button();
+            this.btn_sup_back = new System.Windows.Forms.Button();
+            this.btn_sup_resetsearch = new System.Windows.Forms.Button();
+            this.txt_sup_search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_sup)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,13 +137,14 @@
             this.dataGV_sup.RowTemplate.Height = 25;
             this.dataGV_sup.Size = new System.Drawing.Size(625, 390);
             this.dataGV_sup.TabIndex = 9;
+            this.dataGV_sup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_sup_CellClick);
             // 
             // btn_sup_add
             // 
             this.btn_sup_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_sup_add.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_sup_add.ForeColor = System.Drawing.Color.White;
-            this.btn_sup_add.Location = new System.Drawing.Point(64, 407);
+            this.btn_sup_add.Location = new System.Drawing.Point(84, 407);
             this.btn_sup_add.Name = "btn_sup_add";
             this.btn_sup_add.Size = new System.Drawing.Size(112, 35);
             this.btn_sup_add.TabIndex = 10;
@@ -150,34 +154,36 @@
             // 
             // btn_sup_delete
             // 
-            this.btn_sup_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_delete.BackColor = System.Drawing.Color.IndianRed;
             this.btn_sup_delete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_sup_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_sup_delete.Location = new System.Drawing.Point(64, 537);
+            this.btn_sup_delete.Location = new System.Drawing.Point(840, 602);
             this.btn_sup_delete.Name = "btn_sup_delete";
             this.btn_sup_delete.Size = new System.Drawing.Size(112, 35);
             this.btn_sup_delete.TabIndex = 11;
             this.btn_sup_delete.Text = "Delete";
             this.btn_sup_delete.UseVisualStyleBackColor = false;
+            this.btn_sup_delete.Click += new System.EventHandler(this.btn_sup_delete_Click);
             // 
-            // btn_sup_update
+            // btn_sup_edit
             // 
-            this.btn_sup_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btn_sup_update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_sup_update.ForeColor = System.Drawing.Color.White;
-            this.btn_sup_update.Location = new System.Drawing.Point(64, 472);
-            this.btn_sup_update.Name = "btn_sup_update";
-            this.btn_sup_update.Size = new System.Drawing.Size(112, 35);
-            this.btn_sup_update.TabIndex = 12;
-            this.btn_sup_update.Text = "Update";
-            this.btn_sup_update.UseVisualStyleBackColor = false;
+            this.btn_sup_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_edit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sup_edit.ForeColor = System.Drawing.Color.White;
+            this.btn_sup_edit.Location = new System.Drawing.Point(654, 602);
+            this.btn_sup_edit.Name = "btn_sup_edit";
+            this.btn_sup_edit.Size = new System.Drawing.Size(112, 35);
+            this.btn_sup_edit.TabIndex = 12;
+            this.btn_sup_edit.Text = "Edit";
+            this.btn_sup_edit.UseVisualStyleBackColor = false;
+            this.btn_sup_edit.Click += new System.EventHandler(this.btn_sup_edit_Click);
             // 
             // btn_sup_reset
             // 
-            this.btn_sup_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_reset.BackColor = System.Drawing.Color.White;
             this.btn_sup_reset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_sup_reset.ForeColor = System.Drawing.Color.White;
-            this.btn_sup_reset.Location = new System.Drawing.Point(64, 602);
+            this.btn_sup_reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_reset.Location = new System.Drawing.Point(236, 407);
             this.btn_sup_reset.Name = "btn_sup_reset";
             this.btn_sup_reset.Size = new System.Drawing.Size(112, 35);
             this.btn_sup_reset.TabIndex = 13;
@@ -185,18 +191,52 @@
             this.btn_sup_reset.UseVisualStyleBackColor = false;
             this.btn_sup_reset.Click += new System.EventHandler(this.btn_sup_reset_Click);
             // 
-            // btn_sup_viewsuppliers
+            // btn_sup_search
             // 
-            this.btn_sup_viewsuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btn_sup_viewsuppliers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_sup_viewsuppliers.ForeColor = System.Drawing.Color.White;
-            this.btn_sup_viewsuppliers.Location = new System.Drawing.Point(435, 131);
-            this.btn_sup_viewsuppliers.Name = "btn_sup_viewsuppliers";
-            this.btn_sup_viewsuppliers.Size = new System.Drawing.Size(175, 35);
-            this.btn_sup_viewsuppliers.TabIndex = 14;
-            this.btn_sup_viewsuppliers.Text = "View Suppliers";
-            this.btn_sup_viewsuppliers.UseVisualStyleBackColor = false;
-            this.btn_sup_viewsuppliers.Click += new System.EventHandler(this.btn_sup_viewsuppliers_Click);
+            this.btn_sup_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_search.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sup_search.ForeColor = System.Drawing.Color.White;
+            this.btn_sup_search.Location = new System.Drawing.Point(755, 131);
+            this.btn_sup_search.Name = "btn_sup_search";
+            this.btn_sup_search.Size = new System.Drawing.Size(110, 35);
+            this.btn_sup_search.TabIndex = 14;
+            this.btn_sup_search.Text = "Search";
+            this.btn_sup_search.UseVisualStyleBackColor = false;
+            this.btn_sup_search.Click += new System.EventHandler(this.btn_sup_search_Click);
+            // 
+            // btn_sup_back
+            // 
+            this.btn_sup_back.BackColor = System.Drawing.Color.White;
+            this.btn_sup_back.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sup_back.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_back.Location = new System.Drawing.Point(84, 602);
+            this.btn_sup_back.Name = "btn_sup_back";
+            this.btn_sup_back.Size = new System.Drawing.Size(112, 35);
+            this.btn_sup_back.TabIndex = 15;
+            this.btn_sup_back.Text = "Back";
+            this.btn_sup_back.UseVisualStyleBackColor = false;
+            this.btn_sup_back.Click += new System.EventHandler(this.btn_sup_back_Click);
+            // 
+            // btn_sup_resetsearch
+            // 
+            this.btn_sup_resetsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_sup_resetsearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sup_resetsearch.ForeColor = System.Drawing.Color.White;
+            this.btn_sup_resetsearch.Location = new System.Drawing.Point(883, 131);
+            this.btn_sup_resetsearch.Name = "btn_sup_resetsearch";
+            this.btn_sup_resetsearch.Size = new System.Drawing.Size(110, 35);
+            this.btn_sup_resetsearch.TabIndex = 16;
+            this.btn_sup_resetsearch.Text = "Reset";
+            this.btn_sup_resetsearch.UseVisualStyleBackColor = false;
+            this.btn_sup_resetsearch.Click += new System.EventHandler(this.btn_sup_resetsearch_Click);
+            // 
+            // txt_sup_search
+            // 
+            this.txt_sup_search.Location = new System.Drawing.Point(435, 140);
+            this.txt_sup_search.Name = "txt_sup_search";
+            this.txt_sup_search.PlaceholderText = "Enter a name...";
+            this.txt_sup_search.Size = new System.Drawing.Size(304, 23);
+            this.txt_sup_search.TabIndex = 17;
             // 
             // Suppliers
             // 
@@ -204,9 +244,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 688);
-            this.Controls.Add(this.btn_sup_viewsuppliers);
+            this.Controls.Add(this.txt_sup_search);
+            this.Controls.Add(this.btn_sup_resetsearch);
+            this.Controls.Add(this.btn_sup_back);
+            this.Controls.Add(this.btn_sup_search);
             this.Controls.Add(this.btn_sup_reset);
-            this.Controls.Add(this.btn_sup_update);
+            this.Controls.Add(this.btn_sup_edit);
             this.Controls.Add(this.btn_sup_delete);
             this.Controls.Add(this.btn_sup_add);
             this.Controls.Add(this.dataGV_sup);
@@ -221,6 +264,7 @@
             this.Controls.Add(this.lbl_sup_supdetails);
             this.Name = "Suppliers";
             this.Text = "Suppliers";
+            this.Load += new System.EventHandler(this.Suppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_sup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,8 +285,11 @@
         private DataGridView dataGV_sup;
         private Button btn_sup_add;
         private Button btn_sup_delete;
-        private Button btn_sup_update;
+        private Button btn_sup_edit;
         private Button btn_sup_reset;
-        private Button btn_sup_viewsuppliers;
+        private Button btn_sup_search;
+        private Button btn_sup_back;
+        private Button btn_sup_resetsearch;
+        private TextBox txt_sup_search;
     }
 }

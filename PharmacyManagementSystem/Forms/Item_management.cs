@@ -26,5 +26,17 @@ namespace PharmacyManagementSystem
             mnI.Show();
             this.Hide();
         }
+
+        private void btn_Im_anb_Click(object sender, EventArgs e)
+        {
+            addBatch addB = new addBatch();
+            addB.Show();
+            this.Hide();
+        }
+
+        private void Item_management_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

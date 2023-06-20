@@ -42,7 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dateTP_aB_expiredate = new System.Windows.Forms.DateTimePicker();
             this.btn_aB_reset = new System.Windows.Forms.Button();
-            this.btn_aB_update = new System.Windows.Forms.Button();
+            this.btn_aB_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_aB_iid
@@ -167,10 +167,10 @@
             // 
             // btn_aB_reset
             // 
-            this.btn_aB_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_aB_reset.BackColor = System.Drawing.Color.White;
             this.btn_aB_reset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_aB_reset.ForeColor = System.Drawing.Color.White;
-            this.btn_aB_reset.Location = new System.Drawing.Point(836, 488);
+            this.btn_aB_reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_aB_reset.Location = new System.Drawing.Point(693, 488);
             this.btn_aB_reset.Name = "btn_aB_reset";
             this.btn_aB_reset.Size = new System.Drawing.Size(95, 43);
             this.btn_aB_reset.TabIndex = 14;
@@ -178,17 +178,18 @@
             this.btn_aB_reset.UseVisualStyleBackColor = false;
             this.btn_aB_reset.Click += new System.EventHandler(this.btn_aB_reset_Click);
             // 
-            // btn_aB_update
+            // btn_aB_back
             // 
-            this.btn_aB_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btn_aB_update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_aB_update.ForeColor = System.Drawing.Color.White;
-            this.btn_aB_update.Location = new System.Drawing.Point(709, 488);
-            this.btn_aB_update.Name = "btn_aB_update";
-            this.btn_aB_update.Size = new System.Drawing.Size(95, 43);
-            this.btn_aB_update.TabIndex = 15;
-            this.btn_aB_update.Text = "Update";
-            this.btn_aB_update.UseVisualStyleBackColor = false;
+            this.btn_aB_back.BackColor = System.Drawing.Color.White;
+            this.btn_aB_back.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_aB_back.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_aB_back.Location = new System.Drawing.Point(806, 488);
+            this.btn_aB_back.Name = "btn_aB_back";
+            this.btn_aB_back.Size = new System.Drawing.Size(95, 43);
+            this.btn_aB_back.TabIndex = 15;
+            this.btn_aB_back.Text = "Back";
+            this.btn_aB_back.UseVisualStyleBackColor = false;
+            this.btn_aB_back.Click += new System.EventHandler(this.btn_aB_back_Click);
             // 
             // addBatch
             // 
@@ -196,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 688);
-            this.Controls.Add(this.btn_aB_update);
+            this.Controls.Add(this.btn_aB_back);
             this.Controls.Add(this.btn_aB_reset);
             this.Controls.Add(this.dateTP_aB_expiredate);
             this.Controls.Add(this.button1);
@@ -234,6 +235,6 @@
         private Button button1;
         private DateTimePicker dateTP_aB_expiredate;
         private Button btn_aB_reset;
-        private Button btn_aB_update;
+        private Button btn_aB_back;
     }
 }

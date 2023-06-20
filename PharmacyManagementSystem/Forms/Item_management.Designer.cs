@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Item_management));
             this.pnl_Im_left = new System.Windows.Forms.Panel();
-            this.btn_Im_update = new System.Windows.Forms.Button();
+            this.btn_Im_anb = new System.Windows.Forms.Button();
             this.lbl_Im_username = new System.Windows.Forms.Label();
             this.btn_Im_back = new System.Windows.Forms.Button();
             this.btn_Im_remove = new System.Windows.Forms.Button();
             this.btn_Im_view = new System.Windows.Forms.Button();
-            this.btn_Im_add = new System.Windows.Forms.Button();
+            this.btn_Im_ani = new System.Windows.Forms.Button();
             this.lbl_Im_logo = new System.Windows.Forms.Label();
             this.pctBoc_Im_logo = new System.Windows.Forms.PictureBox();
             this.pnl_Im_right = new System.Windows.Forms.Panel();
@@ -46,12 +46,12 @@
             // pnl_Im_left
             // 
             this.pnl_Im_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_Im_left.Controls.Add(this.btn_Im_update);
+            this.pnl_Im_left.Controls.Add(this.btn_Im_anb);
             this.pnl_Im_left.Controls.Add(this.lbl_Im_username);
             this.pnl_Im_left.Controls.Add(this.btn_Im_back);
             this.pnl_Im_left.Controls.Add(this.btn_Im_remove);
             this.pnl_Im_left.Controls.Add(this.btn_Im_view);
-            this.pnl_Im_left.Controls.Add(this.btn_Im_add);
+            this.pnl_Im_left.Controls.Add(this.btn_Im_ani);
             this.pnl_Im_left.Controls.Add(this.lbl_Im_logo);
             this.pnl_Im_left.Controls.Add(this.pctBoc_Im_logo);
             this.pnl_Im_left.Controls.Add(this.pnl_Im_right);
@@ -60,17 +60,18 @@
             this.pnl_Im_left.Size = new System.Drawing.Size(275, 730);
             this.pnl_Im_left.TabIndex = 0;
             // 
-            // btn_Im_update
+            // btn_Im_anb
             // 
-            this.btn_Im_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Im_update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Im_update.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_update.Location = new System.Drawing.Point(60, 390);
-            this.btn_Im_update.Name = "btn_Im_update";
-            this.btn_Im_update.Size = new System.Drawing.Size(125, 31);
-            this.btn_Im_update.TabIndex = 9;
-            this.btn_Im_update.Text = "Update Item";
-            this.btn_Im_update.UseVisualStyleBackColor = false;
+            this.btn_Im_anb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btn_Im_anb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Im_anb.ForeColor = System.Drawing.Color.White;
+            this.btn_Im_anb.Location = new System.Drawing.Point(60, 390);
+            this.btn_Im_anb.Name = "btn_Im_anb";
+            this.btn_Im_anb.Size = new System.Drawing.Size(167, 31);
+            this.btn_Im_anb.TabIndex = 9;
+            this.btn_Im_anb.Text = "Add New Batch";
+            this.btn_Im_anb.UseVisualStyleBackColor = false;
+            this.btn_Im_anb.Click += new System.EventHandler(this.btn_Im_anb_Click);
             // 
             // lbl_Im_username
             // 
@@ -121,17 +122,17 @@
             this.btn_Im_view.Text = "View Items";
             this.btn_Im_view.UseVisualStyleBackColor = false;
             // 
-            // btn_Im_add
+            // btn_Im_ani
             // 
-            this.btn_Im_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Im_add.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Im_add.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_add.Location = new System.Drawing.Point(60, 342);
-            this.btn_Im_add.Name = "btn_Im_add";
-            this.btn_Im_add.Size = new System.Drawing.Size(125, 31);
-            this.btn_Im_add.TabIndex = 4;
-            this.btn_Im_add.Text = "Add Item";
-            this.btn_Im_add.UseVisualStyleBackColor = false;
+            this.btn_Im_ani.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btn_Im_ani.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Im_ani.ForeColor = System.Drawing.Color.White;
+            this.btn_Im_ani.Location = new System.Drawing.Point(60, 342);
+            this.btn_Im_ani.Name = "btn_Im_ani";
+            this.btn_Im_ani.Size = new System.Drawing.Size(167, 31);
+            this.btn_Im_ani.TabIndex = 4;
+            this.btn_Im_ani.Text = "Add New Item";
+            this.btn_Im_ani.UseVisualStyleBackColor = false;
             // 
             // lbl_Im_logo
             // 
@@ -142,7 +143,7 @@
             this.lbl_Im_logo.Name = "lbl_Im_logo";
             this.lbl_Im_logo.Size = new System.Drawing.Size(195, 78);
             this.lbl_Im_logo.TabIndex = 3;
-            this.lbl_Im_logo.Text = "Item\r\nManagement\r\n";
+            this.lbl_Im_logo.Text = "Inventory \r\nManagement\r\n";
             // 
             // pctBoc_Im_logo
             // 
@@ -171,6 +172,7 @@
             this.Name = "Item_management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Item_management";
+            this.Load += new System.EventHandler(this.Item_management_Load);
             this.pnl_Im_left.ResumeLayout(false);
             this.pnl_Im_left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoc_Im_logo)).EndInit();
@@ -184,11 +186,11 @@
         private Panel pnl_Im_right;
         private PictureBox pctBoc_Im_logo;
         private Label lbl_Im_logo;
-        private Button btn_Im_add;
+        private Button btn_Im_ani;
         private Button btn_Im_back;
         private Button btn_Im_remove;
         private Button btn_Im_view;
         private Label lbl_Im_username;
-        private Button btn_Im_update;
+        private Button btn_Im_anb;
     }
 }
