@@ -53,6 +53,7 @@
             this.pctBox_nE_username_yes = new System.Windows.Forms.PictureBox();
             this.pctBox_nE_username_no = new System.Windows.Forms.PictureBox();
             this.btn_nE_cancel = new System.Windows.Forms.Button();
+            this.btn_nE_generate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_nE_username_yes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_nE_username_no)).BeginInit();
             this.SuspendLayout();
@@ -220,8 +221,9 @@
             this.txt_nE_password.ForeColor = System.Drawing.Color.Black;
             this.txt_nE_password.Location = new System.Drawing.Point(604, 411);
             this.txt_nE_password.Name = "txt_nE_password";
-            this.txt_nE_password.Size = new System.Drawing.Size(340, 29);
+            this.txt_nE_password.Size = new System.Drawing.Size(212, 29);
             this.txt_nE_password.TabIndex = 15;
+            this.txt_nE_password.ReadOnly= true;
             // 
             // pnl_nE_mid
             // 
@@ -310,12 +312,26 @@
             this.btn_nE_cancel.UseVisualStyleBackColor = false;
             this.btn_nE_cancel.Click += new System.EventHandler(this.btn_nE_cancel_Click);
             // 
+            // btn_nE_generate
+            // 
+            this.btn_nE_generate.BackColor = System.Drawing.Color.White;
+            this.btn_nE_generate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_nE_generate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_nE_generate.Location = new System.Drawing.Point(836, 405);
+            this.btn_nE_generate.Name = "btn_nE_generate";
+            this.btn_nE_generate.Size = new System.Drawing.Size(108, 38);
+            this.btn_nE_generate.TabIndex = 27;
+            this.btn_nE_generate.Text = "Genarate";
+            this.btn_nE_generate.UseVisualStyleBackColor = false;
+            this.btn_nE_generate.Click += new System.EventHandler(this.btn_nE_generate_Click);
+            // 
             // newEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1029, 630);
+            this.Controls.Add(this.btn_nE_generate);
             this.Controls.Add(this.btn_nE_cancel);
             this.Controls.Add(this.pctBox_nE_username_no);
             this.Controls.Add(this.pctBox_nE_username_yes);
@@ -378,5 +394,6 @@
         private PictureBox pctBox_nE_username_yes;
         private PictureBox pctBox_nE_username_no;
         private Button btn_nE_cancel;
+        private Button btn_nE_generate;
     }
 }

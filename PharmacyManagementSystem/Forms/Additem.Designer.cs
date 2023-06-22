@@ -35,11 +35,9 @@
             this.txt_Ai_itemname = new System.Windows.Forms.TextBox();
             this.btn_Ai_add = new System.Windows.Forms.Button();
             this.btn_Ai_reset = new System.Windows.Forms.Button();
-            this.pnl_Ai_left = new System.Windows.Forms.Panel();
-            this.btn_Ai_remove = new System.Windows.Forms.Button();
-            this.btn_Ai_update = new System.Windows.Forms.Button();
-            this.lbl_Ai_search = new System.Windows.Forms.Label();
-            this.txt_Ai_search = new System.Windows.Forms.TextBox();
+            this.btn_Ai_back = new System.Windows.Forms.Button();
+            this.txt_Ai_threshold = new System.Windows.Forms.TextBox();
+            this.lbl_Ai_threshold = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Ai_itemdetails
@@ -95,75 +93,58 @@
             this.btn_Ai_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_Ai_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Ai_add.ForeColor = System.Drawing.Color.White;
-            this.btn_Ai_add.Location = new System.Drawing.Point(602, 373);
+            this.btn_Ai_add.Location = new System.Drawing.Point(271, 500);
             this.btn_Ai_add.Name = "btn_Ai_add";
             this.btn_Ai_add.Size = new System.Drawing.Size(146, 48);
             this.btn_Ai_add.TabIndex = 15;
             this.btn_Ai_add.Text = "Add";
             this.btn_Ai_add.UseVisualStyleBackColor = false;
+            this.btn_Ai_add.Click += new System.EventHandler(this.btn_Ai_add_Click);
             // 
             // btn_Ai_reset
             // 
             this.btn_Ai_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_Ai_reset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Ai_reset.ForeColor = System.Drawing.Color.White;
-            this.btn_Ai_reset.Location = new System.Drawing.Point(754, 446);
+            this.btn_Ai_reset.Location = new System.Drawing.Point(428, 500);
             this.btn_Ai_reset.Name = "btn_Ai_reset";
             this.btn_Ai_reset.Size = new System.Drawing.Size(146, 48);
             this.btn_Ai_reset.TabIndex = 16;
             this.btn_Ai_reset.Text = "Reset";
             this.btn_Ai_reset.UseVisualStyleBackColor = false;
+            this.btn_Ai_reset.Click += new System.EventHandler(this.btn_Ai_reset_Click);
             // 
-            // pnl_Ai_left
+            // btn_Ai_back
             // 
-            this.pnl_Ai_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.pnl_Ai_left.Location = new System.Drawing.Point(501, 87);
-            this.pnl_Ai_left.Name = "pnl_Ai_left";
-            this.pnl_Ai_left.Size = new System.Drawing.Size(6, 523);
-            this.pnl_Ai_left.TabIndex = 17;
+            this.btn_Ai_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_Ai_back.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Ai_back.ForeColor = System.Drawing.Color.White;
+            this.btn_Ai_back.Location = new System.Drawing.Point(588, 500);
+            this.btn_Ai_back.Name = "btn_Ai_back";
+            this.btn_Ai_back.Size = new System.Drawing.Size(146, 48);
+            this.btn_Ai_back.TabIndex = 18;
+            this.btn_Ai_back.Text = "Back";
+            this.btn_Ai_back.UseVisualStyleBackColor = false;
+            this.btn_Ai_back.Click += new System.EventHandler(this.btn_Ai_back_Click);
             // 
-            // btn_Ai_remove
+            // txt_Ai_threshold
             // 
-            this.btn_Ai_remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btn_Ai_remove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Ai_remove.ForeColor = System.Drawing.Color.White;
-            this.btn_Ai_remove.Location = new System.Drawing.Point(906, 373);
-            this.btn_Ai_remove.Name = "btn_Ai_remove";
-            this.btn_Ai_remove.Size = new System.Drawing.Size(146, 48);
-            this.btn_Ai_remove.TabIndex = 18;
-            this.btn_Ai_remove.Text = "Remove";
-            this.btn_Ai_remove.UseVisualStyleBackColor = false;
+            this.txt_Ai_threshold.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Ai_threshold.ForeColor = System.Drawing.Color.Black;
+            this.txt_Ai_threshold.Location = new System.Drawing.Point(47, 373);
+            this.txt_Ai_threshold.Name = "txt_Ai_threshold";
+            this.txt_Ai_threshold.Size = new System.Drawing.Size(340, 29);
+            this.txt_Ai_threshold.TabIndex = 21;
             // 
-            // btn_Ai_update
+            // lbl_Ai_threshold
             // 
-            this.btn_Ai_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btn_Ai_update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Ai_update.ForeColor = System.Drawing.Color.White;
-            this.btn_Ai_update.Location = new System.Drawing.Point(754, 373);
-            this.btn_Ai_update.Name = "btn_Ai_update";
-            this.btn_Ai_update.Size = new System.Drawing.Size(146, 48);
-            this.btn_Ai_update.TabIndex = 19;
-            this.btn_Ai_update.Text = "Update";
-            this.btn_Ai_update.UseVisualStyleBackColor = false;
-            // 
-            // lbl_Ai_search
-            // 
-            this.lbl_Ai_search.AutoSize = true;
-            this.lbl_Ai_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ai_search.Location = new System.Drawing.Point(47, 102);
-            this.lbl_Ai_search.Name = "lbl_Ai_search";
-            this.lbl_Ai_search.Size = new System.Drawing.Size(57, 21);
-            this.lbl_Ai_search.TabIndex = 20;
-            this.lbl_Ai_search.Text = "Search";
-            // 
-            // txt_Ai_search
-            // 
-            this.txt_Ai_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Ai_search.ForeColor = System.Drawing.Color.Black;
-            this.txt_Ai_search.Location = new System.Drawing.Point(47, 124);
-            this.txt_Ai_search.Name = "txt_Ai_search";
-            this.txt_Ai_search.Size = new System.Drawing.Size(340, 29);
-            this.txt_Ai_search.TabIndex = 21;
+            this.lbl_Ai_threshold.AutoSize = true;
+            this.lbl_Ai_threshold.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Ai_threshold.Location = new System.Drawing.Point(47, 349);
+            this.lbl_Ai_threshold.Name = "lbl_Ai_threshold";
+            this.lbl_Ai_threshold.Size = new System.Drawing.Size(79, 21);
+            this.lbl_Ai_threshold.TabIndex = 20;
+            this.lbl_Ai_threshold.Text = "Threshold";
             // 
             // Additem
             // 
@@ -171,11 +152,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 688);
-            this.Controls.Add(this.txt_Ai_search);
-            this.Controls.Add(this.lbl_Ai_search);
-            this.Controls.Add(this.btn_Ai_update);
-            this.Controls.Add(this.btn_Ai_remove);
-            this.Controls.Add(this.pnl_Ai_left);
+            this.Controls.Add(this.txt_Ai_threshold);
+            this.Controls.Add(this.lbl_Ai_threshold);
+            this.Controls.Add(this.btn_Ai_back);
             this.Controls.Add(this.btn_Ai_reset);
             this.Controls.Add(this.btn_Ai_add);
             this.Controls.Add(this.txt_Ai_itemname);
@@ -185,6 +164,7 @@
             this.Controls.Add(this.lbl_Ai_itemdetails);
             this.Name = "Additem";
             this.Text = "Additem";
+            this.Load += new System.EventHandler(this.Additem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,10 +179,8 @@
         private TextBox txt_Ai_itemname;
         private Button btn_Ai_add;
         private Button btn_Ai_reset;
-        private Panel pnl_Ai_left;
-        private Button btn_Ai_remove;
-        private Button btn_Ai_update;
-        private Label lbl_Ai_search;
-        private TextBox txt_Ai_search;
+        private Button btn_Ai_back;
+        private TextBox txt_Ai_threshold;
+        private Label lbl_Ai_threshold;
     }
 }

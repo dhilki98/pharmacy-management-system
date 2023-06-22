@@ -14,22 +14,25 @@ namespace PharmacyManagementSystem
     public partial class Item_management : Form
     {
         UserContext ctx;
-        public Item_management(UserContext ctx)
+        Main paerntMain;
+        public Item_management(UserContext ctx, Main main)
         {
             InitializeComponent();
             this.ctx = ctx;
+            this.paerntMain = main;
         }
+
+
 
         private void btn_Im_back_Click(object sender, EventArgs e)
         {
-            Main mnI = new Main(ctx);
-            mnI.Show();
-            this.Hide();
+            paerntMain.Show();
+            this.Close();
         }
 
         private void btn_Im_anb_Click(object sender, EventArgs e)
         {
-            addBatch addB = new addBatch();
+            addBatch addB = new addBatch(ctx,1,this);
             addB.Show();
             this.Hide();
         }

@@ -1,5 +1,9 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using PharmacyManagementSystem.Operationals;
+using System.Security.Cryptography;
+using System.Runtime.Intrinsics.Arm;
+using System.Text;
 
 namespace PharmacyManagementSystem
 {
@@ -91,7 +95,7 @@ namespace PharmacyManagementSystem
             query = "select * from USERS where userName='" + uname + "'";
             DataSet ds = DBHelper.getData(query);
 
-            if(txt_nE_username.Text == "")
+            if (txt_nE_username.Text == "")
             {
                 pctBox_nE_username_yes.Hide();
                 pctBox_nE_username_no.Show();
@@ -110,14 +114,14 @@ namespace PharmacyManagementSystem
 
         private void saveResponse()
         {
-            string role = cmbBox_nE_userrole.Text;
-            string name = txt_nE_name.Text;
-            string nic = txt_nE_nic.Text;
-            string mobile = txt_nE_mobileno.Text;
-            string email = txt_nE_eaddress.Text;
-            string phamlicense = txt_nE_pln.Text;
-            string username = txt_nE_username.Text;
-            string password = txt_nE_password.Text;
+            String role = cmbBox_nE_userrole.Text;
+            String name = txt_nE_name.Text;
+            String nic = txt_nE_nic.Text;
+            String mobile = txt_nE_mobileno.Text;
+            String email = txt_nE_eaddress.Text;
+            String phamlicense = txt_nE_pln.Text;
+            String username = txt_nE_username.Text;
+            String password = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(txt_nE_password.Text)).ToString();
 
             try
             {
@@ -145,5 +149,13 @@ namespace PharmacyManagementSystem
             }
         }
 
+        private void btn_nE_generate_Click(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string pw = new string(Enumerable.Repeat(chars, 8)
+        .Select(s => s[rand.Next(s.Length)]).ToArray());
+            txt_nE_password.Text = pw;
+        }
     }
 }

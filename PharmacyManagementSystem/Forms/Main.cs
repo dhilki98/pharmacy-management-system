@@ -70,7 +70,7 @@ namespace PharmacyManagementSystem
 
         private void btn_Main_im_Click(object sender, EventArgs e)
         {
-            Item_management im = new Item_management(ctx);
+            Item_management im = new Item_management(ctx, this);
             im.Show();
             this.Hide();
         }

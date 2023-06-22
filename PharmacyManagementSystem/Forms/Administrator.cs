@@ -31,7 +31,7 @@ namespace PharmacyManagementSystem
 
         public void refreshTable()
         {
-            query = "select * from USERS";
+            query = "select fullName,userName,nic,userRole,email,contactNo,pharmLicense from USERS";
             dataGV_Uv.DataSource = DBHelper.getData(query).Tables[0];
         }
 
@@ -99,7 +99,7 @@ namespace PharmacyManagementSystem
 
         private void btn_Adm_spplier_Click(object sender, EventArgs e)
         {
-            Suppliers sup = new Suppliers ();
+            Suppliers sup = new Suppliers (ctx,this);
             sup.Show();
             this.Hide();
         }
