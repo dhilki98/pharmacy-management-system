@@ -79,5 +79,10 @@ namespace PharmacyManagementSystem
         {
             Main_Load(this, null);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
