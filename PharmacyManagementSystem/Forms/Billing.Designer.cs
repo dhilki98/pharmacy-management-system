@@ -57,6 +57,7 @@
             this.lbl_Bill_total = new System.Windows.Forms.Label();
             this.lbl_Bill_id = new System.Windows.Forms.Label();
             this.txt_Bill_id = new System.Windows.Forms.TextBox();
+            this.btn_Bill_refreash = new System.Windows.Forms.Button();
             this.pnl_Bill_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_Bill)).BeginInit();
@@ -122,7 +123,7 @@
             // 
             this.lbl_Bill_search.AutoSize = true;
             this.lbl_Bill_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bill_search.Location = new System.Drawing.Point(370, 32);
+            this.lbl_Bill_search.Location = new System.Drawing.Point(358, 56);
             this.lbl_Bill_search.Name = "lbl_Bill_search";
             this.lbl_Bill_search.Size = new System.Drawing.Size(57, 21);
             this.lbl_Bill_search.TabIndex = 1;
@@ -132,19 +133,21 @@
             // 
             this.txt_Bill_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Bill_search.ForeColor = System.Drawing.Color.Black;
-            this.txt_Bill_search.Location = new System.Drawing.Point(299, 58);
+            this.txt_Bill_search.Location = new System.Drawing.Point(299, 80);
             this.txt_Bill_search.Name = "txt_Bill_search";
             this.txt_Bill_search.Size = new System.Drawing.Size(210, 29);
             this.txt_Bill_search.TabIndex = 2;
+            this.txt_Bill_search.TextChanged += new System.EventHandler(this.txt_Bill_search_TextChanged);
             // 
             // listBox_Bill
             // 
             this.listBox_Bill.FormattingEnabled = true;
             this.listBox_Bill.ItemHeight = 15;
-            this.listBox_Bill.Location = new System.Drawing.Point(299, 93);
+            this.listBox_Bill.Location = new System.Drawing.Point(299, 123);
             this.listBox_Bill.Name = "listBox_Bill";
-            this.listBox_Bill.Size = new System.Drawing.Size(210, 619);
+            this.listBox_Bill.Size = new System.Drawing.Size(210, 589);
             this.listBox_Bill.TabIndex = 3;
+            this.listBox_Bill.SelectedIndexChanged += new System.EventHandler(this.listBox_Bill_SelectedIndexChanged);
             // 
             // lbl_Bill_nou
             // 
@@ -182,6 +185,7 @@
             this.txt_Bill_name.ForeColor = System.Drawing.Color.Black;
             this.txt_Bill_name.Location = new System.Drawing.Point(533, 129);
             this.txt_Bill_name.Name = "txt_Bill_name";
+            this.txt_Bill_name.ReadOnly = true;
             this.txt_Bill_name.Size = new System.Drawing.Size(340, 29);
             this.txt_Bill_name.TabIndex = 7;
             // 
@@ -210,6 +214,7 @@
             this.txt_Bill_ppu.ForeColor = System.Drawing.Color.Black;
             this.txt_Bill_ppu.Location = new System.Drawing.Point(533, 202);
             this.txt_Bill_ppu.Name = "txt_Bill_ppu";
+            this.txt_Bill_ppu.ReadOnly = true;
             this.txt_Bill_ppu.Size = new System.Drawing.Size(340, 29);
             this.txt_Bill_ppu.TabIndex = 10;
             // 
@@ -282,7 +287,7 @@
             // 
             // btn_Bill_remove
             // 
-            this.btn_Bill_remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btn_Bill_remove.BackColor = System.Drawing.Color.IndianRed;
             this.btn_Bill_remove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Bill_remove.ForeColor = System.Drawing.Color.White;
             this.btn_Bill_remove.Location = new System.Drawing.Point(533, 618);
@@ -334,8 +339,21 @@
             this.txt_Bill_id.ForeColor = System.Drawing.Color.Black;
             this.txt_Bill_id.Location = new System.Drawing.Point(533, 56);
             this.txt_Bill_id.Name = "txt_Bill_id";
+            this.txt_Bill_id.ReadOnly = true;
             this.txt_Bill_id.Size = new System.Drawing.Size(340, 29);
             this.txt_Bill_id.TabIndex = 18;
+            // 
+            // btn_Bill_refreash
+            // 
+            this.btn_Bill_refreash.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Bill_refreash.ForeColor = System.Drawing.Color.White;
+            this.btn_Bill_refreash.Location = new System.Drawing.Point(299, 12);
+            this.btn_Bill_refreash.Name = "btn_Bill_refreash";
+            this.btn_Bill_refreash.Size = new System.Drawing.Size(75, 31);
+            this.btn_Bill_refreash.TabIndex = 19;
+            this.btn_Bill_refreash.Text = "Refresh";
+            this.btn_Bill_refreash.UseVisualStyleBackColor = false;
+            this.btn_Bill_refreash.Click += new System.EventHandler(this.btn_Bill_refreash_Click);
             // 
             // Billing
             // 
@@ -343,6 +361,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1364, 729);
+            this.Controls.Add(this.btn_Bill_refreash);
             this.Controls.Add(this.txt_Bill_id);
             this.Controls.Add(this.lbl_Bill_id);
             this.Controls.Add(this.lbl_Bill_total);
@@ -405,5 +424,6 @@
         private DataGridViewTextBoxColumn clm_Bill_tprice;
         private Label lbl_Bill_id;
         private TextBox txt_Bill_id;
+        private Button btn_Bill_refreash;
     }
 }

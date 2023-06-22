@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,9 @@ namespace PharmacyManagementSystem
     public partial class Billing : Form
     {
         UserContext ctx;
+        string query;
+        DataSet ds;
+
         public Billing(UserContext ctx)
         {
             InitializeComponent();
@@ -24,7 +28,21 @@ namespace PharmacyManagementSystem
 
         private void Billing_Load(object sender, EventArgs e)
         {
+            lbl_Bill_username.Text = ctx.getFullname();
 
+            listBox_Bill.Items.Clear();
+            query = "select itemName from ITEMS where quantity > '0'";
+            ds = DBHelper.getData(query);
+
+            for(int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                listBox_Bill.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+            }
+        }
+
+        private void btn_Bill_refreash_Click(object sender, EventArgs e)
+        {
+            Billing_Load(this, null);
         }
 
         private void txt_Bill_nou_TextChanged(object sender, EventArgs e)
@@ -60,6 +78,12 @@ namespace PharmacyManagementSystem
         {
             if (txt_Bill_id.Text != "")
             {
+                query = "select quantity from BATCHES where itemId = '" + txt_Bill_id.Text + "'";
+                ds = DBHelper.getData(query);
+
+                quantity = Int64.Parse(ds.Tables[0].Rows[0][1].ToString());
+                newQuantity = quantity - Int64.Parse(txt_Bill_nou.Text);
+
                 if (newQuantity >= 0)
                 {
                     if (newQuantity > 100)
@@ -73,6 +97,9 @@ namespace PharmacyManagementSystem
 
                         totalAmount = totalAmount + int.Parse(txt_Bill_tprice.Text);
                         lbl_Bill_total.Text = "Rs. " + totalAmount.ToString();
+
+                        query = "update BATCHES set quantity = '" + newQuantity + "' where itemId = '" + txt_Bill_id.Text + "'";
+                        DBHelper.setData(query, "Item Added");
                     }
                     else
                     {
@@ -86,13 +113,17 @@ namespace PharmacyManagementSystem
                         totalAmount = totalAmount + int.Parse(txt_Bill_tprice.Text);
                         lbl_Bill_total.Text = "Rs. " + totalAmount.ToString();
 
+                        query = "update BATCHES set quantity = '" + newQuantity + "' where itemId = '" + txt_Bill_id.Text + "'";
+                        DBHelper.setData(query, "Item Added");
+
                         MessageBox.Show("Only " + quantity + " Left.\n Make a Purchase");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Item is Out of Stock.", "Warning");
+                    MessageBox.Show("Item is Out of Stock.", "Warning !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                Billing_Load(this, null);
                 clearAll();
             }
             else
@@ -139,9 +170,45 @@ namespace PharmacyManagementSystem
                 }
                 finally
                 {
+                    query = "select quantity from BATCHES where itemId = '" + valueID + "'";
+                    ds = DBHelper.getData(query);
+                    quantity = Int64.Parse(ds.Tables[0].Rows[0][5].ToString());
+                    newQuantity = quantity + noOfunit;
 
+                    query = "update BATCHES set quantity = '" + newQuantity + "' where itemId = '" + valueID + "'";
+                    DBHelper.setData(query, "Item removed from cart.");
+                    totalAmount = totalAmount - valueAmount;
+                    lbl_Bill_total.Text = "Rs. " + totalAmount.ToString();
                 }
             }
+        }
+
+        private void txt_Bill_search_TextChanged(object sender, EventArgs e)
+        {
+            listBox_Bill.Items.Clear();
+            query = "select itemName from ITEMS where itemName like '" + txt_Bill_search.Text + "%' and quantity > '0'";
+            ds = DBHelper.getData(query);
+
+            for(int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                listBox_Bill.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+            }
+        }
+
+        private void listBox_Bill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_Bill_nou.Clear();
+
+            String name = listBox_Bill.GetItemText(listBox_Bill.SelectedItem);
+
+            txt_Bill_name.Text = name;
+            query = "select itemId from ITEMS where itemName = '"+name+"'";
+            ds = DBHelper.getData(query);
+             String id = ds.Tables[0].Rows[0][0].ToString();
+            txt_Bill_id.Text = id;
+            query = "select unitPrice from BATCHES where unitPrice = '" + id + "'";
+            ds = DBHelper.getData(query);
+            txt_Bill_ppu.Text = ds.Tables[0].Rows[0][3].ToString();
         }
 
         private void btn_Bill_print_Click(object sender, EventArgs e)
