@@ -206,6 +206,7 @@
             this.txt_Bill_tprice.ForeColor = System.Drawing.Color.Black;
             this.txt_Bill_tprice.Location = new System.Drawing.Point(976, 138);
             this.txt_Bill_tprice.Name = "txt_Bill_tprice";
+            this.txt_Bill_tprice.ReadOnly = true;
             this.txt_Bill_tprice.Size = new System.Drawing.Size(340, 29);
             this.txt_Bill_tprice.TabIndex = 9;
             // 

@@ -36,11 +36,6 @@ namespace PharmacyManagementSystem
             this.context = uc;
         }
 
-        private void Additem_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void saveResponse()
         {
             String itemName = txt_Ai_itemname.Text;
@@ -50,7 +45,7 @@ namespace PharmacyManagementSystem
             {
                 if (itemId == 0)
                 {
-                    query = "insert into ITEMS (itemName, medicalName, threshold) values ('" + itemName + "', '" + medName + "', '" + threshold + "')";
+                    query = "insert into ITEMS (itemName, medicalName, threshold, availableQuantity) values ('" + itemName + "', '" + medName + "', '" + threshold + "', '0')";
                     DBHelper.setData(query, "Add Sucessful.");
                 }
                 else if (itemId > 0)
@@ -108,6 +103,7 @@ namespace PharmacyManagementSystem
 
         private void btn_Ai_back_Click(object sender, EventArgs e)
         {
+            parentItemManage.refreshTable();
             parentItemManage.Show();
             this.Close();
         }

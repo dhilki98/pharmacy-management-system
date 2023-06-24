@@ -97,12 +97,5 @@ namespace PharmacyManagementSystem
             refreshTable();
         }
 
-        private void btn_Adm_spplier_Click(object sender, EventArgs e)
-        {
-            Suppliers sup = new Suppliers (ctx,this);
-            sup.Show();
-            this.Hide();
-        }
-
     }
 }

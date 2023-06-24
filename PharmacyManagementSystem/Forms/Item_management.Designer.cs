@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Item_management));
             this.pnl_Im_left = new System.Windows.Forms.Panel();
+            this.btn_Im_sd = new System.Windows.Forms.Button();
             this.btn_Im_anb = new System.Windows.Forms.Button();
             this.lbl_Im_username = new System.Windows.Forms.Label();
             this.btn_Im_back = new System.Windows.Forms.Button();
-            this.btn_Im_remove = new System.Windows.Forms.Button();
-            this.btn_Im_view = new System.Windows.Forms.Button();
             this.btn_Im_ani = new System.Windows.Forms.Button();
             this.lbl_Im_logo = new System.Windows.Forms.Label();
             this.pctBoc_Im_logo = new System.Windows.Forms.PictureBox();
             this.pnl_Im_right = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnl_Im_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoc_Im_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Im_left
             // 
             this.pnl_Im_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnl_Im_left.Controls.Add(this.btn_Im_sd);
             this.pnl_Im_left.Controls.Add(this.btn_Im_anb);
             this.pnl_Im_left.Controls.Add(this.lbl_Im_username);
             this.pnl_Im_left.Controls.Add(this.btn_Im_back);
-            this.pnl_Im_left.Controls.Add(this.btn_Im_remove);
-            this.pnl_Im_left.Controls.Add(this.btn_Im_view);
             this.pnl_Im_left.Controls.Add(this.btn_Im_ani);
             this.pnl_Im_left.Controls.Add(this.lbl_Im_logo);
             this.pnl_Im_left.Controls.Add(this.pctBoc_Im_logo);
@@ -60,12 +60,25 @@
             this.pnl_Im_left.Size = new System.Drawing.Size(275, 730);
             this.pnl_Im_left.TabIndex = 0;
             // 
+            // btn_Im_sd
+            // 
+            this.btn_Im_sd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btn_Im_sd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Im_sd.ForeColor = System.Drawing.Color.White;
+            this.btn_Im_sd.Location = new System.Drawing.Point(44, 457);
+            this.btn_Im_sd.Name = "btn_Im_sd";
+            this.btn_Im_sd.Size = new System.Drawing.Size(167, 31);
+            this.btn_Im_sd.TabIndex = 10;
+            this.btn_Im_sd.Text = "Supplier Details";
+            this.btn_Im_sd.UseVisualStyleBackColor = false;
+            this.btn_Im_sd.Click += new System.EventHandler(this.btn_Im_sd_Click);
+            // 
             // btn_Im_anb
             // 
             this.btn_Im_anb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Im_anb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Im_anb.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_anb.Location = new System.Drawing.Point(60, 390);
+            this.btn_Im_anb.Location = new System.Drawing.Point(44, 387);
             this.btn_Im_anb.Name = "btn_Im_anb";
             this.btn_Im_anb.Size = new System.Drawing.Size(167, 31);
             this.btn_Im_anb.TabIndex = 9;
@@ -78,7 +91,7 @@
             this.lbl_Im_username.AutoSize = true;
             this.lbl_Im_username.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Im_username.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_Im_username.Location = new System.Drawing.Point(74, 544);
+            this.lbl_Im_username.Location = new System.Drawing.Point(74, 656);
             this.lbl_Im_username.Name = "lbl_Im_username";
             this.lbl_Im_username.Size = new System.Drawing.Size(111, 29);
             this.lbl_Im_username.TabIndex = 8;
@@ -89,7 +102,7 @@
             this.btn_Im_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Im_back.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Im_back.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_back.Location = new System.Drawing.Point(60, 493);
+            this.btn_Im_back.Location = new System.Drawing.Point(60, 580);
             this.btn_Im_back.Name = "btn_Im_back";
             this.btn_Im_back.Size = new System.Drawing.Size(125, 31);
             this.btn_Im_back.TabIndex = 7;
@@ -97,42 +110,18 @@
             this.btn_Im_back.UseVisualStyleBackColor = false;
             this.btn_Im_back.Click += new System.EventHandler(this.btn_Im_back_Click);
             // 
-            // btn_Im_remove
-            // 
-            this.btn_Im_remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Im_remove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Im_remove.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_remove.Location = new System.Drawing.Point(60, 442);
-            this.btn_Im_remove.Name = "btn_Im_remove";
-            this.btn_Im_remove.Size = new System.Drawing.Size(125, 31);
-            this.btn_Im_remove.TabIndex = 6;
-            this.btn_Im_remove.Text = "Remove Item";
-            this.btn_Im_remove.UseVisualStyleBackColor = false;
-            // 
-            // btn_Im_view
-            // 
-            this.btn_Im_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Im_view.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Im_view.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_view.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_Im_view.Location = new System.Drawing.Point(60, 293);
-            this.btn_Im_view.Name = "btn_Im_view";
-            this.btn_Im_view.Size = new System.Drawing.Size(125, 31);
-            this.btn_Im_view.TabIndex = 5;
-            this.btn_Im_view.Text = "View Items";
-            this.btn_Im_view.UseVisualStyleBackColor = false;
-            // 
             // btn_Im_ani
             // 
             this.btn_Im_ani.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Im_ani.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Im_ani.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_ani.Location = new System.Drawing.Point(60, 342);
+            this.btn_Im_ani.Location = new System.Drawing.Point(44, 318);
             this.btn_Im_ani.Name = "btn_Im_ani";
             this.btn_Im_ani.Size = new System.Drawing.Size(167, 31);
             this.btn_Im_ani.TabIndex = 4;
             this.btn_Im_ani.Text = "Add New Item";
             this.btn_Im_ani.UseVisualStyleBackColor = false;
+            this.btn_Im_ani.Click += new System.EventHandler(this.btn_Im_ani_Click);
             // 
             // lbl_Im_logo
             // 
@@ -162,12 +151,24 @@
             this.pnl_Im_right.Size = new System.Drawing.Size(1088, 727);
             this.pnl_Im_right.TabIndex = 1;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(338, 57);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(959, 506);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.ReadOnly= true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            // 
             // Item_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1364, 729);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pnl_Im_left);
             this.Name = "Item_management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -176,6 +177,7 @@
             this.pnl_Im_left.ResumeLayout(false);
             this.pnl_Im_left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoc_Im_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,9 +190,9 @@
         private Label lbl_Im_logo;
         private Button btn_Im_ani;
         private Button btn_Im_back;
-        private Button btn_Im_remove;
-        private Button btn_Im_view;
         private Label lbl_Im_username;
         private Button btn_Im_anb;
+        private Button btn_Im_sd;
+        private DataGridView dataGridView1;
     }
 }

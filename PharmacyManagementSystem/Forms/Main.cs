@@ -40,6 +40,23 @@ namespace PharmacyManagementSystem
             query = "select count(userRole) from USERS where userRole = 'Pharmacist'";
             ds = DBHelper.getData(query);
             setLabel(ds, lbl_Main_nop);
+
+            query = "select top 1 itemName from ITEMS order by availableQuantity ASC";
+            ds = DBHelper.getData(query);
+            setLabel(ds, lbl_Main_lai);
+
+            query = "select count(itemName) from Items";
+            ds = DBHelper.getData(query);
+            setLabel(ds, lbl_Main_mai);
+
+            query = "select ITEMS.itemName, BATCHES.expireDate from ITEMS inner join BATCHES on ITEMS.itemId = BATCHES.itemId where BATCHES.expireDate > '" + DateTime.Now.ToString("MM/dd/yyyy") + "' order by BATCHES.expireDate ASC";
+            ds = DBHelper.getData(query);
+            String cat = "";
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                cat = cat + DateTime.Parse(dr[1].ToString()).ToString("dd/MM/yyyy") + " : " + dr[0].ToString() + "\n";
+            }
+            lbl_Main_edl.Text = cat;
         }
 
         private void setLabel(DataSet ds, Label lbl)
@@ -85,6 +102,13 @@ namespace PharmacyManagementSystem
             changePW pw = new changePW(ctx, this);
             pw.Show();
             this.Hide();
+        }
+
+        private void btn_Main_logout_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.Show();
+            this.Close();
         }
     }
 }

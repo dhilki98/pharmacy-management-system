@@ -42,7 +42,6 @@
             this.txt_Adm_search = new System.Windows.Forms.TextBox();
             this.dataGV_Uv = new System.Windows.Forms.DataGridView();
             this.btn_Adm_reset = new System.Windows.Forms.Button();
-            this.btn_Adm_spplier = new System.Windows.Forms.Button();
             this.pnl_Adm_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Adm_logo)).BeginInit();
             this.pnl_Adm_right.SuspendLayout();
@@ -52,7 +51,6 @@
             // pnl_Adm_left
             // 
             this.pnl_Adm_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_Adm_left.Controls.Add(this.btn_Adm_spplier);
             this.pnl_Adm_left.Controls.Add(this.lbl_Adm_username);
             this.pnl_Adm_left.Controls.Add(this.btn_Adm_back);
             this.pnl_Adm_left.Controls.Add(this.btn_Adm_adduser);
@@ -207,19 +205,6 @@
             this.btn_Adm_reset.UseVisualStyleBackColor = false;
             this.btn_Adm_reset.Click += new System.EventHandler(this.btn_Adm_reset_Click);
             // 
-            // btn_Adm_spplier
-            // 
-            this.btn_Adm_spplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btn_Adm_spplier.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adm_spplier.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_spplier.Location = new System.Drawing.Point(65, 417);
-            this.btn_Adm_spplier.Name = "btn_Adm_spplier";
-            this.btn_Adm_spplier.Size = new System.Drawing.Size(150, 35);
-            this.btn_Adm_spplier.TabIndex = 21;
-            this.btn_Adm_spplier.Text = "Suppliers";
-            this.btn_Adm_spplier.UseVisualStyleBackColor = false;
-            this.btn_Adm_spplier.Click += new System.EventHandler(this.btn_Adm_spplier_Click);
-            // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -257,6 +242,5 @@
         private Button btn_Adm_search;
         private Button btn_Adm_edit;
         private Button btn_Adm_delete;
-        private Button btn_Adm_spplier;
     }
 }

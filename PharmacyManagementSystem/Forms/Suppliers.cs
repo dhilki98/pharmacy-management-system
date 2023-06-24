@@ -11,14 +11,14 @@ namespace PharmacyManagementSystem
         String query;
         DataSet ds;
         UserContext context;
-        Administrator parentAdm;
+        Item_management parentAdm;
         int selectedSupplierId = 0;
         bool isEditing = false;
 
-        public Suppliers(UserContext uc, Administrator ad)
+        public Suppliers(UserContext uc, Item_management im)
         {
             InitializeComponent();
-            this.parentAdm = ad;
+            this.parentAdm = im;
             this.context = uc;
         }
 

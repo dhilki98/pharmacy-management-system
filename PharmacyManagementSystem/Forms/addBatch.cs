@@ -38,20 +38,27 @@ namespace PharmacyManagementSystem
             dataGridView1.DataSource = DBHelper.getData(query).Tables[0];
             dateTP_aB_expiredate.MinDate = DateTime.Now;
             btn_aB_remove.Hide();
+            if(isEditing)
+            {
+                lbl_aB_quantity.Hide();
+                txt_aB_quantity.Hide();
+            }
         }
 
         private void saveResponse()
         {
             String itemID = txt_aB_iid.Text;
             String supplierID = txt_aB_sid.Text;
-            String expireDate = dateTP_aB_expiredate.ToString();
+            String expireDate = dateTP_aB_expiredate.Value.Date.ToString("MM/dd/yyyy");
             String unitPrice = txt_aB_unitprice.Text;
             String quantity = txt_aB_quantity.Text;
             try
             {
                 if (isEditing == false)
                 {
-                    query = "insert into BATCHES (itemId, supId, unitPrice, expireDate, quantity) values ('" + itemID + "', '" + supplierID + "', '" + unitPrice + "', '" + expireDate + "', '" + quantity + "')";
+                    query = "insert into BATCHES (itemId, supId, unitPrice, expireDate, quantity) values ('" + itemID + "', '" + supplierID + "', '" + unitPrice + "', '" + expireDate + "', '" + quantity + "');"
+                        + "update ITEMS set availableQuantity = availableQuantity + '"+ quantity +"' where itemId = '"+itemID+"'";
+
                     DBHelper.setData(query, "Add Sucessful.");
                 }
                 else
@@ -60,7 +67,6 @@ namespace PharmacyManagementSystem
                         "itemId = '" + itemID + "', " +
                         "supId = '" + supplierID + "', " +
                         "unitPrice = '" + unitPrice + "', " +
-                        "quantity = '" + quantity + "', " +
                         "expireDate = '" + expireDate + "' " +
                         "where batchId = '" + selectedBatchId + "'";
                     DBHelper.setData(query, "Update Sucessful");
@@ -127,6 +133,7 @@ namespace PharmacyManagementSystem
 
         private void btn_aB_back_Click(object sender, EventArgs e)
         {
+            parentItemManage.refreshTable();
             parentItemManage.Show();
             this.Close();
         }

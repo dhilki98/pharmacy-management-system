@@ -93,9 +93,9 @@
             this.btn_Ai_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_Ai_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Ai_add.ForeColor = System.Drawing.Color.White;
-            this.btn_Ai_add.Location = new System.Drawing.Point(271, 500);
+            this.btn_Ai_add.Location = new System.Drawing.Point(53, 478);
             this.btn_Ai_add.Name = "btn_Ai_add";
-            this.btn_Ai_add.Size = new System.Drawing.Size(146, 48);
+            this.btn_Ai_add.Size = new System.Drawing.Size(110, 48);
             this.btn_Ai_add.TabIndex = 15;
             this.btn_Ai_add.Text = "Add";
             this.btn_Ai_add.UseVisualStyleBackColor = false;
@@ -106,9 +106,9 @@
             this.btn_Ai_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_Ai_reset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Ai_reset.ForeColor = System.Drawing.Color.White;
-            this.btn_Ai_reset.Location = new System.Drawing.Point(428, 500);
+            this.btn_Ai_reset.Location = new System.Drawing.Point(169, 478);
             this.btn_Ai_reset.Name = "btn_Ai_reset";
-            this.btn_Ai_reset.Size = new System.Drawing.Size(146, 48);
+            this.btn_Ai_reset.Size = new System.Drawing.Size(105, 48);
             this.btn_Ai_reset.TabIndex = 16;
             this.btn_Ai_reset.Text = "Reset";
             this.btn_Ai_reset.UseVisualStyleBackColor = false;
@@ -119,9 +119,9 @@
             this.btn_Ai_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btn_Ai_back.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Ai_back.ForeColor = System.Drawing.Color.White;
-            this.btn_Ai_back.Location = new System.Drawing.Point(588, 500);
+            this.btn_Ai_back.Location = new System.Drawing.Point(280, 478);
             this.btn_Ai_back.Name = "btn_Ai_back";
-            this.btn_Ai_back.Size = new System.Drawing.Size(146, 48);
+            this.btn_Ai_back.Size = new System.Drawing.Size(99, 48);
             this.btn_Ai_back.TabIndex = 18;
             this.btn_Ai_back.Text = "Back";
             this.btn_Ai_back.UseVisualStyleBackColor = false;
@@ -151,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1072, 688);
+            this.ClientSize = new System.Drawing.Size(471, 688);
             this.Controls.Add(this.txt_Ai_threshold);
             this.Controls.Add(this.lbl_Ai_threshold);
             this.Controls.Add(this.btn_Ai_back);
@@ -164,7 +164,6 @@
             this.Controls.Add(this.lbl_Ai_itemdetails);
             this.Name = "Additem";
             this.Text = "Additem";
-            this.Load += new System.EventHandler(this.Additem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

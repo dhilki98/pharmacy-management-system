@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PharmacyManagementSystem.DataModels;
+using PharmacyManagementSystem.Operationals;
 
 namespace PharmacyManagementSystem
 {
@@ -15,6 +16,9 @@ namespace PharmacyManagementSystem
     {
         UserContext ctx;
         Main paerntMain;
+        String query;
+        DataSet ds;
+
         public Item_management(UserContext ctx, Main main)
         {
             InitializeComponent();
@@ -39,7 +43,29 @@ namespace PharmacyManagementSystem
 
         private void Item_management_Load(object sender, EventArgs e)
         {
+            lbl_Im_username.Text = ctx.getFullname();
+            query = "select * from ITEMS";
+            dataGridView1.DataSource = DBHelper.getData(query).Tables[0];
+        }
 
+        private void btn_Im_ani_Click(object sender, EventArgs e)
+        {
+            Additem addI = new Additem(ctx,this);
+            addI.Show();
+            this.Hide();
+        }
+
+        public void refreshTable()
+        {
+            query = "select * from ITEMS";
+            dataGridView1.DataSource = DBHelper.getData(query).Tables[0];
+        }
+
+        private void btn_Im_sd_Click(object sender, EventArgs e)
+        {
+            Suppliers sup = new Suppliers(ctx, this);
+            sup.Show();
+            this.Hide();
         }
     }
 }
