@@ -1,4 +1,6 @@
 ﻿using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 using PharmacyManagementSystem.DataModels;
 using PharmacyManagementSystem.Operationals;
 
@@ -22,29 +24,31 @@ namespace PharmacyManagementSystem
             {
                 if (txt_Login_username.Text == "root" && txt_Login_password.Text == "root")
                 {
-                    Main mn = new Main(new UserContext("Root User", UserContext.Role.Administrator,"Default Root User"));
+                    Main mn = new Main(new UserContext("Root User", UserContext.Role.Administrator, "Default Root User", 0));
                     mn.Show();
                     this.Hide();
                 }
             }
             else
             {
-                query = "select * from USERS where userName = '" + txt_Login_username.Text + "' and password='" + txt_Login_password.Text + "'";
+                string pw = BitConverter.ToString(SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(txt_Login_password.Text)));
+                query = "select * from USERS where userName = '" + txt_Login_username.Text + "' and password='" + pw + "'";
                 ds = DBHelper.getData(query);
                 if (ds.Tables[0].Rows.Count == 1)
                 {
                     string username = txt_Login_username.Text;
                     string role = ds.Tables[0].Rows[0][5].ToString() ?? "Pharmacist";
                     string fullname = ds.Tables[0].Rows[0][1].ToString() ?? username;
+                    int userId = int.Parse(ds.Tables[0].Rows[0][0].ToString() ?? "0");
                     if (role == "Administrator")
                     {
-                        Main mn = new Main(new UserContext(username, UserContext.Role.Administrator, fullname));
+                        Main mn = new Main(new UserContext(username, UserContext.Role.Administrator, fullname, userId));
                         mn.Show();
                         this.Hide();
                     }
                     else if (role == "Pharmacist")
                     {
-                        Main mn = new Main(new UserContext(username, UserContext.Role.Pharmacist, fullname));
+                        Main mn = new Main(new UserContext(username, UserContext.Role.Pharmacist, fullname, userId));
                         mn.Show();
                         this.Hide();
                     }

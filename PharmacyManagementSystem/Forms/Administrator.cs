@@ -22,7 +22,7 @@ namespace PharmacyManagementSystem
         private void Administrator_Load(object sender, EventArgs e)
         {
             lbl_Adm_username.Text = ctx.getFullname();
-            query = "select * from USERS";
+            query = "select fullName,userName,nic,userRole,email,contactNo,pharmLicense from USERS";
             dataGV_Uv.DataSource = DBHelper.getData(query).Tables[0];
             btn_Adm_reset.Hide();
             btn_Adm_edit.Hide();
@@ -103,5 +103,6 @@ namespace PharmacyManagementSystem
             sup.Show();
             this.Hide();
         }
+
     }
 }

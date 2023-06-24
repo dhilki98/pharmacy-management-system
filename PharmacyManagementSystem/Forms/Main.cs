@@ -80,9 +80,11 @@ namespace PharmacyManagementSystem
             Main_Load(this, null);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btn_Main_changePW_Click(object sender, EventArgs e)
         {
-
+            changePW pw = new changePW(ctx, this);
+            pw.Show();
+            this.Hide();
         }
     }
 }

@@ -43,12 +43,13 @@
             this.lbl_main_pharm = new System.Windows.Forms.Label();
             this.lbl_Main_nop = new System.Windows.Forms.Label();
             this.pnl_Main_admin = new System.Windows.Forms.Panel();
-            this.pnl_Main_pharm = new System.Windows.Forms.Panel();
-            this.pnl_Main_summary = new System.Windows.Forms.Panel();
-            this.lbl_pnl1_uAdmin = new System.Windows.Forms.Label();
-            this.lbl_pnl2_uPharm = new System.Windows.Forms.Label();
             this.lbl_pnl1_task = new System.Windows.Forms.Label();
+            this.lbl_pnl1_uAdmin = new System.Windows.Forms.Label();
+            this.pnl_Main_pharm = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_pnl2_uPharm = new System.Windows.Forms.Label();
+            this.pnl_Main_summary = new System.Windows.Forms.Panel();
+            this.btn_Main_changePW = new System.Windows.Forms.Button();
             this.pnl_Main_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Main_logo)).BeginInit();
             this.pnl_Main_admin.SuspendLayout();
@@ -58,6 +59,7 @@
             // pnl_Main_left
             // 
             this.pnl_Main_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnl_Main_left.Controls.Add(this.btn_Main_changePW);
             this.pnl_Main_left.Controls.Add(this.lbl_Main_username);
             this.pnl_Main_left.Controls.Add(this.btn_Main_logout);
             this.pnl_Main_left.Controls.Add(this.btn_Main_billing);
@@ -86,7 +88,7 @@
             this.btn_Main_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Main_logout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Main_logout.ForeColor = System.Drawing.Color.White;
-            this.btn_Main_logout.Location = new System.Drawing.Point(75, 453);
+            this.btn_Main_logout.Location = new System.Drawing.Point(75, 529);
             this.btn_Main_logout.Name = "btn_Main_logout";
             this.btn_Main_logout.Size = new System.Drawing.Size(137, 36);
             this.btn_Main_logout.TabIndex = 5;
@@ -220,6 +222,27 @@
             this.pnl_Main_admin.Size = new System.Drawing.Size(308, 597);
             this.pnl_Main_admin.TabIndex = 6;
             // 
+            // lbl_pnl1_task
+            // 
+            this.lbl_pnl1_task.AutoSize = true;
+            this.lbl_pnl1_task.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_pnl1_task.Location = new System.Drawing.Point(26, 79);
+            this.lbl_pnl1_task.Name = "lbl_pnl1_task";
+            this.lbl_pnl1_task.Size = new System.Drawing.Size(145, 126);
+            this.lbl_pnl1_task.TabIndex = 1;
+            this.lbl_pnl1_task.Text = "Task Performes\r\n   \r\n   Manage users\r\n   Manage suppliers\r\n   Manage items\r\n   Se" +
+    "ll items";
+            // 
+            // lbl_pnl1_uAdmin
+            // 
+            this.lbl_pnl1_uAdmin.AutoSize = true;
+            this.lbl_pnl1_uAdmin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_pnl1_uAdmin.Location = new System.Drawing.Point(91, 27);
+            this.lbl_pnl1_uAdmin.Name = "lbl_pnl1_uAdmin";
+            this.lbl_pnl1_uAdmin.Size = new System.Drawing.Size(150, 30);
+            this.lbl_pnl1_uAdmin.TabIndex = 0;
+            this.lbl_pnl1_uAdmin.Text = "Administrator";
+            // 
             // pnl_Main_pharm
             // 
             this.pnl_Main_pharm.BackColor = System.Drawing.Color.PaleGoldenrod;
@@ -232,23 +255,15 @@
             this.pnl_Main_pharm.Size = new System.Drawing.Size(308, 597);
             this.pnl_Main_pharm.TabIndex = 7;
             // 
-            // pnl_Main_summary
+            // label1
             // 
-            this.pnl_Main_summary.BackColor = System.Drawing.Color.Honeydew;
-            this.pnl_Main_summary.Location = new System.Drawing.Point(1015, 58);
-            this.pnl_Main_summary.Name = "pnl_Main_summary";
-            this.pnl_Main_summary.Size = new System.Drawing.Size(308, 597);
-            this.pnl_Main_summary.TabIndex = 8;
-            // 
-            // lbl_pnl1_uAdmin
-            // 
-            this.lbl_pnl1_uAdmin.AutoSize = true;
-            this.lbl_pnl1_uAdmin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pnl1_uAdmin.Location = new System.Drawing.Point(91, 27);
-            this.lbl_pnl1_uAdmin.Name = "lbl_pnl1_uAdmin";
-            this.lbl_pnl1_uAdmin.Size = new System.Drawing.Size(150, 30);
-            this.lbl_pnl1_uAdmin.TabIndex = 0;
-            this.lbl_pnl1_uAdmin.Text = "Administrator";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(32, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 84);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Task Performes\r\n\r\n   Manage items\r\n   Sell items";
             // 
             // lbl_pnl2_uPharm
             // 
@@ -260,27 +275,26 @@
             this.lbl_pnl2_uPharm.TabIndex = 1;
             this.lbl_pnl2_uPharm.Text = "Pharmacist";
             // 
-            // lbl_pnl1_task
+            // pnl_Main_summary
             // 
-            this.lbl_pnl1_task.AutoSize = true;
-            this.lbl_pnl1_task.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pnl1_task.Location = new System.Drawing.Point(26, 79);
-            this.lbl_pnl1_task.Name = "lbl_pnl1_task";
-            this.lbl_pnl1_task.Size = new System.Drawing.Size(145, 126);
-            this.lbl_pnl1_task.TabIndex = 1;
-            this.lbl_pnl1_task.Text = "Task Performes\r\n   \r\n   Manage users\r\n   Manage suppliers\r\n   Manage items\r\n   Se" +
-    "ll items";
+            this.pnl_Main_summary.BackColor = System.Drawing.Color.Honeydew;
+            this.pnl_Main_summary.Location = new System.Drawing.Point(1015, 58);
+            this.pnl_Main_summary.Name = "pnl_Main_summary";
+            this.pnl_Main_summary.Size = new System.Drawing.Size(308, 597);
+            this.pnl_Main_summary.TabIndex = 8;
             // 
-            // label1
+            // btn_Main_changePW
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(32, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 84);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Task Performes\r\n\r\n   Manage items\r\n   Sell items";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btn_Main_changePW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btn_Main_changePW.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Main_changePW.ForeColor = System.Drawing.Color.White;
+            this.btn_Main_changePW.Location = new System.Drawing.Point(75, 456);
+            this.btn_Main_changePW.Name = "btn_Main_changePW";
+            this.btn_Main_changePW.Size = new System.Drawing.Size(137, 65);
+            this.btn_Main_changePW.TabIndex = 7;
+            this.btn_Main_changePW.Text = "Change Password";
+            this.btn_Main_changePW.UseVisualStyleBackColor = false;
+            this.btn_Main_changePW.Click += new System.EventHandler(this.btn_Main_changePW_Click);
             // 
             // Main
             // 
@@ -330,5 +344,6 @@
         private Label label1;
         private Label lbl_pnl2_uPharm;
         private Panel pnl_Main_summary;
+        private Button btn_Main_changePW;
     }
 }

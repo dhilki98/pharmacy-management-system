@@ -191,6 +191,7 @@
             this.dataGV_Uv.RowTemplate.Height = 25;
             this.dataGV_Uv.Size = new System.Drawing.Size(929, 443);
             this.dataGV_Uv.TabIndex = 0;
+            this.dataGV_Uv.CellClick += DataGv_Uv_CellClick;
             this.dataGV_Uv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
             // 
             // btn_Adm_reset

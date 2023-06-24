@@ -121,7 +121,8 @@ namespace PharmacyManagementSystem
             String email = txt_nE_eaddress.Text;
             String phamlicense = txt_nE_pln.Text;
             String username = txt_nE_username.Text;
-            String password = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(txt_nE_password.Text)).ToString();
+            "gag".GetHashCode();
+            String password = BitConverter.ToString(SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(txt_nE_password.Text)));
 
             try
             {

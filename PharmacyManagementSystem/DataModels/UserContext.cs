@@ -10,11 +10,19 @@
 
         private Role userRole;
 
-        public UserContext(string un, Role ur, string fn)
+        private int userId;
+
+        public UserContext(string un, Role ur, string fn, int id)
         {
+            userId = id;
             username = un;
             userRole = ur;
             fullname = fn;
+        }
+
+        public int getUserId()
+        {
+            return userId;
         }
 
         public Role getUserRole()
