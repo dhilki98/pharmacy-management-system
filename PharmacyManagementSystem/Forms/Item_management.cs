@@ -36,7 +36,7 @@ namespace PharmacyManagementSystem
 
         private void btn_Im_anb_Click(object sender, EventArgs e)
         {
-            addBatch addB = new addBatch(ctx,1,this);
+            addBatch addB = new addBatch(ctx, 1, this);
             addB.Show();
             this.Hide();
         }
@@ -46,11 +46,15 @@ namespace PharmacyManagementSystem
             lbl_Im_username.Text = ctx.getFullname();
             query = "select * from ITEMS";
             dataGridView1.DataSource = DBHelper.getData(query).Tables[0];
+            if (ctx.getUserRole() != UserContext.Role.Administrator)
+            {
+                btn_Im_sd.Hide();
+            }
         }
 
         private void btn_Im_ani_Click(object sender, EventArgs e)
         {
-            Additem addI = new Additem(ctx,this);
+            Additem addI = new Additem(ctx, this);
             addI.Show();
             this.Hide();
         }

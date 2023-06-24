@@ -142,11 +142,12 @@
             // 
             // listBox_Bill
             // 
+            this.listBox_Bill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox_Bill.FormattingEnabled = true;
-            this.listBox_Bill.ItemHeight = 15;
+            this.listBox_Bill.ItemHeight = 21;
             this.listBox_Bill.Location = new System.Drawing.Point(299, 123);
             this.listBox_Bill.Name = "listBox_Bill";
-            this.listBox_Bill.Size = new System.Drawing.Size(210, 589);
+            this.listBox_Bill.Size = new System.Drawing.Size(210, 571);
             this.listBox_Bill.TabIndex = 3;
             this.listBox_Bill.SelectedIndexChanged += new System.EventHandler(this.listBox_Bill_SelectedIndexChanged);
             // 
@@ -198,7 +199,7 @@
             this.txt_Bill_nou.Name = "txt_Bill_nou";
             this.txt_Bill_nou.Size = new System.Drawing.Size(340, 29);
             this.txt_Bill_nou.TabIndex = 8;
-            this.txt_Bill_nou.TextChanged += new System.EventHandler(this.txt_Bill_nou_TextChanged);
+            this.txt_Bill_nou.TextChanged += txt_Bill_nou_TextChanged;
             // 
             // txt_Bill_tprice
             // 

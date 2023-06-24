@@ -9,6 +9,7 @@ namespace PharmacyManagementSystem
         UserContext ctx;
         string query;
         DataSet ds;
+        int selectedRowIndex = -1;
 
         public Billing(UserContext ctx)
         {
@@ -39,10 +40,18 @@ namespace PharmacyManagementSystem
         {
             if (txt_Bill_nou.Text != "")
             {
-                Int64 unitPrice = Int64.Parse(txt_Bill_ppu.Text);
-                Int64 noOfUnit = Int64.Parse(txt_Bill_nou.Text);
-                Int64 totalAmount = unitPrice * noOfUnit;
-                txt_Bill_tprice.Text = totalAmount.ToString();
+                double unitPrice = double.Parse(txt_Bill_ppu.Text);
+                try
+                {
+                    int noOfUnit = int.Parse(txt_Bill_nou.Text);
+                    double totalAmount = unitPrice * noOfUnit;
+                    txt_Bill_tprice.Text = totalAmount.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Number of Units must be an Integer.", "Warning !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             else
             {
@@ -66,7 +75,7 @@ namespace PharmacyManagementSystem
 
         private void btn_Bill_atocart_Click(object sender, EventArgs e)
         {
-            if (txt_Bill_id.Text != "")
+            if (txt_Bill_id.Text != "" && txt_Bill_nou.Text != "")
             {
                 query = "select availableQuantity,threshold from ITEMS where itemId = '" + txt_Bill_id.Text + "'";
                 ds = DBHelper.getData(query);
@@ -92,7 +101,7 @@ namespace PharmacyManagementSystem
 
                     if (newQuantity <= threshold)
                     {
-                        MessageBox.Show("Only " + quantity + " Left.\n Make a Purchase");
+                        MessageBox.Show("Only " + quantity + " Left.\n Threshold - "+threshold);
                     }
                 }
                 else
@@ -120,13 +129,14 @@ namespace PharmacyManagementSystem
         {
             try
             {
+                selectedRowIndex = e.RowIndex;
                 valueAmount = int.Parse(dataGV_Bill.Rows[e.RowIndex].Cells[4].Value.ToString());
                 valueID = dataGV_Bill.Rows[e.RowIndex].Cells[0].Value.ToString();
-                noOfunit = Int64.Parse(dataGV_Bill.Rows[e.RowIndex].Cells[3].Value.ToString());
+                noOfunit = int.Parse(dataGV_Bill.Rows[e.RowIndex].Cells[3].Value.ToString());
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Error Occured.", "Error !!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -134,28 +144,21 @@ namespace PharmacyManagementSystem
 
         private void btn_Bill_remove_Click(object sender, EventArgs e)
         {
-            if (valueID != null)
+            if (selectedRowIndex >= 0)
             {
-                try
-                {
-                    dataGV_Bill.Rows.RemoveAt(this.dataGV_Bill.SelectedRows[0].Index);
-                }
-                catch
-                {
 
-                }
-                finally
-                {
-                    query = "select availableQuantity from ITEMS where itemId = '" + valueID + "'";
-                    ds = DBHelper.getData(query);
-                    quantity = Int64.Parse(ds.Tables[0].Rows[0][5].ToString());
-                    newQuantity = quantity + noOfunit;
+                query = "select availableQuantity from ITEMS where itemId = '" + valueID + "'";
+                ds = DBHelper.getData(query);
+                quantity = Int64.Parse(ds.Tables[0].Rows[0][0].ToString());
+                newQuantity = quantity + noOfunit;
 
-                    query = "update ITEMS set availableQuantity = '" + newQuantity + "' where itemId = '" + valueID + "'";
-                    DBHelper.setData(query, "Item removed from cart.");
-                    totalAmount = totalAmount - valueAmount;
-                    lbl_Bill_total.Text = "Rs. " + totalAmount.ToString();
-                }
+                query = "update ITEMS set availableQuantity = '" + newQuantity + "' where itemId = '" + valueID + "'";
+                DBHelper.setData(query, "Item removed from cart.");
+                totalAmount = totalAmount - valueAmount;
+                lbl_Bill_total.Text = "Rs. " + totalAmount.ToString();
+
+                dataGV_Bill.Rows.RemoveAt(selectedRowIndex);
+                selectedRowIndex = -1;
             }
         }
 
@@ -191,8 +194,10 @@ namespace PharmacyManagementSystem
         {
             DGVPrinter print = new DGVPrinter();
             print.Title = "Item Bill - Unity Pharmacy";
-            print.SubTitle = String.Format("Date: {0}", DateTime.Now.Date);
+            print.SubTitle = String.Format("Date: {0}", DateTime.Now.ToString("MM/dd/yyyy"));
             print.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            print.TitleSpacing = 30;
+            print.SubTitleSpacing = 15;
             print.PageNumbers = true;
             print.PageNumberInHeader = false;
             print.PorportionalColumns = true;
