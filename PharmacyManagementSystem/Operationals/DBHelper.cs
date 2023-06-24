@@ -10,8 +10,8 @@ namespace PharmacyManagementSystem.Operationals
 {
     class DBHelper
     {
-         static string SERVER_NAME = "DESKTOP-F7UFU4N";
-        //static string SERVER_NAME = "LAPTOP-V4CJ4PPI";
+        //static string SERVER_NAME = "DESKTOP-F7UFU4N";
+        static string SERVER_NAME = "LAPTOP-V4CJ4PPI";
 
         private static SqlConnection createConnection()
         {

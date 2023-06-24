@@ -68,7 +68,6 @@
             this.lbl_sup_address.Size = new System.Drawing.Size(66, 21);
             this.lbl_sup_address.TabIndex = 1;
             this.lbl_sup_address.Text = "Address";
-            this.lbl_sup_address.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbl_sup_contactno
             // 
@@ -137,6 +136,8 @@
             this.dataGV_sup.RowTemplate.Height = 25;
             this.dataGV_sup.Size = new System.Drawing.Size(625, 390);
             this.dataGV_sup.TabIndex = 9;
+            this.dataGV_sup.AllowUserToAddRows = false;
+            this.dataGV_sup.ReadOnly = true;
             this.dataGV_sup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_sup_CellClick);
             // 
             // btn_sup_add

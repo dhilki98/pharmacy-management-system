@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PharmacyManagementSystem
 {
-    public partial class Additem : Form
+    public partial class changePW : Form
     {
 
         String query;
@@ -21,7 +21,7 @@ namespace PharmacyManagementSystem
         Item_management parentItemManage;
         int itemId = 0;
 
-        public Additem(UserContext uc, int itemId, Item_management im)
+        public changePW(UserContext uc, int itemId, Item_management im)
         {
             InitializeComponent();
             this.parentItemManage = im;
@@ -29,7 +29,7 @@ namespace PharmacyManagementSystem
             this.itemId = itemId;
         }
 
-        public Additem(UserContext uc, Item_management im)
+        public changePW(UserContext uc, Item_management im)
         {
             InitializeComponent();
             this.parentItemManage = im;
@@ -43,9 +43,9 @@ namespace PharmacyManagementSystem
 
         private void saveResponse()
         {
-            String itemName = txt_Ai_itemname.Text;
-            String medName = txt_Ai_mname.Text;
-            String threshold = txt_Ai_threshold.Text;
+            String itemName = txt_cPW_username.Text;
+            String medName = txt_cPW_passwd.Text;
+            String threshold = txt_cPW_retypepw.Text;
             try
             {
                 if (itemId == 0)
@@ -74,9 +74,9 @@ namespace PharmacyManagementSystem
         {
             query = "select * from Items where ItemId='" + itemId + "'";
             DataSet ds = DBHelper.getData(query);
-            txt_Ai_itemname.Text = ds.Tables[0].Rows[0][1].ToString();
-            txt_Ai_mname.Text = ds.Tables[0].Rows[0][2].ToString();
-            txt_Ai_threshold.Text = ds.Tables[0].Rows[0][3].ToString();
+            txt_cPW_username.Text = ds.Tables[0].Rows[0][1].ToString();
+            txt_cPW_passwd.Text = ds.Tables[0].Rows[0][2].ToString();
+            txt_cPW_retypepw.Text = ds.Tables[0].Rows[0][3].ToString();
             btn_Ai_add.Text = "Update";
             btn_Ai_reset.Text = "Cancel";
         }
@@ -88,9 +88,9 @@ namespace PharmacyManagementSystem
 
         public void clearAll()
         {
-            txt_Ai_itemname.Clear();
-            txt_Ai_mname.Clear();
-            txt_Ai_threshold.Clear();
+            txt_cPW_username.Clear();
+            txt_cPW_passwd.Clear();
+            txt_cPW_retypepw.Clear();
         }
 
         private void btn_Ai_add_Click(object sender, EventArgs e)
