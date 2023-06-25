@@ -49,14 +49,16 @@ namespace PharmacyManagementSystem
             ds = DBHelper.getData(query);
             setLabel(ds, lbl_Main_mai);
 
-            query = "select top 5 ITEMS.itemName, BATCHES.expireDate from ITEMS inner join BATCHES on ITEMS.itemId = BATCHES.itemId where BATCHES.expireDate > '" + DateTime.Now.ToString("MM/dd/yyyy") + "' order by BATCHES.expireDate ASC";
+            query = "select top 5 ITEMS.itemName, BATCHES.expireDate from ITEMS inner join BATCHES on " +
+                "ITEMS.itemId = BATCHES.itemId where BATCHES.expireDate > '" + DateTime.Now.ToString("MM/dd/yyyy") + 
+                "' order by BATCHES.expireDate ASC";
             ds = DBHelper.getData(query);
-            String cat = "";
+            String stat = "";
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                cat = cat + DateTime.Parse(dr[1].ToString()).ToString("dd/MM/yyyy") + " : " + dr[0].ToString() + "\n";
+                stat = stat + DateTime.Parse(dr[1].ToString()).ToString("dd/MM/yyyy") + " : " + dr[0].ToString() + "\n";
             }
-            lbl_Main_edl.Text = cat;
+            lbl_Main_edl.Text = stat;
         }
 
         private void setLabel(DataSet ds, Label lbl)

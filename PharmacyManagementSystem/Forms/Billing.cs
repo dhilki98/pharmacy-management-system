@@ -59,7 +59,17 @@ namespace PharmacyManagementSystem
             }
         }
 
+        private void refreshTable()
+        {
+            listBox_Bill.Items.Clear();
+            query = "select itemName from ITEMS where availableQuantity > '0'";
+            ds = DBHelper.getData(query);
 
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                listBox_Bill.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+            }
+        }
 
         private void btn_Bill_back_Click(object sender, EventArgs e)
         {
@@ -71,9 +81,12 @@ namespace PharmacyManagementSystem
         protected int n, totalAmount = 0;
         protected Int64 quantity, newQuantity, threshold;
 
-
-
         private void btn_Bill_atocart_Click(object sender, EventArgs e)
+        {
+            addToBill();
+        }
+
+        private void addToBill()
         {
             if (txt_Bill_id.Text != "" && txt_Bill_nou.Text != "")
             {
@@ -101,22 +114,20 @@ namespace PharmacyManagementSystem
 
                     if (newQuantity <= threshold)
                     {
-                        MessageBox.Show("Only " + quantity + " Left.\n Threshold - "+threshold);
+                        MessageBox.Show("Only " + quantity + " Left.\n Threshold - " + threshold);
                     }
                 }
                 else
                 {
                     MessageBox.Show("Item is Out of Stock.", "Warning !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                Billing_Load(this, null);
+                refreshTable();
                 clearAll();
             }
             else
             {
                 MessageBox.Show("Select Item First.", "Information !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         int valueAmount;
@@ -194,7 +205,7 @@ namespace PharmacyManagementSystem
         {
             DGVPrinter print = new DGVPrinter();
             print.Title = "Item Bill - Unity Pharmacy";
-            print.SubTitle = String.Format("Date: {0}", DateTime.Now.ToString("MM/dd/yyyy"));
+            print.SubTitle = String.Format("Date: {0}\n\n Total Amount: {1}", DateTime.Now.ToString("MM/dd/yyyy"),lbl_Bill_total.Text);
             print.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             print.TitleSpacing = 30;
             print.SubTitleSpacing = 15;
@@ -202,8 +213,6 @@ namespace PharmacyManagementSystem
             print.PageNumberInHeader = false;
             print.PorportionalColumns = true;
             print.HeaderCellAlignment = StringAlignment.Near;
-            print.Footer = "Total Payable Amount : " + lbl_Bill_total.Text;
-            print.FooterSpacing = 15;
             print.PrintDataGridView(dataGV_Bill);
 
             totalAmount = 0;

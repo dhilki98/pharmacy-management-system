@@ -56,8 +56,9 @@ namespace PharmacyManagementSystem
             {
                 if (isEditing == false)
                 {
-                    query = "insert into BATCHES (itemId, supId, unitPrice, expireDate, quantity) values ('" + itemID + "', '" + supplierID + "', '" + unitPrice + "', '" + expireDate + "', '" + quantity + "');"
-                        + "update ITEMS set availableQuantity = availableQuantity + '"+ quantity +"' where itemId = '"+itemID+"'";
+                    query = "insert into BATCHES (itemId, supId, unitPrice, expireDate, quantity) values " +
+                        "('" + itemID + "', '" + supplierID + "', '" + unitPrice + "', '" + expireDate + "', '" + quantity + "');" +
+                        "update ITEMS set availableQuantity = availableQuantity + '"+ quantity +"' where itemId = '"+itemID+"'";
 
                     DBHelper.setData(query, "Add Sucessful.");
                 }
