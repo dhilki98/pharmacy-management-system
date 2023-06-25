@@ -67,11 +67,11 @@ namespace PharmacyManagementSystem
 
         private void loadEditingDetails()
         {
-            query = "select * from Items where ItemId='" + itemId + "'";
+            query = "select itemName, medicalName, threshold from Items where ItemId='" + itemId + "'";
             DataSet ds = DBHelper.getData(query);
-            txt_Ai_itemname.Text = ds.Tables[0].Rows[0][1].ToString();
-            txt_Ai_mname.Text = ds.Tables[0].Rows[0][2].ToString();
-            txt_Ai_threshold.Text = ds.Tables[0].Rows[0][3].ToString();
+            txt_Ai_itemname.Text = ds.Tables[0].Rows[0][0].ToString();
+            txt_Ai_mname.Text = ds.Tables[0].Rows[0][1].ToString();
+            txt_Ai_threshold.Text = ds.Tables[0].Rows[0][2].ToString();
             btn_Ai_add.Text = "Update";
             btn_Ai_reset.Text = "Cancel";
         }
@@ -108,5 +108,12 @@ namespace PharmacyManagementSystem
             this.Close();
         }
 
+        private void Additem_Load(object sender, EventArgs e)
+        {
+            if (itemId != 0)
+            {
+                loadEditingDetails();
+            }
+        }
     }
 }

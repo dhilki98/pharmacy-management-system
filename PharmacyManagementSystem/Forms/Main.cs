@@ -49,7 +49,7 @@ namespace PharmacyManagementSystem
             ds = DBHelper.getData(query);
             setLabel(ds, lbl_Main_mai);
 
-            query = "select ITEMS.itemName, BATCHES.expireDate from ITEMS inner join BATCHES on ITEMS.itemId = BATCHES.itemId where BATCHES.expireDate > '" + DateTime.Now.ToString("MM/dd/yyyy") + "' order by BATCHES.expireDate ASC";
+            query = "select top 5 ITEMS.itemName, BATCHES.expireDate from ITEMS inner join BATCHES on ITEMS.itemId = BATCHES.itemId where BATCHES.expireDate > '" + DateTime.Now.ToString("MM/dd/yyyy") + "' order by BATCHES.expireDate ASC";
             ds = DBHelper.getData(query);
             String cat = "";
             foreach (DataRow dr in ds.Tables[0].Rows)

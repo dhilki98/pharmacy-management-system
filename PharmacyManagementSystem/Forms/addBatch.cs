@@ -34,7 +34,7 @@ namespace PharmacyManagementSystem
         {
             dateTP_aB_expiredate.Format = DateTimePickerFormat.Custom;
             dateTP_aB_expiredate.CustomFormat = "MM/dd/yyyy";
-            query = "select * from BATCHES where itemId = '" + itemId + "'";
+            query = "select * from BATCHES";
             dataGridView1.DataSource = DBHelper.getData(query).Tables[0];
             dateTP_aB_expiredate.MinDate = DateTime.Now;
             btn_aB_remove.Hide();
@@ -82,7 +82,7 @@ namespace PharmacyManagementSystem
 
         public void refreshTable()
         {
-            query = "select * from BATCHES where itemId = '" + itemId + "'";
+            query = "select * from BATCHES";
             dataGridView1.DataSource = DBHelper.getData(query).Tables[0];
             isEditing = false;
             btn_aB_add.Text = "Add";

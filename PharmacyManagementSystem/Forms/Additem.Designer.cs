@@ -164,6 +164,7 @@
             this.Controls.Add(this.lbl_Ai_itemdetails);
             this.Name = "Additem";
             this.Text = "Additem";
+            this.Load += new System.EventHandler(this.Additem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
