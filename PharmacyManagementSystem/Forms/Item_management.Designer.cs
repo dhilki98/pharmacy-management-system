@@ -39,6 +39,8 @@
             this.pctBoc_Im_logo = new System.Windows.Forms.PictureBox();
             this.pnl_Im_right = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_Im_edit = new System.Windows.Forms.Button();
+            this.btn_Im_delete = new System.Windows.Forms.Button();
             this.pnl_Im_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoc_Im_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -153,14 +155,41 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(338, 57);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(959, 506);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.ReadOnly= true;
-            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.CellClick += DataGv_Im_CellClick;
+            // 
+            // btn_Im_edit
+            // 
+            this.btn_Im_edit.BackColor = System.Drawing.Color.White;
+            this.btn_Im_edit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Im_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btn_Im_edit.Location = new System.Drawing.Point(681, 629);
+            this.btn_Im_edit.Name = "btn_Im_edit";
+            this.btn_Im_edit.Size = new System.Drawing.Size(108, 38);
+            this.btn_Im_edit.TabIndex = 21;
+            this.btn_Im_edit.Text = "Edit";
+            this.btn_Im_edit.UseVisualStyleBackColor = false;
+            this.btn_Im_edit.Click += new System.EventHandler(this.btn_Im_edit_Click);
+            // 
+            // btn_Im_delete
+            // 
+            this.btn_Im_delete.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_Im_delete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Im_delete.ForeColor = System.Drawing.Color.White;
+            this.btn_Im_delete.Location = new System.Drawing.Point(882, 629);
+            this.btn_Im_delete.Name = "btn_Im_delete";
+            this.btn_Im_delete.Size = new System.Drawing.Size(108, 38);
+            this.btn_Im_delete.TabIndex = 22;
+            this.btn_Im_delete.Text = "Delete";
+            this.btn_Im_delete.UseVisualStyleBackColor = false;
+            this.btn_Im_delete.Click += new System.EventHandler(this.btn_Im_delete_Click);
             // 
             // Item_management
             // 
@@ -168,6 +197,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1364, 729);
+            this.Controls.Add(this.btn_Im_delete);
+            this.Controls.Add(this.btn_Im_edit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pnl_Im_left);
             this.Name = "Item_management";
@@ -194,5 +225,7 @@
         private Button btn_Im_anb;
         private Button btn_Im_sd;
         private DataGridView dataGridView1;
+        private Button btn_Im_edit;
+        private Button btn_Im_delete;
     }
 }

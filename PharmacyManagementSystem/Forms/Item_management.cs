@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using PharmacyManagementSystem.DataModels;
 using PharmacyManagementSystem.Operationals;
 
@@ -18,6 +19,7 @@ namespace PharmacyManagementSystem
         Main paerntMain;
         String query;
         DataSet ds;
+        int selectedItemId = -1;
 
         public Item_management(UserContext ctx, Main main)
         {
@@ -46,6 +48,8 @@ namespace PharmacyManagementSystem
             lbl_Im_username.Text = ctx.getFullname();
             query = "select * from ITEMS";
             dataGridView1.DataSource = DBHelper.getData(query).Tables[0];
+            btn_Im_edit.Hide();
+            btn_Im_delete.Hide();
             if (ctx.getUserRole() != UserContext.Role.Administrator)
             {
                 btn_Im_sd.Hide();
@@ -70,6 +74,37 @@ namespace PharmacyManagementSystem
             Suppliers sup = new Suppliers(ctx, this);
             sup.Show();
             this.Hide();
+        }
+
+        private void btn_Im_edit_Click(object sender, EventArgs e)
+        {
+            Additem item = new Additem(ctx,selectedItemId, this);
+            item.Show();
+            this.Hide();
+            selectedItemId = -1;
+        }
+        private void DataGv_Im_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_Im_delete.Show();
+            btn_Im_edit.Show();
+            selectedItemId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+        }
+
+
+        private void btn_Im_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "DELETE FROM batches WHERE itemId='" + selectedItemId + "';" +
+                    " DELETE FROM items WHERE itemId='" + selectedItemId + "'";
+                DBHelper.setData(query, "Removal Sucessful");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("User Removal Unsuccessful." + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            selectedItemId = -1;
+            refreshTable();
         }
     }
 }
