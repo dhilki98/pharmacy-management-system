@@ -94,13 +94,13 @@ namespace PharmacyManagementSystem
         private void loadEditingDetails()
         {
             isEditing = true;
-            query = "select * from Batches where batchId='" + selectedBatchId + "'";
+            query = "select itemId, supId, unitPrice, quantity, expireDate from Batches where batchId='" + selectedBatchId + "'";
             DataSet ds = DBHelper.getData(query);
-            txt_aB_iid.Text = ds.Tables[0].Rows[0][1].ToString();
-            txt_aB_sid.Text = ds.Tables[0].Rows[0][2].ToString();
-            txt_aB_unitprice.Text = ds.Tables[0].Rows[0][3].ToString();
-            txt_aB_quantity.Text = ds.Tables[0].Rows[0][4].ToString();
-            dateTP_aB_expiredate.Value = DateTime.Parse(ds.Tables[0].Rows[0][5].ToString());
+            txt_aB_iid.Text = ds.Tables[0].Rows[0][0].ToString();
+            txt_aB_sid.Text = ds.Tables[0].Rows[0][1].ToString();
+            txt_aB_unitprice.Text = ds.Tables[0].Rows[0][2].ToString();
+            txt_aB_quantity.Text = ds.Tables[0].Rows[0][3].ToString();
+            dateTP_aB_expiredate.Value = DateTime.Parse(ds.Tables[0].Rows[0][4].ToString());
             btn_aB_add.Text = "Update";
             btn_aB_reset.Text = "Cancel";
         }

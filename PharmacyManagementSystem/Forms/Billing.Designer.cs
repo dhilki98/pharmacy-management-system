@@ -198,6 +198,7 @@
             this.txt_Bill_nou.Name = "txt_Bill_nou";
             this.txt_Bill_nou.Size = new System.Drawing.Size(340, 29);
             this.txt_Bill_nou.TabIndex = 8;
+            this.txt_Bill_nou.TextChanged += txt_Bill_nou_TextChanged;
             // 
             // txt_Bill_tprice
             // 
