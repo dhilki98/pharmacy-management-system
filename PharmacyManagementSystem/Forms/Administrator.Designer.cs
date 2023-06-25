@@ -63,23 +63,23 @@
             // 
             // lbl_Adm_username
             // 
-            this.lbl_Adm_username.AutoSize = true;
             this.lbl_Adm_username.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Adm_username.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_Adm_username.Location = new System.Drawing.Point(78, 563);
+            this.lbl_Adm_username.Location = new System.Drawing.Point(3, 644);
             this.lbl_Adm_username.Name = "lbl_Adm_username";
-            this.lbl_Adm_username.Size = new System.Drawing.Size(111, 29);
+            this.lbl_Adm_username.Size = new System.Drawing.Size(269, 29);
             this.lbl_Adm_username.TabIndex = 1;
             this.lbl_Adm_username.Text = "username";
+            this.lbl_Adm_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Adm_back
             // 
             this.btn_Adm_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Adm_back.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Adm_back.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_back.Location = new System.Drawing.Point(65, 479);
+            this.btn_Adm_back.Location = new System.Drawing.Point(3, 532);
             this.btn_Adm_back.Name = "btn_Adm_back";
-            this.btn_Adm_back.Size = new System.Drawing.Size(150, 35);
+            this.btn_Adm_back.Size = new System.Drawing.Size(266, 31);
             this.btn_Adm_back.TabIndex = 7;
             this.btn_Adm_back.Text = "Back";
             this.btn_Adm_back.UseVisualStyleBackColor = false;
@@ -90,9 +90,9 @@
             this.btn_Adm_adduser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Adm_adduser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Adm_adduser.ForeColor = System.Drawing.Color.White;
-            this.btn_Adm_adduser.Location = new System.Drawing.Point(65, 350);
+            this.btn_Adm_adduser.Location = new System.Drawing.Point(3, 318);
             this.btn_Adm_adduser.Name = "btn_Adm_adduser";
-            this.btn_Adm_adduser.Size = new System.Drawing.Size(150, 35);
+            this.btn_Adm_adduser.Size = new System.Drawing.Size(266, 31);
             this.btn_Adm_adduser.TabIndex = 4;
             this.btn_Adm_adduser.Text = "Add New User";
             this.btn_Adm_adduser.UseVisualStyleBackColor = false;
@@ -189,8 +189,6 @@
             this.dataGV_Uv.RowTemplate.Height = 25;
             this.dataGV_Uv.Size = new System.Drawing.Size(929, 443);
             this.dataGV_Uv.TabIndex = 0;
-            this.dataGV_Uv.CellClick += DataGv_Uv_CellClick;
-            this.dataGV_Uv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
             // 
             // btn_Adm_reset
             // 

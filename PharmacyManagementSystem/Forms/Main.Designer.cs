@@ -46,6 +46,7 @@
             this.pnl_Main_admin = new System.Windows.Forms.Panel();
             this.pnl_Main_pharm = new System.Windows.Forms.Panel();
             this.pnl_Main_summary = new System.Windows.Forms.Panel();
+            this.lbl_Main_edl = new System.Windows.Forms.Label();
             this.lbl_Main_expire = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_Main_lai = new System.Windows.Forms.Label();
-            this.lbl_Main_edl = new System.Windows.Forms.Label();
             this.pnl_Main_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_Main_logo)).BeginInit();
             this.pnl_Main_admin.SuspendLayout();
@@ -84,9 +84,9 @@
             this.btn_Main_changePW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Main_changePW.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Main_changePW.ForeColor = System.Drawing.Color.White;
-            this.btn_Main_changePW.Location = new System.Drawing.Point(75, 456);
+            this.btn_Main_changePW.Location = new System.Drawing.Point(3, 525);
             this.btn_Main_changePW.Name = "btn_Main_changePW";
-            this.btn_Main_changePW.Size = new System.Drawing.Size(137, 65);
+            this.btn_Main_changePW.Size = new System.Drawing.Size(266, 31);
             this.btn_Main_changePW.TabIndex = 7;
             this.btn_Main_changePW.Text = "Change Password";
             this.btn_Main_changePW.UseVisualStyleBackColor = false;
@@ -108,9 +108,9 @@
             this.btn_Main_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Main_logout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Main_logout.ForeColor = System.Drawing.Color.White;
-            this.btn_Main_logout.Location = new System.Drawing.Point(75, 529);
+            this.btn_Main_logout.Location = new System.Drawing.Point(3, 591);
             this.btn_Main_logout.Name = "btn_Main_logout";
-            this.btn_Main_logout.Size = new System.Drawing.Size(137, 36);
+            this.btn_Main_logout.Size = new System.Drawing.Size(266, 31);
             this.btn_Main_logout.TabIndex = 5;
             this.btn_Main_logout.Text = "Log Out";
             this.btn_Main_logout.UseVisualStyleBackColor = false;
@@ -121,9 +121,9 @@
             this.btn_Main_billing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Main_billing.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Main_billing.ForeColor = System.Drawing.Color.White;
-            this.btn_Main_billing.Location = new System.Drawing.Point(75, 411);
+            this.btn_Main_billing.Location = new System.Drawing.Point(3, 457);
             this.btn_Main_billing.Name = "btn_Main_billing";
-            this.btn_Main_billing.Size = new System.Drawing.Size(137, 36);
+            this.btn_Main_billing.Size = new System.Drawing.Size(266, 31);
             this.btn_Main_billing.TabIndex = 4;
             this.btn_Main_billing.Text = "Billing";
             this.btn_Main_billing.UseVisualStyleBackColor = false;
@@ -134,11 +134,11 @@
             this.btn_Main_im.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Main_im.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Main_im.ForeColor = System.Drawing.Color.White;
-            this.btn_Main_im.Location = new System.Drawing.Point(75, 341);
+            this.btn_Main_im.Location = new System.Drawing.Point(3, 387);
             this.btn_Main_im.Name = "btn_Main_im";
-            this.btn_Main_im.Size = new System.Drawing.Size(137, 64);
+            this.btn_Main_im.Size = new System.Drawing.Size(266, 31);
             this.btn_Main_im.TabIndex = 3;
-            this.btn_Main_im.Text = "Item\r\nManagement";
+            this.btn_Main_im.Text = "Item Management";
             this.btn_Main_im.UseVisualStyleBackColor = false;
             this.btn_Main_im.Click += new System.EventHandler(this.btn_Main_im_Click);
             // 
@@ -147,11 +147,11 @@
             this.btn_Main_administration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Main_administration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Main_administration.ForeColor = System.Drawing.Color.White;
-            this.btn_Main_administration.Location = new System.Drawing.Point(75, 299);
+            this.btn_Main_administration.Location = new System.Drawing.Point(3, 318);
             this.btn_Main_administration.Name = "btn_Main_administration";
-            this.btn_Main_administration.Size = new System.Drawing.Size(137, 36);
+            this.btn_Main_administration.Size = new System.Drawing.Size(266, 31);
             this.btn_Main_administration.TabIndex = 2;
-            this.btn_Main_administration.Text = "Administration";
+            this.btn_Main_administration.Text = "User Management";
             this.btn_Main_administration.UseVisualStyleBackColor = false;
             this.btn_Main_administration.Click += new System.EventHandler(this.btn_Main_administration_Click);
             // 
@@ -269,6 +269,20 @@
             this.pnl_Main_summary.Size = new System.Drawing.Size(308, 598);
             this.pnl_Main_summary.TabIndex = 8;
             // 
+            // lbl_Main_edl
+            // 
+            this.lbl_Main_edl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Main_edl.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Main_edl.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Main_edl.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Main_edl.Location = new System.Drawing.Point(28, 109);
+            this.lbl_Main_edl.Name = "lbl_Main_edl";
+            this.lbl_Main_edl.Size = new System.Drawing.Size(262, 467);
+            this.lbl_Main_edl.TabIndex = 6;
+            this.lbl_Main_edl.Text = "0";
+            // 
             // lbl_Main_expire
             // 
             this.lbl_Main_expire.AutoSize = true;
@@ -339,31 +353,15 @@
             this.lbl_Main_lai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Main_lai.AutoSize = true;
             this.lbl_Main_lai.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Main_lai.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Main_lai.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Main_lai.Location = new System.Drawing.Point(58, 106);
+            this.lbl_Main_lai.Location = new System.Drawing.Point(3, 106);
             this.lbl_Main_lai.Name = "lbl_Main_lai";
-            this.lbl_Main_lai.Size = new System.Drawing.Size(189, 65);
+            this.lbl_Main_lai.Size = new System.Drawing.Size(302, 65);
             this.lbl_Main_lai.TabIndex = 3;
             this.lbl_Main_lai.Text = "sample";
             this.lbl_Main_lai.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Main_edl
-            // 
-            this.lbl_Main_edl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Main_edl.AutoSize = true;
-            this.lbl_Main_edl.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Main_edl.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Main_edl.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Main_edl.Location = new System.Drawing.Point(38, 109);
-            this.lbl_Main_edl.Name = "lbl_Main_edl";
-            this.lbl_Main_edl.Size = new System.Drawing.Size(25, 30);
-            this.lbl_Main_edl.TabIndex = 6;
-            this.lbl_Main_edl.Text = "0";
             // 
             // Main
             // 
