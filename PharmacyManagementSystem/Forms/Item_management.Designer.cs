@@ -67,9 +67,9 @@
             this.btn_Im_sd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Im_sd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Im_sd.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_sd.Location = new System.Drawing.Point(44, 457);
+            this.btn_Im_sd.Location = new System.Drawing.Point(3, 457);
             this.btn_Im_sd.Name = "btn_Im_sd";
-            this.btn_Im_sd.Size = new System.Drawing.Size(167, 31);
+            this.btn_Im_sd.Size = new System.Drawing.Size(266, 31);
             this.btn_Im_sd.TabIndex = 10;
             this.btn_Im_sd.Text = "Supplier Details";
             this.btn_Im_sd.UseVisualStyleBackColor = false;
@@ -80,9 +80,9 @@
             this.btn_Im_anb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Im_anb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Im_anb.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_anb.Location = new System.Drawing.Point(44, 387);
+            this.btn_Im_anb.Location = new System.Drawing.Point(3, 387);
             this.btn_Im_anb.Name = "btn_Im_anb";
-            this.btn_Im_anb.Size = new System.Drawing.Size(167, 31);
+            this.btn_Im_anb.Size = new System.Drawing.Size(266, 31);
             this.btn_Im_anb.TabIndex = 9;
             this.btn_Im_anb.Text = "Add New Batch";
             this.btn_Im_anb.UseVisualStyleBackColor = false;
@@ -90,23 +90,23 @@
             // 
             // lbl_Im_username
             // 
-            this.lbl_Im_username.AutoSize = true;
             this.lbl_Im_username.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Im_username.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_Im_username.Location = new System.Drawing.Point(74, 656);
+            this.lbl_Im_username.Location = new System.Drawing.Point(3, 644);
             this.lbl_Im_username.Name = "lbl_Im_username";
-            this.lbl_Im_username.Size = new System.Drawing.Size(111, 29);
+            this.lbl_Im_username.Size = new System.Drawing.Size(269, 29);
             this.lbl_Im_username.TabIndex = 8;
             this.lbl_Im_username.Text = "username";
+            this.lbl_Im_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Im_back
             // 
             this.btn_Im_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Im_back.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Im_back.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_back.Location = new System.Drawing.Point(60, 580);
+            this.btn_Im_back.Location = new System.Drawing.Point(3, 532);
             this.btn_Im_back.Name = "btn_Im_back";
-            this.btn_Im_back.Size = new System.Drawing.Size(125, 31);
+            this.btn_Im_back.Size = new System.Drawing.Size(266, 31);
             this.btn_Im_back.TabIndex = 7;
             this.btn_Im_back.Text = "Back";
             this.btn_Im_back.UseVisualStyleBackColor = false;
@@ -117,9 +117,9 @@
             this.btn_Im_ani.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Im_ani.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Im_ani.ForeColor = System.Drawing.Color.White;
-            this.btn_Im_ani.Location = new System.Drawing.Point(44, 318);
+            this.btn_Im_ani.Location = new System.Drawing.Point(3, 318);
             this.btn_Im_ani.Name = "btn_Im_ani";
-            this.btn_Im_ani.Size = new System.Drawing.Size(167, 31);
+            this.btn_Im_ani.Size = new System.Drawing.Size(266, 31);
             this.btn_Im_ani.TabIndex = 4;
             this.btn_Im_ani.Text = "Add New Item";
             this.btn_Im_ani.UseVisualStyleBackColor = false;
@@ -134,7 +134,7 @@
             this.lbl_Im_logo.Name = "lbl_Im_logo";
             this.lbl_Im_logo.Size = new System.Drawing.Size(195, 78);
             this.lbl_Im_logo.TabIndex = 3;
-            this.lbl_Im_logo.Text = "Inventory \r\nManagement\r\n";
+            this.lbl_Im_logo.Text = "Item \r\nManagement\r\n";
             // 
             // pctBoc_Im_logo
             // 

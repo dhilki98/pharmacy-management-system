@@ -77,13 +77,12 @@
             // 
             // lbl_Bill_username
             // 
-            this.lbl_Bill_username.AutoSize = true;
             this.lbl_Bill_username.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Bill_username.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_Bill_username.Location = new System.Drawing.Point(77, 641);
+            this.lbl_Bill_username.Location = new System.Drawing.Point(3, 644);
             this.lbl_Bill_username.Name = "lbl_Bill_username";
-            this.lbl_Bill_username.Size = new System.Drawing.Size(111, 29);
-            this.lbl_Bill_username.TabIndex = 5;
+            this.lbl_Bill_username.Size = new System.Drawing.Size(269, 29);
+            this.lbl_Bill_username.TabIndex = 6;
             this.lbl_Bill_username.Text = "username";
             this.lbl_Bill_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -91,9 +90,9 @@
             // 
             this.btn_Bill_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_Bill_back.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Bill_back.Location = new System.Drawing.Point(63, 409);
+            this.btn_Bill_back.Location = new System.Drawing.Point(3, 532);
             this.btn_Bill_back.Name = "btn_Bill_back";
-            this.btn_Bill_back.Size = new System.Drawing.Size(125, 31);
+            this.btn_Bill_back.Size = new System.Drawing.Size(266, 31);
             this.btn_Bill_back.TabIndex = 4;
             this.btn_Bill_back.Text = "Back";
             this.btn_Bill_back.UseVisualStyleBackColor = false;
@@ -199,7 +198,6 @@
             this.txt_Bill_nou.Name = "txt_Bill_nou";
             this.txt_Bill_nou.Size = new System.Drawing.Size(340, 29);
             this.txt_Bill_nou.TabIndex = 8;
-            this.txt_Bill_nou.TextChanged += txt_Bill_nou_TextChanged;
             // 
             // txt_Bill_tprice
             // 
